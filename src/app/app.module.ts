@@ -7,7 +7,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { ListComponent } from './list/list.component';
 import { CdkStepperModule } from '@angular/cdk/stepper';
 import {MatButtonModule, MatCardModule, MatChipsModule, MatFormFieldModule, MatSnackBarModule} from '@angular/material';
-import { SnackButtonComponent } from './list/snack-button/snack-button.component';
+import { SnackButtonComponent } from './snack-button/snack-button.component';
 import {FormsModule} from '@angular/forms';
 
 @NgModule({
