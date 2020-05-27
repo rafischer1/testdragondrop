@@ -41,7 +41,9 @@ export class ListComponent implements OnInit {
     }
   }
 
-  saveList() {}
+  saveList() {
+    console.log("You saved a list 🌇");
+  }
 
   reset() {
     this.list = [

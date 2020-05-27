@@ -47,13 +47,18 @@
       [action]="'Do the dew'"
       [message]="'🌇 Be Cool'"
       [color]="'warn'"
+      [verticalPosition]="'top'"
+      [horizontalPosition]="'center'"
       (click)="reset()"
     ></app-snack-button>
     <app-snack-button
       [type]="'Save List'"
       [action]="'Do Great Things'"
       [message]="'📺Cool It Now'"
+      [verticalPosition]="'top'"
+      [horizontalPosition]="'center'"
       [color]="'primary'"
+      (click)="saveList()"
     ></app-snack-button>
   </div>
 </div>

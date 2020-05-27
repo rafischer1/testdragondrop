@@ -16,8 +16,8 @@ export class SnackButtonComponent implements OnInit {
   @Input() action: string;
   @Input() type: string;
   @Input() color: string;
-  horizontalPosition: MatSnackBarHorizontalPosition = "center";
-  verticalPosition: MatSnackBarVerticalPosition = "top";
+  @Input() horizontalPosition: MatSnackBarHorizontalPosition;
+  @Input() verticalPosition: MatSnackBarVerticalPosition;
 
   constructor(private snackBar: MatSnackBar) {}
 
