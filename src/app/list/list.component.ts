@@ -5,20 +5,28 @@ import {
   transferArrayItem,
 } from "@angular/cdk/drag-drop";
 
+export class PlanDesign {
+  name: string;
+  renewalDate: string;
+  hdhp: boolean;
+}
+
 @Component({
   selector: "app-list",
   templateUrl: "./list.component.html",
   styleUrls: ["./list.component.css"],
 })
 export class ListComponent implements OnInit {
-  list: any[] = [
-    "Humana EPO-3500",
-    "Aetna NY-2000-XYZ",
-    "Anthem Gold 5500",
-    "Aetna NY-HDHP-4500",
+  list: PlanDesign[] = [
+    { name: "Humana EPO-3500", hdhp: true, renewalDate: "1/1/21" },
+    { name: "Aetna NY-2000-XYZ", hdhp: true, renewalDate: "1/1/21" },
+    { name: "Anthem Gold 5500", hdhp: true, renewalDate: "1/1/21" },
+    { name: "Aetna NY-HDHP-4500", hdhp: true, renewalDate: "1/1/21" },
   ];
 
-  finalList: any[] = ["Humana PPO-5000"];
+  finalList: PlanDesign[] = [
+    { name: "Humana PPO-5000", hdhp: true, renewalDate: "1/1/21" },
+  ];
 
   constructor() {}
 
@@ -47,12 +55,14 @@ export class ListComponent implements OnInit {
 
   reset() {
     this.list = [
-      "Humana EPO-3500",
-      "Aetna NY-2000-XYZ",
-      "Anthem Gold 5500",
-      "Aetna NY-HDHP-4500",
+      { name: "Humana EPO-3500", hdhp: true, renewalDate: "1/1/21" },
+      { name: "Aetna NY-2000-XYZ", hdhp: true, renewalDate: "1/1/21" },
+      { name: "Anthem Gold 5500", hdhp: true, renewalDate: "1/1/21" },
+      { name: "Aetna NY-HDHP-4500", hdhp: true, renewalDate: "1/1/21" },
     ];
 
-    this.finalList = ["Humana PPO-5000"];
+    this.finalList = [
+      { name: "Humana PPO-5000", hdhp: true, renewalDate: "1/1/21" },
+    ];
   }
 }
