@@ -1,6 +1,4 @@
-
 <div class="container">
-
   <div class="example-container">
     <h2>Master Plans</h2>
     <div
@@ -11,7 +9,12 @@
       class="example-list"
       (cdkDropListDropped)="drop($event)"
     >
-      <div class="list mat-raised-button" *ngFor="let item of list" cdkDrag mat-basic-chip>
+      <div
+        class="list mat-raised-button"
+        *ngFor="let item of list"
+        cdkDrag
+        mat-basic-chip
+      >
         {{ item }}
       </div>
     </div>
@@ -32,16 +35,25 @@
         class="list mat-raised-button"
         *ngFor="let item of finalList"
         cdkDrag
-       mat-basic-chip
+        mat-basic-chip
       >
         {{ item }}
       </div>
     </div>
   </div>
   <div class="button">
-    <app-snack-button [type]="'Reset List'" [action]="'Do the dew'" [message]="'🌇 Be Cool'" [color]="'warn'" (click)="reset()"></app-snack-button>
-    <app-snack-button [type]="'Save List'" [action]="'Do Great Things'" [message]="'📺Cool It Now'" [color]="'primary'"></app-snack-button>
+    <app-snack-button
+      [type]="'Reset List'"
+      [action]="'Do the dew'"
+      [message]="'🌇 Be Cool'"
+      [color]="'warn'"
+      (click)="reset()"
+    ></app-snack-button>
+    <app-snack-button
+      [type]="'Save List'"
+      [action]="'Do Great Things'"
+      [message]="'📺Cool It Now'"
+      [color]="'primary'"
+    ></app-snack-button>
   </div>
-
 </div>
-
