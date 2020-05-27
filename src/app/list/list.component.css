@@ -18,11 +18,10 @@
 .list {
   cursor: grab;
   color: white;
-  background: linear-gradient(rgb(99, 226, 226), teal);
   height: 50px;
   width: 30%;
   border-radius: 5px;
-  margin: 1% 0 20px 0;
+  margin: 1% 0 15px 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -50,3 +49,4 @@
   margin: auto auto;
   padding: 4%;
 }
+

@@ -1,14 +1,22 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { DragDropModule } from '@angular/cdk/drag-drop';
-import { ListComponent } from './list/list.component';
-import { CdkStepperModule } from '@angular/cdk/stepper';
-import {MatButtonModule, MatCardModule, MatChipsModule, MatFormFieldModule, MatSnackBarModule} from '@angular/material';
-import { SnackButtonComponent } from './snack-button/snack-button.component';
-import {FormsModule} from '@angular/forms';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
+import { AppRoutingModule } from "./app-routing.module";
+import { AppComponent } from "./app.component";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { DragDropModule } from "@angular/cdk/drag-drop";
+import { ListComponent } from "./list/list.component";
+import { CdkStepperModule } from "@angular/cdk/stepper";
+import {
+  MatButtonModule,
+  MatCardModule,
+  MatChipsModule,
+  MatFormFieldModule,
+  MatIconModule,
+  MatMenuModule,
+  MatSnackBarModule,
+} from "@angular/material";
+import { SnackButtonComponent } from "./snack-button/snack-button.component";
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [AppComponent, ListComponent, SnackButtonComponent],
@@ -23,9 +31,11 @@ import {FormsModule} from '@angular/forms';
     MatFormFieldModule,
     FormsModule,
     MatCardModule,
-    MatChipsModule
+    MatChipsModule,
+    MatIconModule,
+    MatMenuModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

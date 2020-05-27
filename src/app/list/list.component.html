@@ -6,15 +6,10 @@
       #todoList="cdkDropList"
       [cdkDropListData]="list"
       [cdkDropListConnectedTo]="[doneList]"
-      class="example-list"
+      class="example-list first-list"
       (cdkDropListDropped)="drop($event)"
     >
-      <div
-        class="list mat-raised-button"
-        *ngFor="let item of list"
-        cdkDrag
-        mat-basic-chip
-      >
+      <div class="list item" *ngFor="let item of list" cdkDrag mat-basic-chip>
         {{ item.name }}
       </div>
     </div>
@@ -38,14 +33,13 @@
       >
         <mat-card class="example-card">
           <mat-card-header>
-            <div mat-card-avatar class="example-header-image"></div>
             <mat-card-title>{{ item.name }}</mat-card-title>
           </mat-card-header>
           <mat-card-content>
-            <p>HDHP? {{ item.hdhp ? "Yes" : "No" }}</p>
+            <p>{{ item.renewalDate }}</p>
           </mat-card-content>
           <mat-card-actions>
-            <button mat-button color="primary">PREVIEW</button>
+            <button mat-button color="accent">[ ]</button>
           </mat-card-actions>
         </mat-card>
       </div>

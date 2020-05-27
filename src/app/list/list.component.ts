@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnChanges, OnInit } from "@angular/core";
 import {
   CdkDragDrop,
   moveItemInArray,
@@ -39,6 +39,7 @@ export class ListComponent implements OnInit {
         event.previousIndex,
         event.currentIndex
       );
+      this.checkEmptyList();
     } else {
       transferArrayItem(
         event.previousContainer.data,
@@ -46,6 +47,7 @@ export class ListComponent implements OnInit {
         event.previousIndex,
         event.currentIndex
       );
+      this.checkEmptyList();
     }
   }
 
@@ -64,5 +66,14 @@ export class ListComponent implements OnInit {
     this.finalList = [
       { name: "Humana PPO-5000", hdhp: true, renewalDate: "1/1/21" },
     ];
+  }
+
+  private checkEmptyList() {
+    if (this.list.length === 0) {
+      this.list = [{ name: "placeholder", hdhp: false, renewalDate: "" }];
+    }
+    if (this.finalList.length === 0) {
+      this.finalList = [{ name: "placeholder", hdhp: false, renewalDate: "" }];
+    }
   }
 }
