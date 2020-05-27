@@ -43,3 +43,10 @@
 .button {
   flex-basis: 45%;
 }
+
+.example-card {
+  display: flex;
+  max-width: 400px;
+  margin: auto auto;
+  padding: 4%;
+}
