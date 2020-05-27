@@ -1,4 +1,4 @@
-## 🐲Test Repo for 'Gooey' Functionality 🐲
+## 🐲 Test Repo for 'Gooey' Functionality 🐲
 
 `npm install`
 
