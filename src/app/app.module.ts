@@ -10,15 +10,18 @@ import {
   MatButtonModule,
   MatCardModule,
   MatChipsModule,
-  MatFormFieldModule, MatGridListModule,
-  MatIconModule, MatListModule,
-  MatMenuModule, MatRippleModule,
+  MatFormFieldModule,
+  MatGridListModule,
+  MatIconModule,
+  MatListModule,
+  MatMenuModule,
+  MatRippleModule,
   MatSnackBarModule,
-} from '@angular/material';
+} from "@angular/material";
 import { SnackButtonComponent } from "./snack-button/snack-button.component";
 import { FormsModule } from "@angular/forms";
 import { CardComponent } from "./list/card/card.component";
-import { ResizerComponent } from './resizer/resizer.component';
+import { ResizerComponent } from "./resizer/resizer.component";
 
 @NgModule({
   declarations: [
