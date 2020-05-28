@@ -15,9 +15,8 @@
     </div>
   </div>
 
-  <div class="example-container">
+  <div class="cards-container">
     <h2>Plans to Offer</h2>
-
     <div
       cdkDropList
       #doneList="cdkDropList"
@@ -26,23 +25,9 @@
       class="example-list"
       (cdkDropListDropped)="drop($event)"
     >
-      <div
-        class="list mat-raised-button"
-        *ngFor="let item of finalList"
-        cdkDrag
-      >
-        <mat-card class="example-card">
-          <mat-card-header>
-            <mat-card-title>{{ item.name }}</mat-card-title>
-          </mat-card-header>
-          <mat-card-content>
-            <p>{{ item.renewalDate }}</p>
-          </mat-card-content>
-          <mat-card-actions>
-            <button mat-button color="accent">[ ]</button>
-          </mat-card-actions>
-        </mat-card>
-      </div>
+      <mat-list class="list card-list" *ngFor="let item of finalList" cdkDrag>
+        <mat-list-item><app-card [plan]="item"></app-card></mat-list-item>
+      </mat-list>
     </div>
   </div>
   <div class="button">
