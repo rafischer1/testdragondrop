@@ -1,1 +1,26 @@
-<app-list></app-list>
+<div class="app-container">
+  <div class="header">
+    <button
+      mat-icon-button
+      [matMenuTriggerFor]="menu"
+      aria-label="Example icon-button with a menu"
+    >
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu" xPosition="after">
+      <button mat-menu-item (click)="navigate('resize')">
+        <mat-icon>dialpad</mat-icon>
+        <span>Resize</span>
+      </button>
+      <button mat-menu-item (click)="navigate('list')">
+        <mat-icon>voicemail</mat-icon>
+        <span>List</span>
+      </button>
+      <button mat-menu-item (click)="navigate('')">
+        <mat-icon>home</mat-icon>
+        <span>Home</span>
+      </button>
+    </mat-menu>
+  </div>
+</div>
+<router-outlet></router-outlet>

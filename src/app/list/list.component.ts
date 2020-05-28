@@ -1,9 +1,23 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnChanges, OnInit } from "@angular/core";
 import {
   CdkDragDrop,
   moveItemInArray,
   transferArrayItem,
 } from "@angular/cdk/drag-drop";
+import { HelpersService } from "../services/helpers.service";
+
+export class PlanDesign {
+  name: string;
+  renewalDate: string;
+  rates: Rates;
+}
+
+export class Rates {
+  ec: number;
+  ee: number;
+  es: number;
+  fam: number;
+}
 
 @Component({
   selector: "app-list",
@@ -11,16 +25,63 @@ import {
   styleUrls: ["./list.component.css"],
 })
 export class ListComponent implements OnInit {
-  list: any[] = [
-    "Humana EPO-3500",
-    "Aetna NY-2000-XYZ",
-    "Anthem Gold 5500",
-    "Aetna NY-HDHP-4500",
+  list: PlanDesign[] = [
+    {
+      name: "Humana EPO-3500",
+      rates: {
+        ec: this.help.random(),
+        ee: this.help.random(),
+        es: this.help.random(),
+        fam: this.help.random(),
+      },
+      renewalDate: "1/1/21",
+    },
+    {
+      name: "Aetna NY-2000-XYZ",
+      rates: {
+        ec: this.help.random(),
+        ee: this.help.random(),
+        es: this.help.random(),
+        fam: this.help.random(),
+      },
+      renewalDate: "1/1/21",
+    },
+    {
+      name: "Anthem Gold 5500",
+      rates: {
+        ec: this.help.random(),
+        ee: this.help.random(),
+        es: this.help.random(),
+        fam: this.help.random(),
+      },
+      renewalDate: "1/1/21",
+    },
+    {
+      name: "Aetna NY-HDHP-4500",
+      rates: {
+        ec: this.help.random(),
+        ee: this.help.random(),
+        es: this.help.random(),
+        fam: this.help.random(),
+      },
+      renewalDate: "1/1/21",
+    },
   ];
 
-  finalList: any[] = ["Humana PPO-5000"];
+  finalList: PlanDesign[] = [
+    {
+      name: "Humana PPO-5000",
+      rates: {
+        ec: this.help.random(),
+        ee: this.help.random(),
+        es: this.help.random(),
+        fam: this.help.random(),
+      },
+      renewalDate: "1/1/21",
+    },
+  ];
 
-  constructor() {}
+  constructor(private help: HelpersService) {}
 
   ngOnInit() {}
 
@@ -31,6 +92,7 @@ export class ListComponent implements OnInit {
         event.previousIndex,
         event.currentIndex
       );
+      this.checkEmptyList();
     } else {
       transferArrayItem(
         event.previousContainer.data,
@@ -38,6 +100,7 @@ export class ListComponent implements OnInit {
         event.previousIndex,
         event.currentIndex
       );
+      this.checkEmptyList();
     }
   }
 
@@ -47,12 +110,90 @@ export class ListComponent implements OnInit {
 
   reset() {
     this.list = [
-      "Humana EPO-3500",
-      "Aetna NY-2000-XYZ",
-      "Anthem Gold 5500",
-      "Aetna NY-HDHP-4500",
+      {
+        name: "Humana EPO-3500",
+        rates: {
+          ec: this.help.random(),
+          ee: this.help.random(),
+          es: this.help.random(),
+          fam: this.help.random(),
+        },
+        renewalDate: "1/1/21",
+      },
+      {
+        name: "Aetna NY-2000-XYZ",
+        rates: {
+          ec: this.help.random(),
+          ee: this.help.random(),
+          es: this.help.random(),
+          fam: this.help.random(),
+        },
+        renewalDate: "1/1/21",
+      },
+      {
+        name: "Anthem Gold 5500",
+        rates: {
+          ec: this.help.random(),
+          ee: this.help.random(),
+          es: this.help.random(),
+          fam: this.help.random(),
+        },
+        renewalDate: "1/1/21",
+      },
+      {
+        name: "Aetna NY-HDHP-4500",
+        rates: {
+          ec: this.help.random(),
+          ee: this.help.random(),
+          es: this.help.random(),
+          fam: this.help.random(),
+        },
+        renewalDate: "1/1/21",
+      },
     ];
 
-    this.finalList = ["Humana PPO-5000"];
+    this.finalList = [
+      {
+        name: "Humana PPO-5000",
+        rates: {
+          ec: this.help.random(),
+          ee: this.help.random(),
+          es: this.help.random(),
+          fam: this.help.random(),
+        },
+        renewalDate: "1/1/21",
+      },
+    ];
+  }
+
+  private checkEmptyList() {
+    if (this.list.length === 0) {
+      this.list = [
+        {
+          name: "placeholder",
+          rates: {
+            ec: this.help.random(),
+            ee: this.help.random(),
+            es: this.help.random(),
+            fam: this.help.random(),
+          },
+          renewalDate: "",
+        },
+      ];
+    }
+    if (this.finalList.length === 0) {
+      this.finalList = [
+        {
+          name: "placeholder",
+          rates: {
+            ec: this.help.random(),
+            ee: this.help.random(),
+            es: this.help.random(),
+            fam: this.help.random(),
+          },
+          renewalDate: "",
+        },
+      ];
+    }
   }
 }

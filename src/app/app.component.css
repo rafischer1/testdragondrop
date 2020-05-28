@@ -1,0 +1,10 @@
+.header {
+  position: absolute;
+  top: 0;
+  height: 45px;
+  float: top;
+  border-bottom: 1px solid black;
+  width: 100%;
+  color: white;
+  background-color: #333;
+}
