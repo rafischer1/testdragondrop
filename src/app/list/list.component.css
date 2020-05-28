@@ -11,10 +11,11 @@
 
 .example-container {
   flex-basis: 20%;
+  height: 75%;
+  width: 100%;
 }
 
 .cards-container {
-  border: 1px dotted #333;
   flex-basis: 50%;
   height: 75%;
   width: 100%;
@@ -25,12 +26,8 @@
 }
 
 .card-list {
-  border: 1px dotted hotpink;
   height: 100%;
-  display: grid;
-  margin: 0 0 12% 0%;
+  display: inline-grid;
   grid-column-gap: 10px;
   grid-row-gap: 10px;
 }
-
-
