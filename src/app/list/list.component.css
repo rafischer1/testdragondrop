@@ -31,3 +31,13 @@
   grid-column-gap: 10px;
   grid-row-gap: 10px;
 }
+
+.empty {
+  border: 1px dotted rgba(255, 112, 112, 0.47);
+  height: 25px;
+  width: 50%;
+}
+
+.empty:hover {
+  border: 2px solid rgb(255, 112, 112);
+}
