@@ -12,7 +12,7 @@ import {
   MatChipsModule,
   MatFormFieldModule, MatGridListModule,
   MatIconModule, MatListModule,
-  MatMenuModule,
+  MatMenuModule, MatRippleModule,
   MatSnackBarModule,
 } from '@angular/material';
 import { SnackButtonComponent } from "./snack-button/snack-button.component";
@@ -44,6 +44,7 @@ import { ResizerComponent } from './resizer/resizer.component';
     MatMenuModule,
     MatGridListModule,
     MatListModule,
+    MatRippleModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -8,15 +8,17 @@
       [cdkDropListConnectedTo]="[doneList]"
       class="example-list first-list"
       (cdkDropListDropped)="drop($event)"
+      [class.empty]="list.length === 0"
     >
-      <div
-        class="list item"
-        *ngFor="let item of list"
-        cdkDrag
-        mat-basic-chip
-        color="primary"
-      >
-        {{ item.name }}
+      <div class="list item" *ngFor="let item of list" cdkDrag color="primary">
+        <p
+          mat-ripple
+          [matRippleColor]="'rgba(255, 243, 173, 0.45)'"
+          [matRippleCentered]="false"
+          [matRippleUnbounded]="false"
+        >
+          {{ item.name }}
+        </p>
       </div>
     </div>
   </div>
@@ -31,6 +33,7 @@
       [cdkDropListConnectedTo]="[todoList]"
       class="example-list"
       (cdkDropListDropped)="drop($event)"
+      [class.empty]="finalList.length === 0"
     >
       <mat-list class="list card-list" *ngFor="let item of finalList" cdkDrag>
         <app-card [plan]="item"></app-card>
@@ -40,8 +43,8 @@
   <div class="button">
     <app-snack-button
       [type]="'Reset List'"
-      [action]="'Do the dew'"
-      [message]="'🌇 Be Cool'"
+      [action]="'🎛'"
+      [message]="'Lists Reset'"
       [color]="'warn'"
       [verticalPosition]="'top'"
       [horizontalPosition]="'center'"
@@ -49,8 +52,8 @@
     ></app-snack-button>
     <app-snack-button
       [type]="'Save List'"
-      [action]="'Do Great Things'"
-      [message]="'📺Cool It Now'"
+      [action]="'⏱'"
+      [message]="'Saved'"
       [verticalPosition]="'top'"
       [horizontalPosition]="'center'"
       [color]="'primary'"

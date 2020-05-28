@@ -25,6 +25,7 @@ export class Rates {
   styleUrls: ["./list.component.css"],
 })
 export class ListComponent implements OnInit {
+  ripple: "rgba(255, 243, 173, 0.65)";
   list: PlanDesign[] = [
     {
       name: "Humana EPO-3500",
@@ -81,6 +82,7 @@ export class ListComponent implements OnInit {
     },
   ];
 
+
   constructor(private help: HelpersService) {}
 
   ngOnInit() {}
@@ -92,7 +94,6 @@ export class ListComponent implements OnInit {
         event.previousIndex,
         event.currentIndex
       );
-      this.checkEmptyList();
     } else {
       transferArrayItem(
         event.previousContainer.data,
@@ -100,7 +101,6 @@ export class ListComponent implements OnInit {
         event.previousIndex,
         event.currentIndex
       );
-      this.checkEmptyList();
     }
   }
 
@@ -164,36 +164,5 @@ export class ListComponent implements OnInit {
         renewalDate: "1/1/21",
       },
     ];
-  }
-
-  private checkEmptyList() {
-    if (this.list.length === 0) {
-      this.list = [
-        {
-          name: "placeholder",
-          rates: {
-            ec: this.help.random(),
-            ee: this.help.random(),
-            es: this.help.random(),
-            fam: this.help.random(),
-          },
-          renewalDate: "",
-        },
-      ];
-    }
-    if (this.finalList.length === 0) {
-      this.finalList = [
-        {
-          name: "placeholder",
-          rates: {
-            ec: this.help.random(),
-            ee: this.help.random(),
-            es: this.help.random(),
-            fam: this.help.random(),
-          },
-          renewalDate: "",
-        },
-      ];
-    }
   }
 }
