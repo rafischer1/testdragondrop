@@ -3,6 +3,7 @@
   color="accent"
   (click)="emitCursorChange()"
   [class.selected]="selected"
+  [style.cursor]="setCursor()"
 >
   <mat-icon>{{ type }}</mat-icon>
 </button>

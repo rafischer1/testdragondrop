@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { HelpersService } from "../services/helpers.service";
 
 @Component({
   selector: "app-cursors",
@@ -8,40 +9,47 @@ import { Component, OnInit } from "@angular/core";
 export class CursorsComponent implements OnInit {
   selected = "";
   sideNavOpen: boolean;
-  constructor() {}
+  constructor(private help: HelpersService) {}
 
   ngOnInit() {
     this.sideNavOpen = false;
+    this.selected = "format_clear";
+    this.setCursor();
   }
 
-  sideNaveOpenToggle() {
+  sideNaveOpenToggle = () =>
     this.sideNavOpen ? (this.sideNavOpen = false) : (this.sideNavOpen = true);
-  }
 
   cursorChange(type: string) {
     switch (type) {
       case "create":
         this.selected = "create";
-        console.log("create cursor");
+        this.setCursor();
         break;
       case "text_fields":
         this.selected = "text_fields";
-        console.log("text field cursor");
+        this.setCursor();
         break;
       case "brush":
         this.selected = "brush";
-        console.log("brush cursor");
+        this.setCursor();
         break;
       case "palette":
         this.selected = "palette";
-        console.log("clear cursor");
+        this.setCursor();
         break;
       case "format_clear":
         this.selected = "format_clear";
-        console.log("clear cursor");
+        this.setCursor();
         break;
       default:
-        console.log("pointer cursor");
+        this.setCursor();
     }
+  }
+
+  setCursor = () => this.help.setCursor(this.selected);
+
+  cursorMove(event: MouseEvent) {
+    // console.log(event);
   }
 }
