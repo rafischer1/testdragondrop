@@ -10,6 +10,8 @@ export class PlanDesign {
   name: string;
   renewalDate: string;
   rates: Rates;
+  id: number;
+  locked: boolean;
 }
 
 export class Rates {
@@ -36,6 +38,8 @@ export class ListComponent implements OnInit {
         fam: this.help.random(),
       },
       renewalDate: "1/1/21",
+      id: 1,
+      locked: false,
     },
     {
       name: "Aetna NY-2000-XYZ",
@@ -46,6 +50,8 @@ export class ListComponent implements OnInit {
         fam: this.help.random(),
       },
       renewalDate: "1/1/21",
+      id: 2,
+      locked: false,
     },
     {
       name: "Anthem Gold 5500",
@@ -56,6 +62,8 @@ export class ListComponent implements OnInit {
         fam: this.help.random(),
       },
       renewalDate: "1/1/21",
+      id: 3,
+      locked: false,
     },
     {
       name: "Aetna NY-HDHP-4500",
@@ -66,6 +74,8 @@ export class ListComponent implements OnInit {
         fam: this.help.random(),
       },
       renewalDate: "1/1/21",
+      id: 4,
+      locked: false,
     },
   ];
 
@@ -79,9 +89,10 @@ export class ListComponent implements OnInit {
         fam: this.help.random(),
       },
       renewalDate: "1/1/21",
+      id: 5,
+      locked: false,
     },
   ];
-
 
   constructor(private help: HelpersService) {}
 
@@ -119,6 +130,8 @@ export class ListComponent implements OnInit {
           fam: this.help.random(),
         },
         renewalDate: "1/1/21",
+        id: 1,
+        locked: false,
       },
       {
         name: "Aetna NY-2000-XYZ",
@@ -129,6 +142,8 @@ export class ListComponent implements OnInit {
           fam: this.help.random(),
         },
         renewalDate: "1/1/21",
+        id: 2,
+        locked: false,
       },
       {
         name: "Anthem Gold 5500",
@@ -139,6 +154,8 @@ export class ListComponent implements OnInit {
           fam: this.help.random(),
         },
         renewalDate: "1/1/21",
+        id: 3,
+        locked: false,
       },
       {
         name: "Aetna NY-HDHP-4500",
@@ -149,6 +166,8 @@ export class ListComponent implements OnInit {
           fam: this.help.random(),
         },
         renewalDate: "1/1/21",
+        id: 4,
+        locked: false,
       },
     ];
 
@@ -162,6 +181,8 @@ export class ListComponent implements OnInit {
           fam: this.help.random(),
         },
         renewalDate: "1/1/21",
+        id: 5,
+        locked: false,
       },
     ];
   }

@@ -19,6 +19,8 @@ export class ResizerComponent implements OnInit {
         fam: this.help.random(),
       },
       renewalDate: "1/1/21",
+      id: 1,
+      locked: false,
     },
     {
       name: "Aetna NY-2000-XYZ",
@@ -29,6 +31,8 @@ export class ResizerComponent implements OnInit {
         fam: this.help.random(),
       },
       renewalDate: "1/1/21",
+      id: 2,
+      locked: false,
     },
     {
       name: "Anthem Gold 5500",
@@ -39,15 +43,23 @@ export class ResizerComponent implements OnInit {
         fam: this.help.random(),
       },
       renewalDate: "1/1/21",
+      id: 3,
+      locked: false,
     },
   ];
   constructor(private help: HelpersService) {}
 
   ngOnInit() {}
 
-  randomUrl = () => this.help.randomUrl();
-
   onResizeEnd(event: ResizeEvent) {
     console.log("Element was resized", event);
+  }
+
+  lock(id: number) {
+    return this.cards.forEach((card) => {
+      if (card.id === id) {
+        card.locked = !card.locked;
+      }
+    });
   }
 }
