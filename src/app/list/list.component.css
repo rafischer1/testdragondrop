@@ -13,12 +13,16 @@
   flex-basis: 20%;
   height: 75%;
   width: 100%;
+  border-right: 1px solid rgba(51, 51, 51, 0.58);
+  margin-right: 30px;
 }
 
 .cards-container {
   flex-basis: 50%;
   height: 75%;
   width: 100%;
+  border-right: 1px solid rgba(51, 51, 51, 0.58);
+  margin-right: 30px;
 }
 
 .list {

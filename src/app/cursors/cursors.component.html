@@ -1,0 +1,53 @@
+<div class="container">
+  <mat-drawer-container
+    class="example-container"
+    autosize
+    (mousemove)="cursorMove($event)"
+    [style.cursor]="setCursor()"
+  >
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+      <div class="buttons">
+        <app-cursor-button
+          [type]="'create'"
+          [selected]="selected === 'create'"
+          (cursorEmit)="cursorChange($event)"
+        ></app-cursor-button>
+        <app-cursor-button
+          [type]="'text_fields'"
+          [selected]="selected === 'text_fields'"
+          (cursorEmit)="cursorChange($event)"
+        ></app-cursor-button>
+        <app-cursor-button
+          [type]="'brush'"
+          [selected]="selected === 'brush'"
+          (cursorEmit)="cursorChange($event)"
+        ></app-cursor-button>
+        <app-cursor-button
+          [type]="'palette'"
+          [selected]="selected === 'palette'"
+          (cursorEmit)="cursorChange($event)"
+        ></app-cursor-button>
+        <app-cursor-button
+          [type]="'format_clear'"
+          [selected]="selected === 'format_clear'"
+          (cursorEmit)="cursorChange($event)"
+        ></app-cursor-button>
+      </div>
+    </mat-drawer>
+
+    <div class="example-sidenav-content">
+      <button
+        class="toggle-button"
+        type="button"
+        mat-raised-button
+        color="accent"
+        (click)="drawer.toggle(); sideNaveOpenToggle()"
+      >
+        <mat-icon>{{
+          sideNavOpen ? "arrow_back_ios" : "arrow_forward_ios"
+        }}</mat-icon>
+      </button>
+    </div>
+  </mat-drawer-container>
+  <div class="selected">Selected: {{ selected }}</div>
+</div>

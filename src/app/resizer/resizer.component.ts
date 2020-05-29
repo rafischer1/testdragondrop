@@ -1,7 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { PlanDesign } from "../list/list.component";
 import { HelpersService } from "../services/helpers.service";
-import { ResizeEvent } from "angular-resizable-element";
 
 @Component({
   selector: "app-resizer",
@@ -50,10 +49,6 @@ export class ResizerComponent implements OnInit {
   constructor(private help: HelpersService) {}
 
   ngOnInit() {}
-
-  onResizeEnd(event: ResizeEvent) {
-    console.log("Element was resized", event);
-  }
 
   lock(id: number) {
     return this.cards.forEach((card) => {
