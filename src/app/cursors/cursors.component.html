@@ -2,30 +2,47 @@
   <mat-drawer-container class="example-container" autosize>
     <mat-drawer #drawer class="example-sidenav" mode="side">
       <div class="buttons">
-        <button mat-raised-button color="accent">
-          <mat-icon>create</mat-icon>
-        </button>
-        <button mat-raised-button color="accent">
-          <mat-icon>text_fields</mat-icon>
-        </button>
-        <button mat-raised-button color="accent">
-          <mat-icon>brush</mat-icon>
-        </button>
-        <button mat-raised-button color="accent">
-          <mat-icon>palette</mat-icon>
-        </button>
+        <app-cursor-button
+          [type]="'create'"
+          [selected]="selected === 'create'"
+          (cursorEmit)="cursorChange($event)"
+        ></app-cursor-button>
+        <app-cursor-button
+          [type]="'text_fields'"
+          [selected]="selected === 'text_fields'"
+          (cursorEmit)="cursorChange($event)"
+        ></app-cursor-button>
+        <app-cursor-button
+          [type]="'brush'"
+          [selected]="selected === 'brush'"
+          (cursorEmit)="cursorChange($event)"
+        ></app-cursor-button>
+        <app-cursor-button
+          [type]="'palette'"
+          [selected]="selected === 'palette'"
+          (cursorEmit)="cursorChange($event)"
+        ></app-cursor-button>
+        <app-cursor-button
+          [type]="'format_clear'"
+          [selected]="selected === 'format_clear'"
+          (cursorEmit)="cursorChange($event)"
+        ></app-cursor-button>
       </div>
     </mat-drawer>
 
     <div class="example-sidenav-content">
       <button
+        class="toggle-button"
         type="button"
-        mat-button
-        color="primary"
-        (click)="drawer.toggle()"
+        mat-raised-button
+        color="accent"
+        (click)="drawer.toggle(); sideNaveOpenToggle()"
       >
-        Toggle sidenav
+        <mat-icon>{{
+          sideNavOpen ? "arrow_back_ios" : "arrow_forward_ios"
+        }}</mat-icon>
       </button>
     </div>
   </mat-drawer-container>
+  <div class="selected">Selected: {{ selected }}</div>
 </div>

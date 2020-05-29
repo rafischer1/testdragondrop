@@ -23,6 +23,7 @@ import { FormsModule } from "@angular/forms";
 import { CardComponent } from "./list/card/card.component";
 import { ResizerComponent } from "./resizer/resizer.component";
 import { CursorsComponent } from './cursors/cursors.component';
+import { CursorButtonComponent } from './cursors/cursor-button/cursor-button.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { CursorsComponent } from './cursors/cursors.component';
     CardComponent,
     ResizerComponent,
     CursorsComponent,
+    CursorButtonComponent,
   ],
   imports: [
     BrowserModule,
