@@ -24,7 +24,7 @@ export class CursorsComponent implements OnInit {
     this.setCursor();
   }
 
-  sideNaveOpenToggle = () =>
+  sideNavOpenToggle = () =>
     this.sideNavOpen ? (this.sideNavOpen = false) : (this.sideNavOpen = true);
 
   cursorChange(type: string) {
