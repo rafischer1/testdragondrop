@@ -4,6 +4,8 @@
 
 `ng serve`
 
+[🥨 Live Preview Link](http://hot-waves.surge.sh/)
+
 ##### [Angular Material Components and CDK](https://material.angular.io/components/categories)
 
 - Snack Bar 🥪
@@ -16,8 +18,10 @@
 
 [x] Get toast service up and running for action completion 🍞
 
-[ ] Gooey drag and drop restricted areas
+[x] Gooey drag and drop restricted areas
 
-[ ] Resizing of cards in restricted areas
+[x] Resizing of cards in restricted areas
 
-[ ] Move item from list to full card preview
+[x] Move item from list to full card preview
+
+[ ] Cursor selection to action in specified area 🛀
