@@ -27,7 +27,6 @@ export class Rates {
   styleUrls: ["./list.component.css"],
 })
 export class ListComponent implements OnInit {
-  ripple: "rgba(255, 243, 173, 0.65)";
   list: PlanDesign[] = [
     {
       name: "Humana EPO-3500",

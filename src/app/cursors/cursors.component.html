@@ -6,30 +6,10 @@
     [style.cursor]="setCursor()"
   >
     <mat-drawer #drawer class="example-sidenav" mode="side">
-      <div class="buttons">
+      <div class="buttons" *ngFor="let button of buttons">
         <app-cursor-button
-          [type]="'create'"
-          [selected]="selected === 'create'"
-          (cursorEmit)="cursorChange($event)"
-        ></app-cursor-button>
-        <app-cursor-button
-          [type]="'text_fields'"
-          [selected]="selected === 'text_fields'"
-          (cursorEmit)="cursorChange($event)"
-        ></app-cursor-button>
-        <app-cursor-button
-          [type]="'brush'"
-          [selected]="selected === 'brush'"
-          (cursorEmit)="cursorChange($event)"
-        ></app-cursor-button>
-        <app-cursor-button
-          [type]="'palette'"
-          [selected]="selected === 'palette'"
-          (cursorEmit)="cursorChange($event)"
-        ></app-cursor-button>
-        <app-cursor-button
-          [type]="'format_clear'"
-          [selected]="selected === 'format_clear'"
+          [type]="button"
+          [selected]="selected === button"
           (cursorEmit)="cursorChange($event)"
         ></app-cursor-button>
       </div>

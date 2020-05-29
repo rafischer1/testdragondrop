@@ -9,6 +9,13 @@ import { HelpersService } from "../services/helpers.service";
 export class CursorsComponent implements OnInit {
   selected = "";
   sideNavOpen: boolean;
+  buttons: string[] = [
+    "create",
+    "text_fields",
+    "brush",
+    "palette",
+    "format_clear",
+  ];
   constructor(private help: HelpersService) {}
 
   ngOnInit() {
