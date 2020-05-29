@@ -1,0 +1,31 @@
+<div class="container">
+  <mat-drawer-container class="example-container" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+      <div class="buttons">
+        <button mat-raised-button color="accent">
+          <mat-icon>create</mat-icon>
+        </button>
+        <button mat-raised-button color="accent">
+          <mat-icon>text_fields</mat-icon>
+        </button>
+        <button mat-raised-button color="accent">
+          <mat-icon>brush</mat-icon>
+        </button>
+        <button mat-raised-button color="accent">
+          <mat-icon>palette</mat-icon>
+        </button>
+      </div>
+    </mat-drawer>
+
+    <div class="example-sidenav-content">
+      <button
+        type="button"
+        mat-button
+        color="primary"
+        (click)="drawer.toggle()"
+      >
+        Toggle sidenav
+      </button>
+    </div>
+  </mat-drawer-container>
+</div>

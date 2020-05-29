@@ -15,13 +15,14 @@ import {
   MatIconModule,
   MatListModule,
   MatMenuModule,
-  MatRippleModule,
+  MatRippleModule, MatSidenavModule,
   MatSnackBarModule,
-} from "@angular/material";
+} from '@angular/material';
 import { SnackButtonComponent } from "./snack-button/snack-button.component";
 import { FormsModule } from "@angular/forms";
 import { CardComponent } from "./list/card/card.component";
 import { ResizerComponent } from "./resizer/resizer.component";
+import { CursorsComponent } from './cursors/cursors.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { ResizerComponent } from "./resizer/resizer.component";
     SnackButtonComponent,
     CardComponent,
     ResizerComponent,
+    CursorsComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,6 +50,7 @@ import { ResizerComponent } from "./resizer/resizer.component";
     MatGridListModule,
     MatListModule,
     MatRippleModule,
+    MatSidenavModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
