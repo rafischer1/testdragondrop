@@ -22,40 +22,38 @@ export class CursorsComponent implements OnInit {
   ngOnInit() {
     this.sideNavOpen = false;
     this.selected = "format_clear";
-    this.setCursor();
+    this.setCursor("");
   }
 
   sideNavOpenToggle = () =>
-    this.sideNavOpen ? (this.sideNavOpen = false) : (this.sideNavOpen = true);
+    this.sideNavOpen ? (this.sideNavOpen = false) : (this.sideNavOpen = true)
 
   cursorChange(type: string) {
     switch (type) {
       case "create":
-        this.selected = "create";
-        this.setCursor();
+        this.setCursor("create");
         break;
       case "text_fields":
-        this.selected = "text_fields";
-        this.setCursor();
+        this.setCursor("text_fields");
         break;
       case "brush":
-        this.selected = "brush";
-        this.setCursor();
+        this.setCursor("brush");
         break;
       case "palette":
-        this.selected = "palette";
-        this.setCursor();
+        this.setCursor("palette");
         break;
       case "format_clear":
-        this.selected = "format_clear";
-        this.setCursor();
+        this.setCursor("format_clear");
         break;
       default:
-        this.setCursor();
+        this.setCursor("");
     }
   }
 
-  setCursor = () => this.help.setCursor(this.selected);
+  setCursor = (cursor: string) => {
+    this.selected = cursor;
+    return this.help.setCursor(cursor);
+  }
 
   cursorMove(event: MouseEvent) {
     // console.log(event);
