@@ -8,6 +8,7 @@ import { HelpersService } from "../services/helpers.service";
 })
 export class CursorsComponent implements OnInit {
   selected = "";
+  theme = "default";
   text: string;
   sideNavOpen: boolean;
   buttons: string[] = [
@@ -26,9 +27,10 @@ export class CursorsComponent implements OnInit {
   }
 
   sideNavOpenToggle = () =>
-    this.sideNavOpen ? (this.sideNavOpen = false) : (this.sideNavOpen = true)
+    this.sideNavOpen ? (this.sideNavOpen = false) : (this.sideNavOpen = true);
 
   cursorChange(type: string) {
+    this.selected = type;
     switch (type) {
       case "create":
         this.setCursor("create");
@@ -51,9 +53,8 @@ export class CursorsComponent implements OnInit {
   }
 
   setCursor = (cursor: string) => {
-    this.selected = cursor;
-    return this.help.setCursor(cursor);
-  }
+    this.help.setCursor(cursor);
+  };
 
   cursorMove(event: MouseEvent) {
     // console.log(event);
@@ -62,4 +63,6 @@ export class CursorsComponent implements OnInit {
   saveText() {
     console.log(this.text);
   }
+
+  setTheme = (type: string) => (this.theme = type);
 }

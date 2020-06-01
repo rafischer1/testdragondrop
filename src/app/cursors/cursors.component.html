@@ -45,6 +45,29 @@
           ></app-snack-button>
         </div>
       </div>
+      <div class="theme" *ngIf="selected === 'palette'">
+        <label>SELECT COLOR THEME </label>
+        <mat-button-toggle-group name="themeStyle" aria-label="Theme Style">
+          <mat-button-toggle value="light" (click)="setTheme('light')"
+            >Light</mat-button-toggle
+          >
+          <mat-button-toggle value="dark" (click)="setTheme('dark')"
+            >Dark</mat-button-toggle
+          >
+          <mat-button-toggle value="g103" (click)="setTheme('g103')"
+            >G103</mat-button-toggle
+          >
+        </mat-button-toggle-group>
+        <div
+          class="palette-area"
+          [class.light]="theme === 'light'"
+          [class.dark]="theme === 'dark'"
+          [class.g103]="theme === 'g103'"
+        >
+          <h4>This is the Style you selected: {{ theme.toUpperCase() }}</h4>
+          <button mat-raised-button>A BUTTON!</button>
+        </div>
+      </div>
     </div>
   </mat-drawer-container>
 </div>

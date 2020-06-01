@@ -53,5 +53,59 @@ textarea {
 }
 
 .text-button {
-  margin: auto auto;
+  margin: 1% 57%;
+}
+
+.palette-area {
+  border: 1px solid #333;
+  height: 215px;
+  width: 20%;
+  margin-left: 25%;
+  color: #333;
+  background-color: white;
+  -webkit-box-shadow: 10px 10px 117px 0px rgba(227, 227, 227, 1);
+  -moz-box-shadow: 10px 10px 117px 0px rgba(227, 227, 227, 1);
+  box-shadow: 10px 10px 117px 0px rgba(227, 227, 227, 1);
+}
+
+.palette-area > button {
+  margin: 25% 35%;
+}
+
+.palette-area > h4 {
+  margin: 5% 15%;
+}
+
+.light {
+  color: #333;
+  background-color: rgba(248, 251, 255, 0.41);
+}
+
+.light > button {
+  background-color: #333;
+  color: white;
+}
+
+.dark {
+  color: white;
+  background-color: #333;
+}
+
+.dark > button {
+  background-color: white;
+  color: #333;
+}
+
+.g103 {
+  color: lightsalmon;
+  background-color: teal;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-weight: bold;
+}
+
+.g103 > button {
+  background-color: lightsalmon;
+  font-weight: bold;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  color: teal;
 }
