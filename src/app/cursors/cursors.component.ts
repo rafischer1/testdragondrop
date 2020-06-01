@@ -10,6 +10,7 @@ export class CursorsComponent implements OnInit {
   selected = "";
   theme = "default";
   text: string;
+  isDrawing: boolean;
   sideNavOpen: boolean;
   buttons: string[] = [
     "create",
@@ -24,6 +25,7 @@ export class CursorsComponent implements OnInit {
     this.sideNavOpen = false;
     this.selected = "format_clear";
     this.setCursor("");
+    this.isDrawing = false;
   }
 
   sideNavOpenToggle = () =>
@@ -52,9 +54,7 @@ export class CursorsComponent implements OnInit {
     }
   }
 
-  setCursor = (cursor: string) => {
-    this.help.setCursor(cursor);
-  };
+  setCursor = (cursor: string) => this.help.setCursor(cursor);
 
   cursorMove(event: MouseEvent) {
     // console.log(event);
@@ -65,4 +65,6 @@ export class CursorsComponent implements OnInit {
   }
 
   setTheme = (type: string) => (this.theme = type);
+
+
 }

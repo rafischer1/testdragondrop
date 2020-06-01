@@ -68,6 +68,9 @@
           <button mat-raised-button>A BUTTON!</button>
         </div>
       </div>
+      <div class="canvas-area" *ngIf="selected === 'brush'">
+        <app-canvas></app-canvas>
+      </div>
     </div>
   </mat-drawer-container>
 </div>

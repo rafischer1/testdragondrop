@@ -1,0 +1,45 @@
+<div aria-label="color selection" class="chip-list">
+  <mat-chip-list>
+    <mat-chip (click)="thicker()">Thicker</mat-chip>
+    <mat-chip (click)="thinner()">Thinner</mat-chip>
+    <mat-chip class="white" (click)="selectColor('white')">Erase</mat-chip>
+    <mat-chip class="black" (click)="selectColor('black')">Black</mat-chip>
+    <mat-chip class="teal" (click)="selectColor('teal')">Teal</mat-chip>
+    <mat-chip class="salmon" (click)="selectColor('lightsalmon')"
+      >Salmon</mat-chip
+    >
+    <mat-chip class="purple" (click)="selectColor('purple')"
+      >Purple</mat-chip
+    ></mat-chip-list
+  >
+</div>
+<label
+  >PAINT AREA
+  <canvas
+    #myCanvas
+    width="500"
+    height="350"
+    (mousedown)="paint($event)"
+    (mousemove)="painting($event)"
+    (mouseup)="painted($event)"
+  >
+  </canvas>
+</label>
+<div class="buttons">
+  <app-snack-button
+    [type]="'Save'"
+    [horizontalPosition]="'center'"
+    [verticalPosition]="'top'"
+    [action]="'🍟'"
+    [message]="'SAVED'"
+    (click)="savePaint()"
+  ></app-snack-button>
+  <app-snack-button
+    [type]="'Clear'"
+    [horizontalPosition]="'center'"
+    [verticalPosition]="'top'"
+    [action]="'🥦'"
+    [message]="'ERASED'"
+    (click)="clearPaint()"
+  ></app-snack-button>
+</div>

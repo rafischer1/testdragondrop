@@ -24,6 +24,7 @@ import { CardComponent } from "./list/card/card.component";
 import { ResizerComponent } from "./resizer/resizer.component";
 import { CursorsComponent } from './cursors/cursors.component';
 import { CursorButtonComponent } from './cursors/cursor-button/cursor-button.component';
+import { CanvasComponent } from './cursors/canvas/canvas.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { CursorButtonComponent } from './cursors/cursor-button/cursor-button.com
     ResizerComponent,
     CursorsComponent,
     CursorButtonComponent,
+    CanvasComponent,
   ],
     imports: [
         BrowserModule,
