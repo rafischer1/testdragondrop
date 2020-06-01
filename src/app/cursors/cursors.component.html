@@ -21,13 +21,30 @@
         type="button"
         mat-raised-button
         color="accent"
-        (click)="drawer.toggle(); sideNaveOpenToggle()"
+        (click)="drawer.toggle(); sideNavOpenToggle()"
       >
         <mat-icon>{{
           sideNavOpen ? "arrow_back_ios" : "arrow_forward_ios"
         }}</mat-icon>
       </button>
     </div>
+    <div class="main-container">
+      <div class="textarea" *ngIf="selected === 'text_fields'">
+        <label
+          >TEXTAREA
+          <textarea rows="10" cols="25" [(ngModel)]="text"></textarea>
+        </label>
+        <div class="text-button">
+          <app-snack-button
+            [type]="'Save Text'"
+            [horizontalPosition]="'center'"
+            [verticalPosition]="'top'"
+            [action]="text"
+            [message]="'SAVED'"
+            (click)="saveText()"
+          ></app-snack-button>
+        </div>
+      </div>
+    </div>
   </mat-drawer-container>
-  <div class="selected">Selected: {{ selected }}</div>
 </div>

@@ -8,6 +8,7 @@ import { HelpersService } from "../services/helpers.service";
 })
 export class CursorsComponent implements OnInit {
   selected = "";
+  text: string;
   sideNavOpen: boolean;
   buttons: string[] = [
     "create",
@@ -58,5 +59,9 @@ export class CursorsComponent implements OnInit {
 
   cursorMove(event: MouseEvent) {
     // console.log(event);
+  }
+
+  saveText() {
+    console.log(this.text);
   }
 }

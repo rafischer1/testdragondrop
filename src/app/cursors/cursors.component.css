@@ -38,4 +38,20 @@
 .selected {
   color: #333;
   font-weight: bold;
+  width: 150px;
+  height: 150px;
+  border: 1px solid #333;
+}
+
+textarea {
+  margin: auto auto;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #333;
+  font-size: 34px;
+  font-family: sans-serif;
+}
+
+.text-button {
+  margin: auto auto;
 }
