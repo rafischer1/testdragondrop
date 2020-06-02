@@ -17,7 +17,13 @@ export class WizardStateStore extends Store<WizardState> {
     super(createInitialState());
   }
 
-  add(stage: WizardStage) {}
+  add(stage: WizardStage) {
+    this.update(() => stage[0]);
+  }
 
   remove(order: number) {}
+
+  resetWizard() {
+    this.update(createInitialState());
+  }
 }

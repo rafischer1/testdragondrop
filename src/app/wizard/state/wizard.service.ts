@@ -27,6 +27,14 @@ export class WizardService {
   remove(order: number) {
     this.store.remove(order);
   }
+
+  showWizard = (order: number) => {
+    const stage: WizardStage[] = this.get(order);
+    console.log("stage in service:", stage);
+    return this.add(stage[0]);
+  };
+
+  resetWizard = () => this.store.resetWizard();
 }
 
 export const defaultWizardStages: WizardStage[] = [
