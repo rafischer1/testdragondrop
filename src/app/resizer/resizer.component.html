@@ -2,6 +2,7 @@
   <div *ngFor="let card of cards">
     <mat-card
       class="card"
+      [class.resize]="!card.locked"
       cdkDrag
       cdkDragBoundary=".container"
       [cdkDragDisabled]="card.locked"

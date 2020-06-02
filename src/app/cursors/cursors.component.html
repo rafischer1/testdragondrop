@@ -2,8 +2,7 @@
   <mat-drawer-container
     class="example-container"
     autosize
-    (mousemove)="cursorMove($event)"
-    [style.cursor]="setCursor()"
+    [style.cursor]="setCursor('')"
   >
     <mat-drawer #drawer class="example-sidenav" mode="side">
       <div class="buttons" *ngFor="let button of buttons">
@@ -41,7 +40,6 @@
             [verticalPosition]="'top'"
             [action]="text"
             [message]="'SAVED'"
-            (click)="saveText()"
           ></app-snack-button>
         </div>
       </div>

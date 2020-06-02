@@ -1,11 +1,11 @@
 <div aria-label="color selection" class="chip-list">
   <mat-chip-list>
-    <mat-chip (click)="thicker()">Thicker</mat-chip>
-    <mat-chip (click)="thinner()">Thinner</mat-chip>
-    <mat-chip class="white" (click)="selectColor('white')">Erase</mat-chip>
-    <mat-chip class="black" (click)="selectColor('black')">Black</mat-chip>
-    <mat-chip class="teal" (click)="selectColor('teal')">Teal</mat-chip>
-    <mat-chip class="salmon" (click)="selectColor('lightsalmon')"
+    <mat-chip class="chip" (click)="thicker()">Thicker</mat-chip>
+    <mat-chip class="chip" (click)="thinner()">Thinner</mat-chip>
+    <mat-chip class="white chip" (click)="selectColor('white')">Erase</mat-chip>
+    <mat-chip class="black chip" (click)="selectColor('black')">Black</mat-chip>
+    <mat-chip class="teal chip" (click)="selectColor('teal')">Teal</mat-chip>
+    <mat-chip class="salmon chip" (click)="selectColor('lightsalmon')"
       >Salmon</mat-chip
     >
     <mat-chip class="purple" (click)="selectColor('purple')"
@@ -26,7 +26,6 @@
   </canvas>
 </label>
 <div class="buttons">
-  <!--  <div>Thickness: {{ lineWidth }}:{{ lineHeight }}</div>-->
   <app-snack-button
     [type]="'Save'"
     [horizontalPosition]="'center'"

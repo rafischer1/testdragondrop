@@ -29,7 +29,7 @@ export class CursorsComponent implements OnInit {
   }
 
   sideNavOpenToggle = () =>
-    this.sideNavOpen ? (this.sideNavOpen = false) : (this.sideNavOpen = true);
+    this.sideNavOpen ? (this.sideNavOpen = false) : (this.sideNavOpen = true)
 
   cursorChange(type: string) {
     this.selected = type;
@@ -56,15 +56,5 @@ export class CursorsComponent implements OnInit {
 
   setCursor = (cursor: string) => this.help.setCursor(cursor);
 
-  cursorMove(event: MouseEvent) {
-    // console.log(event);
-  }
-
-  saveText() {
-    console.log(this.text);
-  }
-
   setTheme = (type: string) => (this.theme = type);
-
-
 }

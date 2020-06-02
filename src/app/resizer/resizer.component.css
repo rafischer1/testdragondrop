@@ -21,6 +21,9 @@
 
 .card {
   margin: auto 5px;
+}
+
+.resize {
   resize: both;
   overflow: auto;
 }
