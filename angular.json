@@ -119,5 +119,8 @@
       }
     }
   },
-  "defaultProject": "testdragdrop"
+  "defaultProject": "testdragdrop",
+  "cli": {
+    "defaultCollection": "@datorama/akita"
+  }
 }

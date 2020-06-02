@@ -25,6 +25,10 @@ import { ResizerComponent } from "./resizer/resizer.component";
 import { CursorsComponent } from './cursors/cursors.component';
 import { CursorButtonComponent } from './cursors/cursor-button/cursor-button.component';
 import { CanvasComponent } from './cursors/canvas/canvas.component';
+import { WizardContainerComponent } from './wizard/wizard-container/wizard-container.component';
+import { WizardComponent } from './wizard/wizard/wizard.component';
+import { NG_ENTITY_SERVICE_CONFIG } from '@datorama/akita-ng-entity-service';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -36,6 +40,8 @@ import { CanvasComponent } from './cursors/canvas/canvas.component';
     CursorsComponent,
     CursorButtonComponent,
     CanvasComponent,
+    WizardContainerComponent,
+    WizardComponent,
   ],
     imports: [
         BrowserModule,
@@ -57,7 +63,7 @@ import { CanvasComponent } from './cursors/canvas/canvas.component';
         MatSidenavModule,
         MatButtonToggleModule,
     ],
-  providers: [],
+  providers: [{ provide: NG_ENTITY_SERVICE_CONFIG, useValue: { baseUrl: 'https://jsonplaceholder.typicode.com' }}],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
