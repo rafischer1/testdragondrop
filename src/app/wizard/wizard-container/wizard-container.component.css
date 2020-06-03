@@ -21,8 +21,7 @@
   z-index: 99999;
   position: fixed;
   right: 0;
-  bottom: -7%;
-  /* top: 0; */
-  width: 50%;
-  height: 33%;
+  bottom: 0;
+  width: 10%;
+  height: 30%;
 }

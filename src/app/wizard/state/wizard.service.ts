@@ -34,9 +34,6 @@ export class WizardService {
     this.store.update(stage);
   }
 
-  remove(order: number) {
-    this.store.remove(order);
-  }
 
   showWizard = (order: number) => {
     const stage: WizardStage = this.get(order);
