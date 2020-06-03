@@ -1,5 +1,30 @@
 <div class="wizard-container">
   <h4>Stage: {{ wizard.order }}</h4>
-  <button mat-stroked-button color="accent" (click)="close()">Close</button>
-  <button mat-stroked-button color="accent" (click)="resetWizard()">Reset</button>
+  <div class="tasks" *ngFor="let task of wizard.tasks">
+    <div>{{ task.order }}</div>
+    <div>{{ task.description }}</div>
+  </div>
+
+  <div class="buttons">
+    <button
+      *ngIf="wizard.navFrom !== ''"
+      mat-raised-button
+      color="primary"
+      (click)="navPrev()"
+    >
+      Prev
+    </button>
+    <button mat-raised-button color="accent" (click)="close()">Close</button>
+    <button mat-raised-button color="warn" (click)="resetWizard()">
+      Reset
+    </button>
+    <button
+      *ngIf="wizard.navTo !== ''"
+      mat-raised-button
+      color="primary"
+      (click)="navNext()"
+    >
+      Next
+    </button>
+  </div>
 </div>

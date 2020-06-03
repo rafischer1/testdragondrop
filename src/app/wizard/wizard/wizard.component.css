@@ -1,6 +1,24 @@
 .wizard-container {
-  border: 3px solid teal;
-  right: 0;
-  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  right: 10px;
+  bottom: 10px;
+  width: 350px;
+  height: 175px;
   position: fixed;
+  background-color: white;
+  -webkit-box-shadow: 10px 10px 31px 0 rgba(168, 168, 168, 1);
+  -moz-box-shadow: 10px 10px 31px 0 rgba(168, 168, 168, 1);
+  box-shadow: 10px 10px 31px 0 rgba(168, 168, 168, 1);
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.buttons > button {
+  margin: 0 1px;
 }

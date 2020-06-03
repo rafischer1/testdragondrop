@@ -18,6 +18,7 @@ export class WizardService {
       completed: false,
       navTo: "",
       navFrom: "",
+      tasks: undefined,
     };
     defaultWizardStages.forEach((stage) => {
       return stage.order === order ? (foundStage = stage) : foundStage;
@@ -33,7 +34,6 @@ export class WizardService {
     // @ts-ignore
     this.store.update(stage);
   }
-
 
   showWizard = (order: number) => {
     const stage: WizardStage = this.get(order);
