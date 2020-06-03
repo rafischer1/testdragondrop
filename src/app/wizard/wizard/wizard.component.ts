@@ -8,14 +8,14 @@ import { WizardStage } from "../state/wizard-stages.interface";
   styleUrls: ["./wizard.component.css"],
 })
 export class WizardComponent implements OnInit {
-  @Input() stage: number;
-  @Input() wizard: WizardStage[];
+  @Input() wizard: WizardStage;
+
   @Output() toggle: EventEmitter<any> = new EventEmitter<any>();
 
   constructor(private service: WizardService) {}
 
   ngOnInit() {
-    console.log("opened with stage:", this.stage, this.wizard);
+    console.log("opened with stage:", this.wizard);
   }
 
   resetWizard() {

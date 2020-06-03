@@ -10,12 +10,12 @@ import { WizardQuery } from "../state/wizard.query";
   styleUrls: ["./wizard-container.component.css"],
 })
 export class WizardContainerComponent implements OnInit {
-  wizard$: Observable<WizardStage[]>;
+  wizard$: Observable<WizardStage>;
   wrapperClass = "wrapper-hidden";
   constructor(private service: WizardService, private query: WizardQuery) {}
 
   ngOnInit() {
-    this.wizard$ = this.query.select("stages").pipe();
+    this.wizard$ = this.query.select("stage").pipe();
     console.log("in container");
     this.wizard$
       ? this.wizard$.subscribe((res) =>

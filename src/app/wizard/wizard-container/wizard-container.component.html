@@ -1,11 +1,7 @@
 <div class="{{ wrapperClass }}">
   <div class="wizard-container">
     <ng-container *ngIf="wizard$ | async as wizard">
-      <app-wizard
-        (toggle)="close()"
-        [stage]="wizard[0].order"
-        [wizard]="wizard"
-      ></app-wizard>
+      <app-wizard (toggle)="close()" [wizard]="wizard"></app-wizard>
     </ng-container>
   </div>
 </div>

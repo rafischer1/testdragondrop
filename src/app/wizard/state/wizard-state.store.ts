@@ -2,12 +2,12 @@ import { Store, StoreConfig } from "@datorama/akita";
 import { WizardStage } from "./wizard-stages.interface";
 
 export interface WizardState {
-  stages: WizardStage[];
+  stage: WizardStage;
 }
 
 export function createInitialState(): WizardState {
   return {
-    stages: undefined,
+    stage: undefined,
   };
 }
 
@@ -18,10 +18,10 @@ export class WizardStateStore extends Store<WizardState> {
   }
 
   add(stage: WizardStage) {
-    this.update(() => stage[0]);
+    this.update((old) => {
+      return { stage };
+    });
   }
-
-  remove(order: number) {}
 
   resetWizard() {
     this.update(createInitialState());

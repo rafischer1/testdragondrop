@@ -4,7 +4,7 @@ import { WizardStateStore, WizardState } from "./wizard-state.store";
 
 @Injectable({ providedIn: "root" })
 export class WizardQuery extends Query<WizardState> {
-  selectStage$ = this.select("stages");
+  selectStage$ = this.select("stage");
 
   constructor(protected store: WizardStateStore) {
     super(store);

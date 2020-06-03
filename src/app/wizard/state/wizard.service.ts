@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { WizardStateStore } from "./wizard-state.store";
-import { WizardStage } from "./wizard-stages.interface";
+import { defaultWizardStages, WizardStage } from "./wizard-stages.interface";
 import { ListComponent } from "../../list/list.component";
 import { ResizerComponent } from "../../resizer/resizer.component";
 import { CursorsComponent } from "../../cursors/cursors.component";
@@ -11,8 +11,18 @@ import { CursorsComponent } from "../../cursors/cursors.component";
 export class WizardService {
   constructor(private store: WizardStateStore) {}
 
-  get(order: number) {
-    return defaultWizardStages.filter((stage) => stage.order === order);
+  get(order: number): WizardStage | undefined {
+    let foundStage: WizardStage = {
+      order: 0,
+      title: "",
+      completed: false,
+      navTo: "",
+      navFrom: "",
+    };
+    defaultWizardStages.forEach((stage) => {
+      return stage.order === order ? (foundStage = stage) : foundStage;
+    });
+    return foundStage;
   }
 
   add(stage: WizardStage) {
@@ -29,34 +39,10 @@ export class WizardService {
   }
 
   showWizard = (order: number) => {
-    const stage: WizardStage[] = this.get(order);
+    const stage: WizardStage = this.get(order);
     console.log("stage in service:", stage);
-    return this.add(stage[0]);
+    return this.add(stage);
   };
 
   resetWizard = () => this.store.resetWizard();
 }
-
-export const defaultWizardStages: WizardStage[] = [
-  {
-    order: 1,
-    navFrom: ListComponent,
-    navTo: ResizerComponent,
-    completed: false,
-    title: "Stage One",
-  },
-  {
-    order: 2,
-    navFrom: ResizerComponent,
-    navTo: CursorsComponent,
-    completed: false,
-    title: "Stage Two",
-  },
-  {
-    order: 3,
-    navFrom: CursorsComponent,
-    navTo: ListComponent,
-    completed: false,
-    title: "Stage Three",
-  },
-];
