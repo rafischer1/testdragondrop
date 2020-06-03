@@ -1,0 +1,27 @@
+.wizard-container {
+  display: flex;
+  z-index: 99999;
+  position: fixed;
+  top: 0;
+  right: 25%;
+  left: 25%;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.wrapper-hidden {
+  visibility: hidden;
+  display: none;
+}
+
+.wizard-wrapper {
+  border: 1px solid red;
+  visibility: visible;
+  z-index: 99999;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 10%;
+  height: 30%;
+}

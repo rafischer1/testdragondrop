@@ -1,0 +1,6 @@
+.wizard-container {
+  border: 3px solid teal;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+}
