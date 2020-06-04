@@ -4,8 +4,8 @@
   justify-content: center;
   right: 10px;
   bottom: 10px;
-  width: 350px;
-  height: 175px;
+  width: 33%;
+  height: 40%;
   position: fixed;
   background-color: white;
   -webkit-box-shadow: 10px 10px 31px 0 rgba(168, 168, 168, 1);
@@ -21,4 +21,18 @@
 
 .buttons > button {
   margin: 0 1px;
+}
+
+.header {
+  background-color: #333;
+  color: white;
+  display: flex;
+  padding: 1% 0 1% 0;
+  width: 33%;
+  top: 271px;
+  position: fixed;
+}
+
+.header > h4 {
+  margin: auto auto;
 }

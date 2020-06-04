@@ -1,5 +1,8 @@
 <div class="wizard-container">
-  <h4>Stage: {{ wizard.order }}</h4>
+  <div class="header">
+    <h4>Stage: {{ wizard.order }}</h4>
+  </div>
+
   <div class="tasks" *ngFor="let task of wizard.tasks">
     <div>{{ task.order }}</div>
     <div>{{ task.description }}</div>
