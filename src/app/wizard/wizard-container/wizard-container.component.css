@@ -16,7 +16,6 @@
 }
 
 .wizard-wrapper {
-  border: 1px solid red;
   visibility: visible;
   z-index: 99999;
   position: fixed;
