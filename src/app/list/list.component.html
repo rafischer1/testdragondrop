@@ -1,63 +1,70 @@
 <div class="container">
-  <div class="example-container">
-    <h2>Master Plans</h2>
-    <div
-      cdkDropList
-      #todoList="cdkDropList"
-      [cdkDropListData]="list"
-      [cdkDropListConnectedTo]="[doneList]"
-      class="example-list first-list"
-      (cdkDropListDropped)="drop($event)"
-      [class.empty]="list.length === 0"
-    >
-      <div class="list item" *ngFor="let item of list" cdkDrag color="primary">
-        <p
-          mat-ripple
-          [matRippleColor]="'rgba(209, 209, 209, 0.45)'"
-          [matRippleCentered]="false"
-          [matRippleUnbounded]="false"
+  <div class="main">
+    <div class="example-container">
+      <h2>Master Plans</h2>
+      <div
+        cdkDropList
+        #todoList="cdkDropList"
+        [cdkDropListData]="list"
+        [cdkDropListConnectedTo]="[doneList]"
+        class="example-list first-list"
+        (cdkDropListDropped)="drop($event)"
+        [class.empty]="list.length === 0"
+      >
+        <div
+          class="list item"
+          *ngFor="let item of list"
+          cdkDrag
+          color="primary"
         >
-          {{ item.name }}
-        </p>
+          <p
+            mat-ripple
+            [matRippleColor]="'rgba(209, 209, 209, 0.45)'"
+            [matRippleCentered]="false"
+            [matRippleUnbounded]="false"
+          >
+            {{ item.name }}
+          </p>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="cards-container">
-    <h2>Plans to Offer</h2>
-    <div
-      cdkDropList
-      #doneList="cdkDropList"
-      cdkDropListOrientation="horizontal"
-      [cdkDropListData]="finalList"
-      [cdkDropListConnectedTo]="[todoList]"
-      class="example-list"
-      (cdkDropListDropped)="drop($event)"
-      [class.empty]="finalList.length === 0"
-    >
-      <mat-list class="list card-list" *ngFor="let item of finalList" cdkDrag>
-        <app-card [plan]="item"></app-card>
-      </mat-list>
+    <div class="cards-container">
+      <h2>Plans to Offer</h2>
+      <div
+        cdkDropList
+        #doneList="cdkDropList"
+        cdkDropListOrientation="horizontal"
+        [cdkDropListData]="finalList"
+        [cdkDropListConnectedTo]="[todoList]"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)"
+        [class.empty]="finalList.length === 0"
+      >
+        <mat-list class="list card-list" *ngFor="let item of finalList" cdkDrag>
+          <app-card [plan]="item"></app-card>
+        </mat-list>
+      </div>
     </div>
-  </div>
-  <div class="button">
-    <app-snack-button
-      [type]="'Reset List'"
-      [action]="'🎛'"
-      [message]="'Lists Reset'"
-      [color]="'warn'"
-      [verticalPosition]="'top'"
-      [horizontalPosition]="'center'"
-      (click)="reset()"
-    ></app-snack-button>
-    <app-snack-button
-      [type]="'Save List'"
-      [action]="'⏱'"
-      [message]="'Saved'"
-      [verticalPosition]="'top'"
-      [horizontalPosition]="'center'"
-      [color]="'primary'"
-      (click)="saveList()"
-    ></app-snack-button>
+    <div class="button">
+      <app-snack-button
+        [type]="'Reset List'"
+        [action]="'🎛'"
+        [message]="'Lists Reset'"
+        [color]="'warn'"
+        [verticalPosition]="'top'"
+        [horizontalPosition]="'center'"
+        (click)="reset()"
+      ></app-snack-button>
+      <app-snack-button
+        [type]="'Save List'"
+        [action]="'⏱'"
+        [message]="'Saved'"
+        [verticalPosition]="'top'"
+        [horizontalPosition]="'center'"
+        [color]="'primary'"
+        (click)="saveList()"
+      ></app-snack-button>
+    </div>
   </div>
 </div>
