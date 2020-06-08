@@ -27,11 +27,9 @@ export class WizardComponent implements OnInit {
     this.toggle.emit();
   }
 
-  navPrev() {
-    this.router.navigate([this.wizard.navFrom]);
+  nav(component: string, stage: number) {
+    this.service.navigate(component, stage)
   }
 
-  navNext() {
-    this.router.navigate([this.wizard.navTo]);
-  }
+
 }

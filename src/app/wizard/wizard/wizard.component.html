@@ -13,7 +13,7 @@
       *ngIf="wizard.navFrom !== ''"
       mat-raised-button
       color="primary"
-      (click)="navPrev()"
+      (click)="nav(wizard.navFrom, wizard.order - 1)"
     >
       Prev
     </button>
@@ -25,7 +25,7 @@
       *ngIf="wizard.navTo !== ''"
       mat-raised-button
       color="primary"
-      (click)="navNext()"
+      (click)="nav(wizard.navTo, wizard.order + 1)"
     >
       Next
     </button>

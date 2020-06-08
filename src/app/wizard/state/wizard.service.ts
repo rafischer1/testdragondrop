@@ -4,12 +4,13 @@ import { defaultWizardStages, WizardStage } from "./wizard-stages.interface";
 import { ListComponent } from "../../list/list.component";
 import { ResizerComponent } from "../../resizer/resizer.component";
 import { CursorsComponent } from "../../cursors/cursors.component";
+import { Router } from "@angular/router";
 
 @Injectable({
   providedIn: "root",
 })
 export class WizardService {
-  constructor(private store: WizardStateStore) {}
+  constructor(private store: WizardStateStore, private router: Router) {}
 
   get(order: number): WizardStage | undefined {
     let foundStage: WizardStage = {
@@ -42,4 +43,10 @@ export class WizardService {
   };
 
   resetWizard = () => this.store.resetWizard();
+
+  navigate(component: string, stage: number) {
+    this.router.navigate([component]);
+    this.resetWizard();
+    this.showWizard(stage);
+  }
 }

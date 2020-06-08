@@ -57,4 +57,6 @@ export class ResizerComponent implements OnInit {
       }
     });
   }
+
+
 }
