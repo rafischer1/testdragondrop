@@ -1,16 +1,15 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { WizardContainerComponent } from './wizard-container.component';
+import { WizardContainerComponent } from "./wizard-container.component";
 
-describe('WizardContainerComponent', () => {
+describe("WizardContainerComponent", () => {
   let component: WizardContainerComponent;
   let fixture: ComponentFixture<WizardContainerComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WizardContainerComponent ]
-    })
-    .compileComponents();
+      declarations: [WizardContainerComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +18,7 @@ describe('WizardContainerComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

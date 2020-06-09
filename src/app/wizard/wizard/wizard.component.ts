@@ -1,7 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 import { WizardService } from "../state/wizard.service";
 import { WizardStage } from "../state/wizard-stages.interface";
-import { Router } from "@angular/router";
 
 @Component({
   selector: "app-wizard",
@@ -13,23 +12,16 @@ export class WizardComponent implements OnInit {
 
   @Output() toggle: EventEmitter<any> = new EventEmitter<any>();
 
-  constructor(private service: WizardService, private router: Router) {}
+  constructor(private service: WizardService) {}
 
   ngOnInit() {
     console.log("opened with stage:", this.wizard);
   }
 
-  resetWizard() {
-    this.service.resetWizard();
-  }
+  resetWizard = () => this.service.resetWizard();
 
-  close() {
-    this.toggle.emit();
-  }
+  close = () => this.toggle.emit();
 
-  nav(component: string, stage: number) {
-    this.service.navigate(component, stage)
-  }
-
-
+  nav = (component: string, stage: number) =>
+    this.service.navigate(component, stage);
 }
