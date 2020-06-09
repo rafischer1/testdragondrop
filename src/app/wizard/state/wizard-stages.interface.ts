@@ -1,7 +1,3 @@
-import { ListComponent } from "../../list/list.component";
-import { ResizerComponent } from "../../resizer/resizer.component";
-import { CursorsComponent } from "../../cursors/cursors.component";
-
 export interface WizardStage {
   order: number;
   title: string;
