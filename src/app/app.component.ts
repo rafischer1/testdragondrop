@@ -9,10 +9,12 @@ import { WizardService } from "./wizard/state/wizard.service";
 })
 export class AppComponent {
   constructor(private router: Router, private wizard: WizardService) {}
-  title = "testdragdrop";
+  title = "GOOEY PROPOSAL AND WIZARD TEST";
 
   navigate(route: string) {
-    this.router.navigate([route]);
+    this.router
+      .navigate([route])
+      .then((res) => console.log("res on navigate:", res));
   }
 
   openWizard() {
