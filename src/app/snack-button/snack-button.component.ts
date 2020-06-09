@@ -1,10 +1,9 @@
-import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
+import { Component, Input, OnInit } from "@angular/core";
 import {
   MatSnackBar,
   MatSnackBarHorizontalPosition,
   MatSnackBarVerticalPosition,
 } from "@angular/material";
-import { ListComponent } from "../list/list.component";
 
 @Component({
   selector: "app-snack-button",

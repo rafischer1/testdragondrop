@@ -8,6 +8,15 @@ export class HelpersService {
 
   random = () => Math.ceil(Math.random() * 1000);
 
+  rates = () => {
+    return {
+      ec: this.random(),
+      ee: this.random(),
+      es: this.random(),
+      fam: this.random(),
+    };
+  };
+
   setCursor(type: string) {
     switch (type) {
       case "create":

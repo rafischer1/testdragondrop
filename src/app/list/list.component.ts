@@ -1,4 +1,4 @@
-import { Component, OnChanges, OnInit } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import {
   CdkDragDrop,
   moveItemInArray,
@@ -30,48 +30,28 @@ export class ListComponent implements OnInit {
   list: PlanDesign[] = [
     {
       name: "Humana EPO-3500",
-      rates: {
-        ec: this.help.random(),
-        ee: this.help.random(),
-        es: this.help.random(),
-        fam: this.help.random(),
-      },
+      rates: this.help.rates(),
       renewalDate: "1/1/21",
       id: 1,
       locked: false,
     },
     {
       name: "Aetna NY-2000-XYZ",
-      rates: {
-        ec: this.help.random(),
-        ee: this.help.random(),
-        es: this.help.random(),
-        fam: this.help.random(),
-      },
+      rates: this.help.rates(),
       renewalDate: "1/1/21",
       id: 2,
       locked: false,
     },
     {
       name: "Anthem Gold 5500",
-      rates: {
-        ec: this.help.random(),
-        ee: this.help.random(),
-        es: this.help.random(),
-        fam: this.help.random(),
-      },
+      rates: this.help.rates(),
       renewalDate: "1/1/21",
       id: 3,
       locked: false,
     },
     {
       name: "Aetna NY-HDHP-4500",
-      rates: {
-        ec: this.help.random(),
-        ee: this.help.random(),
-        es: this.help.random(),
-        fam: this.help.random(),
-      },
+      rates: this.help.rates(),
       renewalDate: "1/1/21",
       id: 4,
       locked: false,
@@ -81,12 +61,7 @@ export class ListComponent implements OnInit {
   finalList: PlanDesign[] = [
     {
       name: "Humana PPO-5000",
-      rates: {
-        ec: this.help.random(),
-        ee: this.help.random(),
-        es: this.help.random(),
-        fam: this.help.random(),
-      },
+      rates: this.help.rates(),
       renewalDate: "1/1/21",
       id: 5,
       locked: false,
@@ -122,48 +97,28 @@ export class ListComponent implements OnInit {
     this.list = [
       {
         name: "Humana EPO-3500",
-        rates: {
-          ec: this.help.random(),
-          ee: this.help.random(),
-          es: this.help.random(),
-          fam: this.help.random(),
-        },
+        rates: this.help.rates(),
         renewalDate: "1/1/21",
         id: 1,
         locked: false,
       },
       {
         name: "Aetna NY-2000-XYZ",
-        rates: {
-          ec: this.help.random(),
-          ee: this.help.random(),
-          es: this.help.random(),
-          fam: this.help.random(),
-        },
+        rates: this.help.rates(),
         renewalDate: "1/1/21",
         id: 2,
         locked: false,
       },
       {
         name: "Anthem Gold 5500",
-        rates: {
-          ec: this.help.random(),
-          ee: this.help.random(),
-          es: this.help.random(),
-          fam: this.help.random(),
-        },
+        rates: this.help.rates(),
         renewalDate: "1/1/21",
         id: 3,
         locked: false,
       },
       {
         name: "Aetna NY-HDHP-4500",
-        rates: {
-          ec: this.help.random(),
-          ee: this.help.random(),
-          es: this.help.random(),
-          fam: this.help.random(),
-        },
+        rates: this.help.rates(),
         renewalDate: "1/1/21",
         id: 4,
         locked: false,
@@ -173,12 +128,7 @@ export class ListComponent implements OnInit {
     this.finalList = [
       {
         name: "Humana PPO-5000",
-        rates: {
-          ec: this.help.random(),
-          ee: this.help.random(),
-          es: this.help.random(),
-          fam: this.help.random(),
-        },
+        rates: this.help.rates(),
         renewalDate: "1/1/21",
         id: 5,
         locked: false,

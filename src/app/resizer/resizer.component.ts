@@ -11,36 +11,21 @@ export class ResizerComponent implements OnInit {
   cards: PlanDesign[] = [
     {
       name: "Humana EPO-3500",
-      rates: {
-        ec: this.help.random(),
-        ee: this.help.random(),
-        es: this.help.random(),
-        fam: this.help.random(),
-      },
+      rates: this.help.rates(),
       renewalDate: "1/1/21",
       id: 1,
       locked: false,
     },
     {
       name: "Aetna NY-2000-XYZ",
-      rates: {
-        ec: this.help.random(),
-        ee: this.help.random(),
-        es: this.help.random(),
-        fam: this.help.random(),
-      },
+      rates: this.help.rates(),
       renewalDate: "1/1/21",
       id: 2,
       locked: false,
     },
     {
       name: "Anthem Gold 5500",
-      rates: {
-        ec: this.help.random(),
-        ee: this.help.random(),
-        es: this.help.random(),
-        fam: this.help.random(),
-      },
+      rates: this.help.rates(),
       renewalDate: "1/1/21",
       id: 3,
       locked: false,
@@ -57,6 +42,4 @@ export class ResizerComponent implements OnInit {
       }
     });
   }
-
-
 }
