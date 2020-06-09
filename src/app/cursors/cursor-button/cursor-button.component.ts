@@ -17,9 +17,7 @@ export class CursorButtonComponent implements OnInit {
     this.setCursor();
   }
 
-  emitCursorChange() {
-    this.cursorEmit.emit(this.type);
-  }
+  emitCursorChange = () => this.cursorEmit.emit(this.type);
 
   setCursor = () => this.help.setCursor(this.type);
 }

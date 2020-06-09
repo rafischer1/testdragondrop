@@ -1,16 +1,17 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { CursorsComponent } from './cursors.component';
+import { CursorsComponent } from "./cursors.component";
+import { CursorButtonComponent } from "./cursor-button/cursor-button.component";
 
-describe('CursorsComponent', () => {
+describe("CursorsComponent", () => {
   let component: CursorsComponent;
   let fixture: ComponentFixture<CursorsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CursorsComponent ]
-    })
-    .compileComponents();
+      declarations: [CursorsComponent],
+      imports: [CursorButtonComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +20,7 @@ describe('CursorsComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

@@ -29,5 +29,5 @@ export class WizardContainerComponent implements OnInit {
   close = () => {
     this.wrapperClass = "wrapper-hidden";
     this.service.resetWizard();
-  }
+  };
 }
