@@ -6,19 +6,17 @@ import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
   styleUrls: ["./canvas.component.css"],
 })
 export class CanvasComponent implements OnInit {
-  @ViewChild("myCanvas", { static: false }) canvasRef: ElementRef;
+  @ViewChild("canvas", { static: false }) canvasRef: ElementRef;
   isDrawing: boolean;
   x: number;
   y: number;
   lineWidth: number;
-  lineHeight: number;
   color = "black";
   constructor() {}
 
   ngOnInit() {
     this.isDrawing = false;
-    this.lineWidth = 5;
-    this.lineHeight = 25;
+    this.lineWidth = 10;
   }
 
   paint(event: MouseEvent) {
@@ -58,7 +56,6 @@ export class CanvasComponent implements OnInit {
     context.beginPath();
     context.strokeStyle = this.color;
     context.lineWidth = this.lineWidth;
-    context.lineHeight = this.lineHeight;
     context.moveTo(x1, y1);
     context.lineTo(x2, y2);
     context.stroke();
@@ -81,11 +78,9 @@ export class CanvasComponent implements OnInit {
 
   thicker() {
     this.lineWidth++;
-    this.lineHeight++;
   }
 
   thinner() {
     this.lineWidth--;
-    this.lineHeight--;
   }
 }
