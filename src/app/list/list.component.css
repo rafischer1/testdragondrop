@@ -1,7 +1,6 @@
 .container {
   position: fixed;
   top: 46px;
-  height: 100%;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -51,4 +50,8 @@
 
 .empty:hover {
   border: 2px solid rgb(255, 112, 112);
+}
+
+.button {
+  margin: 3% 0;
 }
