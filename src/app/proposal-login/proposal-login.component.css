@@ -23,6 +23,7 @@ form {
 }
 
 input {
+  border-radius: 25px;
   margin: 5px 0;
   padding: 5%;
 }

@@ -7,6 +7,10 @@ import { Component, OnInit } from "@angular/core";
 })
 export class ProposalLoginComponent implements OnInit {
   constructor() {}
+  passwordVerified: boolean;
+  signInDisabled: boolean;
+    this.passwordVerified = false;
+    this.signInDisabled = true;
 
   ngOnInit() {}
 
