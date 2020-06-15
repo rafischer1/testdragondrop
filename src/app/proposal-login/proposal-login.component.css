@@ -1,0 +1,323 @@
+
+.container {
+  position: fixed;
+  top: 46px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: space-between;
+}
+
+#Agent_Login_-_Screen_1 {
+  background-color: rgba(255, 255, 255, 1);
+  overflow: hidden;
+  --web-view-name: Agent Login - Screen 1;
+  --web-view-id: Agent_Login_-_Screen_1;
+  --web-scale-on-resize: true;
+  --web-enable-deep-linking: true;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#Rectangle_975 {
+  fill: rgba(51, 51, 51, 1);
+}
+
+.Rectangle_975 {
+  position: absolute;
+  overflow: visible;
+  width: 603px;
+  height: 657px;
+  left: 667px;
+  top: 170px;
+}
+
+#Path_2046 {
+  opacity: 0.004;
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(37, 40, 46, 1);
+  stroke-width: 1px;
+  stroke-linejoin: miter;
+  stroke-linecap: butt;
+  stroke-miterlimit: 4;
+  shape-rendering: auto;
+}
+
+.Path_2046 {
+  overflow: visible;
+  position: absolute;
+  width: 451px;
+  height: 427px;
+  left: 1414px;
+  top: 614px;
+  transform: matrix(1, 0, 0, 1, 0, 0);
+}
+
+#Rectangle_122 {
+  fill: rgba(255, 255, 255, 1);
+}
+
+.Rectangle_122 {
+  position: absolute;
+  overflow: visible;
+  width: 327px;
+  height: 48px;
+  left: 800px;
+  top: 396px;
+}
+
+#John_Doe {
+  left: 820px;
+  top: 413px;
+  position: absolute;
+  overflow: visible;
+  width: 60px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Monsterrat, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  color: rgba(42, 45, 52, 1);
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+}
+
+#Input {
+  position: absolute;
+  width: 327px;
+  height: 48px;
+  left: 800px;
+  top: 460px;
+  overflow: visible;
+}
+
+#Rectangle_122_bi {
+  fill: rgba(255, 255, 255, 1);
+}
+
+.Rectangle_122_bi {
+  position: absolute;
+  overflow: visible;
+  width: 327px;
+  height: 48px;
+  left: 0;
+  top: 0;
+}
+
+#johndoemailcom {
+  left: 20px;
+  top: 17px;
+  position: absolute;
+  overflow: visible;
+  width: 53px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Monsterrat, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  color: rgba(42, 45, 52, 1);
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+}
+
+#Input_bk {
+  position: absolute;
+  width: 327px;
+  height: 48px;
+  left: 800px;
+  top: 524px;
+  overflow: visible;
+}
+
+#Rectangle_122_bl {
+  fill: rgba(255, 255, 255, 1);
+}
+
+.Rectangle_122_bl {
+  position: absolute;
+  overflow: visible;
+  width: 327px;
+  height: 48px;
+  left: 0;
+  top: 0;
+}
+
+#Password {
+  left: 20px;
+  top: 17px;
+  position: absolute;
+  overflow: visible;
+  width: 97px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Monsterrat, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  color: rgba(42, 45, 52, 1);
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+}
+
+#Input_bt {
+  position: absolute;
+  width: 327px;
+  height: 48px;
+  left: 800px;
+  top: 588px;
+  overflow: visible;
+}
+
+#Rectangle_122_br {
+  fill: rgba(193, 193, 193, 1);
+}
+
+.Rectangle_122_br {
+  position: absolute;
+  overflow: visible;
+  width: 327px;
+  height: 48px;
+  left: 0;
+  top: 0;
+}
+
+#Confirm_Password_bv {
+  left: 22px;
+  top: 17px;
+  position: absolute;
+  overflow: visible;
+  width: 184px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Monsterrat, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  color: rgba(42, 45, 52, 1);
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+}
+
+#Input_bt {
+  position: absolute;
+  width: 327px;
+  height: 48px;
+  left: 800px;
+  top: 588px;
+  overflow: visible;
+}
+
+#Rectangle_122_br {
+  fill: rgba(193, 193, 193, 1);
+}
+
+.Rectangle_122_br {
+  position: absolute;
+  overflow: visible;
+  width: 327px;
+  height: 48px;
+  left: 0;
+  top: 0;
+}
+
+#Input_bt {
+  position: absolute;
+  width: 327px;
+  height: 48px;
+  left: 800px;
+  top: 588px;
+  overflow: visible;
+}
+
+#Rectangle_122_bu {
+  fill: rgba(255, 255, 255, 1);
+}
+
+.Rectangle_122_bu {
+  position: absolute;
+  overflow: visible;
+  width: 327px;
+  height: 48px;
+  left: 0;
+  top: 0;
+}
+
+#Input_bw {
+  position: absolute;
+  width: 327px;
+  height: 66px;
+  left: 800px;
+  top: 652px;
+  overflow: visible;
+  --web-animation: fadein 0.3s ease-out;
+  --web-action-type: page;
+  --web-action-target: WSE_Select___Screen_2.html;
+  cursor: pointer;
+}
+
+#Rectangle_122_bx {
+  fill: rgba(136, 136, 136, 1);
+}
+
+.Rectangle_122_bx {
+  position: absolute;
+  overflow: visible;
+  width: 327px;
+  height: 66px;
+  left: 0;
+  top: 0;
+}
+
+#John_Doe_by {
+  left: 924px;
+  top: 677px;
+  position: absolute;
+  overflow: visible;
+  width: 77px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Monsterrat, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 1);
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+}
+
+#John_Doe_bz {
+  left: 799px;
+  top: 330px;
+  position: absolute;
+  overflow: visible;
+  width: 327px;
+  white-space: nowrap;
+  text-align: center;
+  font-family: Monsterrat, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 21px;
+  color: rgba(252, 252, 252, 1);
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+}
+
+#Image_5 {
+  position: absolute;
+  width: 73px;
+  height: 73px;
+  left: 926px;
+  top: 221px;
+  overflow: visible;
+}
