@@ -9,4 +9,8 @@ export class ProposalLoginComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
+
+  submitForm() {
+    console.log("form submitted");
+  }
 }
