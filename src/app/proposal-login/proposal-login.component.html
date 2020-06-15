@@ -2,18 +2,32 @@
   <div class="login-rect">
     <form>
       <label for="peoID">
-        <input id="peoID" placeholder="Peo Id"/>
+        <input id="peoID" [placeholder]="'Peo Id'" [formControl]="peoID" />
       </label>
       <label for="email">
-        <input id="email" placeholder="Email"/>
+        <input id="email" [placeholder]="'Email'" [formControl]="email" />
       </label>
       <label for="password">
-        <input id="password" placeholder="Password"/>
+        <input id="password" [placeholder]="'Password'" [formControl]="password" />
       </label>
       <label for="confirm_password">
-        <input id="confirm_password" placeholder="Confirm Password"/>
+        <input
+          id="confirm_password"
+          [placeholder]="'Confirm Password'"
+          [formControl]="confirmPassword"
+        />
       </label>
-      <button type="submit" mat-raised-button color="primary" (click)="submitForm()">Submit</button>
+      <div class="button">
+        <app-snack-button
+          [type]="'Sign In'"
+          [action]="'Signed In'"
+          [message]="getEmail()"
+          [color]="'primary'"
+          [verticalPosition]="'top'"
+          [horizontalPosition]="'center'"
+          (click)="submitForm()"
+        ></app-snack-button>
+      </div>
     </form>
   </div>
 </div>

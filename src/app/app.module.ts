@@ -22,7 +22,7 @@ import {
   MatStepperModule,
 } from "@angular/material";
 import { SnackButtonComponent } from "./snack-button/snack-button.component";
-import { FormsModule } from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { CardComponent } from "./list/card/card.component";
 import { ResizerComponent } from "./resizer/resizer.component";
 import { CursorsComponent } from "./cursors/cursors.component";
@@ -68,6 +68,7 @@ import { ProposalLoginComponent } from "./proposal-login/proposal-login.componen
     MatSidenavModule,
     MatButtonToggleModule,
     MatStepperModule,
+    ReactiveFormsModule,
   ],
   providers: [
     WizardStateStore,
