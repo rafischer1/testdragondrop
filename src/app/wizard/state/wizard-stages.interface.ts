@@ -12,6 +12,23 @@ export interface Task {
   order: number;
 }
 
+// export class WizardStage {
+//   constructor(
+//     public order: number,
+//     public title: string,
+//     public navTo: Component,
+//     public navFrom: Component,
+//     public completed: boolean,
+//     public tasks: Task[]
+//   ) {}
+// }
+//
+// const stages: WizardStage[] = [
+//   new WizardStage(1, "hi", ListComponent, ResizerComponent, true, [
+//     { description: "do this task", order: 1 },
+//   ]),
+// ];
+
 export const defaultWizardStages: WizardStage[] = [
   {
     order: 1,
