@@ -1,20 +1,49 @@
 <div class="container">
   <div class="login-rect">
+    <img
+      src="https://media-exp1.licdn.com/dms/image/C4E0BAQHEnEYHrHKkKA/company-logo_200_200/0?e=1600300800&v=beta&t=yhnySWnzGPD2crzYrXIS26mLF4jHMhJTMRFrlUiRYKU"
+      alt="cool pic"
+      style="width:100px;height:100px;"
+    />
+    <div class="header">
+
+      <h3>
+        Cure Technologies <br />
+        Proposal Portal
+      </h3>
+    </div>
     <form>
       <label for="peoID">
-        <input id="peoID" [placeholder]="'Peo Id'" [formControl]="peoID" />
+        <input
+          id="peoID"
+          [placeholder]="'PEO ID'"
+          [formControl]="peoID"
+          [required]="true"
+        />
       </label>
       <label for="email">
-        <input id="email" [placeholder]="'Email'" [formControl]="email" />
+        <input
+          id="email"
+          [placeholder]="'EMAIL'"
+          [formControl]="email"
+          [required]="true"
+        />
       </label>
       <label for="password">
-        <input id="password" [placeholder]="'Password'" [formControl]="password" />
+        <input
+          id="password"
+          [placeholder]="'PASSWORD'"
+          [formControl]="password"
+          [required]="true"
+        />
       </label>
       <label for="confirm_password">
         <input
           id="confirm_password"
-          [placeholder]="'Confirm Password'"
+          (input)="checkValidity()"
+          [placeholder]="'CONFIRM PASSWORD'"
           [formControl]="confirmPassword"
+          [required]="true"
         />
       </label>
       <div class="button">
@@ -25,6 +54,7 @@
           [color]="'primary'"
           [verticalPosition]="'top'"
           [horizontalPosition]="'center'"
+          [disabled]="signInDisabled"
           (click)="submitForm()"
         ></app-snack-button>
       </div>

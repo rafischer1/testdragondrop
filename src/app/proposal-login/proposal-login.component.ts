@@ -22,10 +22,16 @@ export class ProposalLoginComponent implements OnInit {
   }
 
   submitForm() {
-    console.log("form submitted");
+    console.log("form submitted:");
   }
 
   getEmail() {
-    return this.email.value
+    return this.email.value;
+  }
+
+  checkValidity() {
+    this.confirmPassword.value === this.password.value
+      ? (this.signInDisabled = false)
+      : (this.signInDisabled = true);
   }
 }

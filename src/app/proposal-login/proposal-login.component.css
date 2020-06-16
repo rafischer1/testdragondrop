@@ -12,22 +12,41 @@
 .login-rect {
   border: 1px solid #333;
   border-radius: 66px 66px 66px 0;
-  padding: 10%;
+  padding: 8% 16%;
   background-color: #333;
   color: white;
+  display: flex;
+  flex-direction: column;
+  margin: auto auto;
+}
+
+.header {
+  text-align: center;
+  font-size: 1.65em;
+  width: 100%;
+  font-weight: normal;
+  margin-top: -5%;
+}
+
+img {
+  margin: -10% auto auto auto;
 }
 
 form {
   display: flex;
   flex-direction: column;
+  margin: auto 30px auto -20%;
 }
 
 input {
   border-radius: 25px;
   margin: 5px 0;
   padding: 5%;
+  width: 125%;
 }
 
-button {
-  margin: 5px 0;
+.button {
+  width: fit-content;
+  margin-top: 5px;
+  margin-left: 100%;
 }
