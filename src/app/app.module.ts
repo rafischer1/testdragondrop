@@ -7,21 +7,22 @@ import { DragDropModule } from "@angular/cdk/drag-drop";
 import { ListComponent } from "./list/list.component";
 import { CdkStepperModule } from "@angular/cdk/stepper";
 import {
-    MatButtonModule,
-    MatButtonToggleModule,
-    MatCardModule,
-    MatChipsModule,
-    MatFormFieldModule,
-    MatGridListModule,
-    MatIconModule,
-    MatListModule,
-    MatMenuModule,
-    MatRippleModule,
-    MatSidenavModule,
-    MatSnackBarModule, MatStepperModule,
-} from '@angular/material';
+  MatButtonModule,
+  MatButtonToggleModule,
+  MatCardModule,
+  MatChipsModule,
+  MatFormFieldModule,
+  MatGridListModule,
+  MatIconModule,
+  MatListModule,
+  MatMenuModule,
+  MatRippleModule,
+  MatSidenavModule,
+  MatSnackBarModule,
+  MatStepperModule,
+} from "@angular/material";
 import { SnackButtonComponent } from "./snack-button/snack-button.component";
-import { FormsModule } from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { CardComponent } from "./list/card/card.component";
 import { ResizerComponent } from "./resizer/resizer.component";
 import { CursorsComponent } from "./cursors/cursors.component";
@@ -31,6 +32,7 @@ import { WizardContainerComponent } from "./wizard/wizard-container/wizard-conta
 import { WizardComponent } from "./wizard/wizard/wizard.component";
 import { NG_ENTITY_SERVICE_CONFIG } from "@datorama/akita-ng-entity-service";
 import { WizardStateStore } from "./wizard/state/wizard-state.store";
+import { ProposalLoginComponent } from "./proposal-login/proposal-login.component";
 
 @NgModule({
   declarations: [
@@ -44,28 +46,30 @@ import { WizardStateStore } from "./wizard/state/wizard-state.store";
     CanvasComponent,
     WizardContainerComponent,
     WizardComponent,
+    ProposalLoginComponent,
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        DragDropModule,
-        CdkStepperModule,
-        MatButtonModule,
-        MatSnackBarModule,
-        MatFormFieldModule,
-        FormsModule,
-        MatCardModule,
-        MatChipsModule,
-        MatIconModule,
-        MatMenuModule,
-        MatGridListModule,
-        MatListModule,
-        MatRippleModule,
-        MatSidenavModule,
-        MatButtonToggleModule,
-        MatStepperModule,
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    DragDropModule,
+    CdkStepperModule,
+    MatButtonModule,
+    MatSnackBarModule,
+    MatFormFieldModule,
+    FormsModule,
+    MatCardModule,
+    MatChipsModule,
+    MatIconModule,
+    MatMenuModule,
+    MatGridListModule,
+    MatListModule,
+    MatRippleModule,
+    MatSidenavModule,
+    MatButtonToggleModule,
+    MatStepperModule,
+    ReactiveFormsModule,
+  ],
   providers: [
     WizardStateStore,
     {

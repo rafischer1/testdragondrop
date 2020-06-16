@@ -17,6 +17,7 @@ export class SnackButtonComponent implements OnInit {
   @Input() color: string;
   @Input() horizontalPosition: MatSnackBarHorizontalPosition;
   @Input() verticalPosition: MatSnackBarVerticalPosition;
+  @Input() disabled: boolean;
 
   constructor(private snackBar: MatSnackBar) {}
 
