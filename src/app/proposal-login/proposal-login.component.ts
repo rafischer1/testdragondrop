@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormControl } from "@angular/forms";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-proposal-login",
@@ -7,7 +8,7 @@ import { FormControl } from "@angular/forms";
   styleUrls: ["./proposal-login.component.css"],
 })
 export class ProposalLoginComponent implements OnInit {
-  constructor() {}
+  constructor(private router: Router) {}
   passwordVerified: boolean;
   signInDisabled: boolean;
 
@@ -22,7 +23,7 @@ export class ProposalLoginComponent implements OnInit {
   }
 
   submitForm() {
-    console.log("form submitted:");
+    this.router.navigate(["proposal"]);
   }
 
   getEmail() {

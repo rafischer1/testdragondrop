@@ -1,0 +1,19 @@
+.container {
+  position: fixed;
+  top: 46px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: space-between;
+  flex-direction: column;
+}
+
+.body {
+  border: 1px solid #333;
+  margin: auto auto;
+}
+
+.footer {
+  margin: 2% auto;
+}

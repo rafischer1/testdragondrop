@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="body">
+    <p>proposal-view works!</p>
+  </div>
+  <div class="footer">
+    <app-snack-button
+      [disabled]="false"
+      [message]="'Back to Login'"
+      [action]="'Logging Out 🎂'"
+      [verticalPosition]="'bottom'"
+      [horizontalPosition]="'left'"
+      [color]="'accent'"
+      [type]="'LOG OUT'"
+      (click)="logOut()"
+    ></app-snack-button>
+  </div>
+</div>
