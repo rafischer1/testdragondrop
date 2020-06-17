@@ -8,13 +8,13 @@
       <mat-icon>more_vert</mat-icon>
     </button>
     <mat-menu #menu="matMenu" xPosition="after">
-      <button mat-menu-item (click)="navigate('resize')">
-        <mat-icon>dialpad</mat-icon>
-        <span>Resize</span>
-      </button>
       <button mat-menu-item (click)="navigate('list')">
         <mat-icon>voicemail</mat-icon>
         <span>List</span>
+      </button>
+      <button mat-menu-item (click)="navigate('resize')">
+        <mat-icon>dialpad</mat-icon>
+        <span>Resize</span>
       </button>
       <button mat-menu-item (click)="navigate('cursors')">
         <mat-icon>fingerprint</mat-icon>
