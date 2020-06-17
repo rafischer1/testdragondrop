@@ -83,11 +83,6 @@ textarea {
   background-color: rgba(248, 251, 255, 0.41);
 }
 
-.light > button {
-  background-color: #333;
-  color: white;
-}
-
 .dark {
   color: white;
   background-color: #333;

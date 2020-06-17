@@ -40,6 +40,7 @@
             [verticalPosition]="'top'"
             [action]="text"
             [message]="'SAVED'"
+            [color]="'primary'"
           ></app-snack-button>
         </div>
       </div>
@@ -63,7 +64,7 @@
           [class.g103]="theme === 'g103'"
         >
           <h4>This is the Style you selected: {{ theme.toUpperCase() }}</h4>
-          <button mat-raised-button>A BUTTON!</button>
+          <button mat-raised-button color="accent">A BUTTON!</button>
         </div>
       </div>
       <div class="canvas-area" *ngIf="selected === 'brush'">

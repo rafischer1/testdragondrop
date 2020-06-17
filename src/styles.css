@@ -1,7 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Roboto", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Roboto", sans-serif;
+  background-color: #121212;
+  color: white;
+}
 
 button.mat-primary {
   background-color: #bbda57 !important;
@@ -11,4 +19,12 @@ button.mat-primary {
 button.mat-primary:disabled {
   background-color: #797979 !important;
   color: #121212 !important;
+}
+
+button.mat-raised-button {
+  color: #121212 !important;
+}
+
+button.mat-button-base {
+  color: white;
 }
