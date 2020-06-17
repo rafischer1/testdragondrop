@@ -16,13 +16,13 @@ import {
   MatIconModule,
   MatListModule,
   MatMenuModule,
-  MatRippleModule,
+  MatRippleModule, MatSelectModule,
   MatSidenavModule,
   MatSnackBarModule,
   MatStepperModule,
 } from "@angular/material";
 import { SnackButtonComponent } from "./snack-button/snack-button.component";
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { CardComponent } from "./list/card/card.component";
 import { ResizerComponent } from "./resizer/resizer.component";
 import { CursorsComponent } from "./cursors/cursors.component";
@@ -32,7 +32,8 @@ import { WizardContainerComponent } from "./wizard/wizard-container/wizard-conta
 import { WizardComponent } from "./wizard/wizard/wizard.component";
 import { NG_ENTITY_SERVICE_CONFIG } from "@datorama/akita-ng-entity-service";
 import { WizardStateStore } from "./wizard/state/wizard-state.store";
-import { ProposalLoginComponent } from "./proposal-login/proposal-login.component";
+import { ProposalLoginComponent } from "./proposal/proposal-login/proposal-login.component";
+import { ProposalViewComponent } from "./proposal/proposal-view/proposal-view.component";
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { ProposalLoginComponent } from "./proposal-login/proposal-login.componen
     WizardContainerComponent,
     WizardComponent,
     ProposalLoginComponent,
+    ProposalViewComponent,
   ],
   imports: [
     BrowserModule,
@@ -69,6 +71,7 @@ import { ProposalLoginComponent } from "./proposal-login/proposal-login.componen
     MatButtonToggleModule,
     MatStepperModule,
     ReactiveFormsModule,
+    MatSelectModule,
   ],
   providers: [
     WizardStateStore,

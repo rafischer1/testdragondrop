@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="section left">
+    <img
+      src="https://image.freepik.com/free-vector/x-letter-stripe-sphere-ball-circle-corporate-generic-logo-template_8580-28.jpg"
+      alt="cool pic"
+      style="width: 100px; height: 100px;"
+    />
+    <img
+      class="face"
+      src="   https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSNYiCJTvBKK5sQxBq6iz1EDpfkhEFBhPBoBcYisNNyum88CkKf&usqp=CAU"
+      alt="cool pic"
+      style="width: 100px; height: 100px;"
+    />
+    <div class="profile-text">
+      <h4>Welcome, Agent Cooper</h4>
+      <h5>agentcooper@demo-peo.com</h5>
+      <h5>(555) 435-5436</h5>
+    </div>
+  </div>
+  <div class="section right">
+    <h4>Select Your WSE</h4>
+    <mat-form-field>
+      <mat-label>Company Name</mat-label>
+      <mat-select [(value)]="selected">
+        <mat-option *ngFor="let wse of companies" [value]="wse">
+          {{ wse }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <div class="select-button">
+      <app-snack-button
+        [disabled]="!selected"
+        [message]="selected"
+        [action]="'Going to Proposal'"
+        [verticalPosition]="'bottom'"
+        [horizontalPosition]="'center'"
+        [color]="'primary'"
+        [type]="'VIEW PROPOSAL'"
+        (click)="select()"
+      ></app-snack-button>
+    </div>
+
+    <div class="button">
+      <app-snack-button
+        [disabled]="false"
+        [message]="'Back to Login'"
+        [action]="'Logging Out 🎂'"
+        [verticalPosition]="'bottom'"
+        [horizontalPosition]="'left'"
+        [color]="'accent'"
+        [type]="'LOG OUT'"
+        (click)="logOut()"
+      ></app-snack-button>
+    </div>
+  </div>
+</div>
