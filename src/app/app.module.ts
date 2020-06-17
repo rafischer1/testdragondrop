@@ -32,8 +32,8 @@ import { WizardContainerComponent } from "./wizard/wizard-container/wizard-conta
 import { WizardComponent } from "./wizard/wizard/wizard.component";
 import { NG_ENTITY_SERVICE_CONFIG } from "@datorama/akita-ng-entity-service";
 import { WizardStateStore } from "./wizard/state/wizard-state.store";
-import { ProposalLoginComponent } from "./proposal-login/proposal-login.component";
-import { ProposalViewComponent } from "./proposal-view/proposal-view.component";
+import { ProposalLoginComponent } from "./proposal/proposal-login/proposal-login.component";
+import { ProposalViewComponent } from "./proposal/proposal-view/proposal-view.component";
 
 @NgModule({
   declarations: [
