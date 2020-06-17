@@ -7,9 +7,21 @@ import { Router } from "@angular/router";
   styleUrls: ["./proposal-view.component.css"],
 })
 export class ProposalViewComponent implements OnInit {
+  companies: string[] = [
+    "Artie's Workshop",
+    "Ben's Computer Repair",
+    "Nick's Hockey Supply",
+    "Ginnie's UX/UI",
+  ];
+  selected: string;
   constructor(private r: Router) {}
 
   ngOnInit() {}
 
   logOut = () => this.r.navigate(["login"]);
+
+
+  select() {
+    console.log("Selected:", this.selected);
+  }
 }

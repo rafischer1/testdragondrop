@@ -16,7 +16,7 @@ import {
   MatIconModule,
   MatListModule,
   MatMenuModule,
-  MatRippleModule,
+  MatRippleModule, MatSelectModule,
   MatSidenavModule,
   MatSnackBarModule,
   MatStepperModule,
@@ -71,6 +71,7 @@ import { ProposalViewComponent } from "./proposal/proposal-view/proposal-view.co
     MatButtonToggleModule,
     MatStepperModule,
     ReactiveFormsModule,
+    MatSelectModule,
   ],
   providers: [
     WizardStateStore,
