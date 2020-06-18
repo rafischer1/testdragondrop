@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { ProposalNavigateService } from "../proposal-navigate.service";
+import { CompaniesService, Company } from "../companies.service";
 
 @Component({
   selector: "app-proposal-view",
@@ -8,21 +9,18 @@ import { ProposalNavigateService } from "../proposal-navigate.service";
   styleUrls: ["./proposal-view.component.css"],
 })
 export class ProposalViewComponent implements OnInit {
-  companies: string[] = [
-    "Artie's Workshop",
-    "Ben's Computer Repair",
-    "Nick's Hockey Supply",
-    "Ginnie's UX/UI",
-  ];
-
-  selected: string;
+  selected: number;
+  companies: Company[];
 
   constructor(
     private r: Router,
-    private proposalService: ProposalNavigateService
+    private proposalService: ProposalNavigateService,
+    private companiesService: CompaniesService
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.companies = this.companiesService.getAll();
+  }
 
   nav(type: string) {
     switch (type) {
@@ -32,4 +30,6 @@ export class ProposalViewComponent implements OnInit {
         return this.proposalService.navigate("login");
     }
   }
+
+  setCompanyName = () => this.selected ? this.companiesService.get(this.selected).name : undefined;
 }

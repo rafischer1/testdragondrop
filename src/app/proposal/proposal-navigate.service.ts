@@ -7,7 +7,7 @@ import { Router } from "@angular/router";
 export class ProposalNavigateService {
   constructor(private r: Router) {}
 
-  navigate(component: string, selected?: string) {
+  navigate(component: string, selected?: number) {
     switch (component) {
       case "proposal":
         return this.r.navigate(["proposal"]);
