@@ -1,0 +1,9 @@
+<button (click)="nav(type)">
+  <mat-icon
+    [style.position]="'fixed'"
+    [style.left]="type === 'prev' ? '50px' : 'none'"
+    [style.right]="type === 'next' ? '50px' : 'none'"
+    [style.fontSize]="'60px'"
+    >{{ type === "prev" ? "arrow_back_ios" : "arrow_forward_ios" }}</mat-icon
+  >
+</button>

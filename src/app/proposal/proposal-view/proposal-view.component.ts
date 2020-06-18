@@ -12,6 +12,10 @@ export class ProposalViewComponent implements OnInit {
   selected: number;
   companies: Company[];
 
+  agentName = "Agent Cooper";
+  agentEmail = "cooper@demo-company.com";
+  agentPhone = "(555) 934-8765";
+
   constructor(
     private r: Router,
     private proposalService: ProposalNavigateService,
@@ -31,5 +35,6 @@ export class ProposalViewComponent implements OnInit {
     }
   }
 
-  setCompanyName = () => this.selected ? this.companiesService.get(this.selected).name : undefined;
+  setCompanyName = () =>
+    this.selected ? this.companiesService.get(this.selected).name : undefined;
 }

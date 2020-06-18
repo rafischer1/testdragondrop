@@ -1,13 +1,6 @@
 <div class="plans-container">
   <p>{{ company.name }}</p>
-  <button
-    mat-stroked-button
-    color="primary"
-    class="next-button"
-    (click)="nav('next')"
-  >
-    NEXT
-  </button>
+  <app-nav-button [type]="'next'" (navEmit)="nav($event)"></app-nav-button>
   <div class="logout-button">
     <app-snack-button
       [disabled]="false"

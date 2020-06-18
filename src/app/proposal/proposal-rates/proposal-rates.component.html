@@ -1,13 +1,6 @@
 <div class="rates-container">
   <p>{{ company.name }} PEO Rates Breakdown</p>
-  <button
-    mat-stroked-button
-    color="primary"
-    class="prev-button"
-    (click)="nav('prev')"
-  >
-    PREV
-  </button>
+  <app-nav-button [type]="'prev'" (navEmit)="nav($event)"></app-nav-button>
   <div class="logout-button">
     <app-snack-button
       [disabled]="false"

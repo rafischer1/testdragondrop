@@ -12,17 +12,20 @@
       style="width: 100px; height: 100px;"
     />
     <div class="profile-text">
-      <h4>Welcome, Agent Cooper</h4>
-      <h5>agentcooper@demo-peo.com</h5>
-      <h5>(555) 435-5436</h5>
+      <h4>Welcome, {{ agentName }}</h4>
+      <h5>{{ agentEmail }}</h5>
+      <h5>{{ agentPhone }}</h5>
     </div>
   </div>
   <div class="section right">
-    <h4>Select Your WSE</h4>
+    <h4>Select Client</h4>
     <mat-form-field>
-      <mat-label>Company Name</mat-label>
+      <mat-label>Client Name</mat-label>
       <mat-select [(value)]="selected">
-        <mat-option *ngFor="let company of companies" [value]="company.companyID">
+        <mat-option
+          *ngFor="let company of companies"
+          [value]="company.companyID"
+        >
           {{ company.name }}
         </mat-option>
       </mat-select>
@@ -35,7 +38,7 @@
         [verticalPosition]="'bottom'"
         [horizontalPosition]="'center'"
         [color]="'primary'"
-        [type]="'VIEW PROPOSAL'"
+        [type]="'VIEW CLIENT'"
         (click)="nav('select')"
       ></app-snack-button>
     </div>
