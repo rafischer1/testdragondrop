@@ -1,0 +1,15 @@
+<div class="rates-container">
+  <button mat-stroked-button color="primary" (click)="nav('prev')">PREV</button>
+  <div class="logout-button">
+    <app-snack-button
+      [disabled]="false"
+      [message]="'Back to Login'"
+      [action]="'Logging Out 🎂'"
+      [verticalPosition]="'bottom'"
+      [horizontalPosition]="'left'"
+      [color]="'accent'"
+      [type]="'LOG OUT'"
+      (click)="nav('logout')"
+    ></app-snack-button>
+  </div>
+</div>

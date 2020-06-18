@@ -34,6 +34,8 @@ import { NG_ENTITY_SERVICE_CONFIG } from "@datorama/akita-ng-entity-service";
 import { WizardStateStore } from "./wizard/state/wizard-state.store";
 import { ProposalLoginComponent } from "./proposal/proposal-login/proposal-login.component";
 import { ProposalViewComponent } from "./proposal/proposal-view/proposal-view.component";
+import { ProposalPlansComponent } from './proposal/proposal-plans/proposal-plans.component';
+import { ProposalRatesComponent } from './proposal/proposal-rates/proposal-rates.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +51,8 @@ import { ProposalViewComponent } from "./proposal/proposal-view/proposal-view.co
     WizardComponent,
     ProposalLoginComponent,
     ProposalViewComponent,
+    ProposalPlansComponent,
+    ProposalRatesComponent,
   ],
   imports: [
     BrowserModule,

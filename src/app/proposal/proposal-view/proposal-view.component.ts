@@ -20,8 +20,7 @@ export class ProposalViewComponent implements OnInit {
 
   logOut = () => this.r.navigate(["login"]);
 
-
   select() {
-    console.log("Selected:", this.selected);
+    this.r.navigate(["plans"], { queryParams: { selected: this.selected } });
   }
 }
