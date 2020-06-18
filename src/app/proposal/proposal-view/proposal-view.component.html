@@ -12,31 +12,34 @@
       style="width: 100px; height: 100px;"
     />
     <div class="profile-text">
-      <h4>Welcome, Agent Cooper</h4>
-      <h5>agentcooper@demo-peo.com</h5>
-      <h5>(555) 435-5436</h5>
+      <h4>Welcome, {{ agentName }}</h4>
+      <h5>{{ agentEmail }}</h5>
+      <h5>{{ agentPhone }}</h5>
     </div>
   </div>
   <div class="section right">
-    <h4>Select Your WSE</h4>
+    <h4>Select Client</h4>
     <mat-form-field>
-      <mat-label>Company Name</mat-label>
+      <mat-label>Client Name</mat-label>
       <mat-select [(value)]="selected">
-        <mat-option *ngFor="let wse of companies" [value]="wse">
-          {{ wse }}
+        <mat-option
+          *ngFor="let company of companies"
+          [value]="company.companyID"
+        >
+          {{ company.name }}
         </mat-option>
       </mat-select>
     </mat-form-field>
     <div class="select-button">
       <app-snack-button
         [disabled]="!selected"
-        [message]="selected"
+        [message]="setCompanyName()"
         [action]="'Going to Proposal'"
         [verticalPosition]="'bottom'"
         [horizontalPosition]="'center'"
         [color]="'primary'"
-        [type]="'VIEW PROPOSAL'"
-        (click)="select()"
+        [type]="'VIEW CLIENT'"
+        (click)="nav('select')"
       ></app-snack-button>
     </div>
 
@@ -49,7 +52,7 @@
         [horizontalPosition]="'left'"
         [color]="'accent'"
         [type]="'LOG OUT'"
-        (click)="logOut()"
+        (click)="nav('logout')"
       ></app-snack-button>
     </div>
   </div>
