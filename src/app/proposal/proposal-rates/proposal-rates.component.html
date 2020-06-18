@@ -1,6 +1,13 @@
 <div class="rates-container">
-  <p>{{wse}} PEO Rates Breakdown</p>
-  <button mat-stroked-button color="primary" (click)="nav('prev')">PREV</button>
+  <p>{{ company.name }} PEO Rates Breakdown</p>
+  <button
+    mat-stroked-button
+    color="primary"
+    class="prev-button"
+    (click)="nav('prev')"
+  >
+    PREV
+  </button>
   <div class="logout-button">
     <app-snack-button
       [disabled]="false"

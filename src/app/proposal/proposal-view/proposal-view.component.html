@@ -22,15 +22,15 @@
     <mat-form-field>
       <mat-label>Company Name</mat-label>
       <mat-select [(value)]="selected">
-        <mat-option *ngFor="let wse of companies" [value]="wse">
-          {{ wse }}
+        <mat-option *ngFor="let company of companies" [value]="company.companyID">
+          {{ company.name }}
         </mat-option>
       </mat-select>
     </mat-form-field>
     <div class="select-button">
       <app-snack-button
         [disabled]="!selected"
-        [message]="selected"
+        [message]="setCompanyName()"
         [action]="'Going to Proposal'"
         [verticalPosition]="'bottom'"
         [horizontalPosition]="'center'"

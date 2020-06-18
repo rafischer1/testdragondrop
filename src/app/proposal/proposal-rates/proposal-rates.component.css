@@ -12,3 +12,15 @@
   height: 100%;
   font-family: "Roboto", monospace;
 }
+
+.logout-button {
+  position: fixed;
+  bottom: 15px;
+  right: 50px;
+}
+
+.prev-button {
+  position: fixed;
+  left: 50px;
+}
+
