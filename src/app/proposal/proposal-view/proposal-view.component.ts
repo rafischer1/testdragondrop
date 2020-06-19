@@ -29,7 +29,7 @@ export class ProposalViewComponent implements OnInit {
   nav(type: string) {
     switch (type) {
       case "select":
-        return this.proposalService.navigate("plans", this.selected);
+        return this.proposalService.navigate("overview", this.selected);
       case "logout":
         return this.proposalService.navigate("login");
     }

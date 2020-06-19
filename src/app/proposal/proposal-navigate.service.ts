@@ -11,6 +11,8 @@ export class ProposalNavigateService {
     switch (component) {
       case "proposal":
         return this.r.navigate(["proposal"]);
+      case "overview":
+        return this.r.navigate(["overview"], { queryParams: { selected } });
       case "plans":
         return this.r.navigate(["plans"], { queryParams: { selected } });
       case "rates":

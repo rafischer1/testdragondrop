@@ -7,6 +7,7 @@ import { ProposalLoginComponent } from "./proposal/proposal-login/proposal-login
 import { ProposalViewComponent } from "./proposal/proposal-view/proposal-view.component";
 import { ProposalPlansComponent } from "./proposal/proposal-plans/proposal-plans.component";
 import { ProposalRatesComponent } from "./proposal/proposal-rates/proposal-rates.component";
+import { ProposalOverviewComponent } from "./proposal/proposal-overview/proposal-overview.component";
 
 const routes: Routes = [
   { path: "", component: ListComponent },
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: "proposal", component: ProposalViewComponent },
   { path: "plans", component: ProposalPlansComponent },
   { path: "rates", component: ProposalRatesComponent },
+  { path: "overview", component: ProposalOverviewComponent },
 ];
 
 @NgModule({

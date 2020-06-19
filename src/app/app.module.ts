@@ -37,6 +37,7 @@ import { ProposalViewComponent } from "./proposal/proposal-view/proposal-view.co
 import { ProposalPlansComponent } from './proposal/proposal-plans/proposal-plans.component';
 import { ProposalRatesComponent } from './proposal/proposal-rates/proposal-rates.component';
 import { NavButtonComponent } from './nav-button/nav-button.component';
+import { ProposalOverviewComponent } from './proposal/proposal-overview/proposal-overview.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { NavButtonComponent } from './nav-button/nav-button.component';
     ProposalPlansComponent,
     ProposalRatesComponent,
     NavButtonComponent,
+    ProposalOverviewComponent,
   ],
   imports: [
     BrowserModule,
