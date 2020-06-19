@@ -5,6 +5,7 @@
   top: 0;
   right: 25%;
   left: 25%;
+  width: fit-content;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;

@@ -13,7 +13,6 @@ export class ProposalLoginComponent implements OnInit {
   signInDisabled: boolean;
 
   email = new FormControl("");
-  peoID = new FormControl("");
   password = new FormControl("");
   confirmPassword = new FormControl("");
 
