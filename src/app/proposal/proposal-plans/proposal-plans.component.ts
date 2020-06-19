@@ -3,7 +3,7 @@ import { ActivatedRoute } from "@angular/router";
 import { ProposalNavigateService } from "../proposal-navigate.service";
 import { CompaniesService, Company } from "../companies.service";
 import { PlanDesign } from "../../list/list.component";
-import { HelpersService } from "../../services/helpers.service";
+import { PlansService } from "../../services/plans.service";
 
 @Component({
   selector: "app-proposal-plans",
@@ -13,34 +13,12 @@ import { HelpersService } from "../../services/helpers.service";
 export class ProposalPlansComponent implements OnInit {
   companyID: number;
   company: Company;
-  list: PlanDesign[] = [
-    {
-      name: "Humana EPO-3500",
-      rates: this.help.rates(),
-      renewalDate: "1/1/21",
-      id: 1,
-      locked: false,
-    },
-    {
-      name: "Aetna NY-2000-XYZ",
-      rates: this.help.rates(),
-      renewalDate: "1/1/21",
-      id: 2,
-      locked: false,
-    },
-    {
-      name: "Anthem Gold 5500",
-      rates: this.help.rates(),
-      renewalDate: "1/1/21",
-      id: 3,
-      locked: false,
-    },
-  ];
+  list: PlanDesign[];
   constructor(
     private route: ActivatedRoute,
     private service: ProposalNavigateService,
     private companiesService: CompaniesService,
-    private help: HelpersService
+    private plansService: PlansService
   ) {}
 
   ngOnInit() {
@@ -48,6 +26,7 @@ export class ProposalPlansComponent implements OnInit {
       this.companyID = params.selected;
     });
     this.company = this.companiesService.get(this.companyID);
+    this.list = this.plansService.getAll();
   }
 
   nav(type: string) {
