@@ -12,8 +12,7 @@ export class ResizerComponent implements OnInit {
   constructor(private plansService: PlansService) {}
 
   ngOnInit() {
-    this.cards = this.plansService.getAll();
-    this.cards.pop();
+    this.cards = this.plansService.getThree();
   }
 
   lock(id: number) {

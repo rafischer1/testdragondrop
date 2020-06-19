@@ -43,4 +43,5 @@ export class PlansService {
 
   get = (id: number) => this.plans.filter((c) => c.id === +id)[0];
 
+  getThree = () => this.plans.splice(0, 1);
 }

@@ -27,8 +27,7 @@ export class ProposalPlansComponent implements OnInit {
       this.companyID = params.selected;
     });
     this.company = this.companiesService.get(this.companyID);
-    this.list = this.plansService.getAll();
-    this.list.pop();
+    this.list = this.plansService.getThree();
   }
 
   nav(type: string) {
