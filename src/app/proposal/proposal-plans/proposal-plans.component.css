@@ -2,24 +2,35 @@
   position: fixed;
   top: 46px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  align-content: space-between;
-  flex-direction: column;
   background-color: #121212;
   color: white;
-  width: 100%;
+  width: fit-content;
   height: 100%;
   font-family: "Roboto", monospace;
 }
 
+.header {
+  position: fixed;
+  top: 46px;
+  right: 44%;
+  font-size: x-large;
+}
+
+.plans-body {
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  justify-content: center;
+  align-content: center;
+  margin: 0 66%;
+}
+
+
 .logout-button {
   position: fixed;
   bottom: 15px;
-  right: 50px;
-}
-
-.next-button {
-  position: fixed;
   right: 50px;
 }

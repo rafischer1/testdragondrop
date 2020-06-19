@@ -1,8 +1,13 @@
 <div class="plans-container">
   <app-nav-button [type]="'prev'" (navEmit)="nav($event)"></app-nav-button>
   <app-nav-button [type]="'next'" (navEmit)="nav($event)"></app-nav-button>
-  <div class="body">
-    <p>{{ company.name }}</p>
+
+  <div class="header">
+    <div>{{ company.name }}</div>
+  </div>
+
+  <div class="plans-body">
+    <div *ngFor="let plan of list" class="cards"><app-card [plan]="plan"></app-card></div>
   </div>
 
   <div class="logout-button">
