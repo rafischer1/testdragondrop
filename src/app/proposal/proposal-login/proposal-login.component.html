@@ -3,10 +3,9 @@
     <img
       src="https://media-exp1.licdn.com/dms/image/C4E0BAQHEnEYHrHKkKA/company-logo_200_200/0?e=1600300800&v=beta&t=yhnySWnzGPD2crzYrXIS26mLF4jHMhJTMRFrlUiRYKU"
       alt="cool pic"
-      style="width:100px;height:100px;"
+      style="width: 100px; height: 100px;"
     />
     <div class="header">
-
       <h3>
         Cure Technologies <br />
         Proposal Portal
@@ -21,23 +20,34 @@
           [required]="true"
         />
       </label>
-      <label for="password">
+
+      <label for="password" class="password">
         <input
           id="password"
           [placeholder]="'PASSWORD'"
           [formControl]="password"
           [required]="true"
+          [type]="hide ? 'password' : 'text'"
         />
+        <mat-icon (click)="hide = !hide">{{
+          hide ? "visibility_off" : "visibility"
+        }}</mat-icon>
       </label>
-      <label for="confirm_password">
+
+      <label for="confirm_password" class="password">
         <input
           id="confirm_password"
           (input)="checkValidity()"
           [placeholder]="'CONFIRM PASSWORD'"
           [formControl]="confirmPassword"
           [required]="true"
+          [type]="hideConfirm ? 'password' : 'text'"
         />
+        <mat-icon matSuffix (click)="hideConfirm = !hideConfirm">{{
+          hideConfirm ? "visibility_off" : "visibility"
+        }}</mat-icon>
       </label>
+
       <div class="button">
         <app-snack-button
           [type]="'Sign In'"

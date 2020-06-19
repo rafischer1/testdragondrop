@@ -15,6 +15,8 @@ export class ProposalLoginComponent implements OnInit {
   email = new FormControl("");
   password = new FormControl("");
   confirmPassword = new FormControl("");
+  hide = true;
+  hideConfirm = true;
 
   ngOnInit() {
     this.passwordVerified = false;

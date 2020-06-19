@@ -14,6 +14,7 @@ export class ProposalPlansComponent implements OnInit {
   companyID: number;
   company: Company;
   list: PlanDesign[];
+
   constructor(
     private route: ActivatedRoute,
     private service: ProposalNavigateService,
@@ -27,6 +28,7 @@ export class ProposalPlansComponent implements OnInit {
     });
     this.company = this.companiesService.get(this.companyID);
     this.list = this.plansService.getAll();
+    this.list.pop();
   }
 
   nav(type: string) {
