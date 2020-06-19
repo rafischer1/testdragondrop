@@ -5,10 +5,12 @@
   right: 10px;
   bottom: 10px;
   width: 25%;
-  height: 40%;
+  height: fit-content;
   position: fixed;
   background-color: white;
   color: #121212;
+  border: 1px solid #121212;
+  border-radius: 5px;
 }
 
 .buttons {
@@ -34,7 +36,16 @@
 
 .tasks {
   display: flex;
-  justify-content: space-between;
   padding: 2% 2%;
   overflow-y: scroll;
+  text-align: left;
+  margin-left: 2%;
+}
+
+.tasks > div {
+  text-align: left;
+}
+
+.description {
+  margin-left: 2%;
 }
