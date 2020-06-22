@@ -1,9 +1,11 @@
 button {
+  position:fixed;
   color: #bbda57;
   border: none;
   cursor: pointer;
   background-color: #121212;
   outline: none;
+  width: fit-content;
 }
 
 button:hover {

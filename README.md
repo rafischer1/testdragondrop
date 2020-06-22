@@ -14,7 +14,7 @@
 
 #### Todo
 
-[ ] Integrate Wizard functionality to multiple component 'actions' 🧙‍
+[x] Integrate Wizard functionality to multiple component 'actions' 🧙‍
 
 [x] Get toast service up and running for action completion 🍞
 
@@ -25,3 +25,5 @@
 [x] Move item from list to full card preview
 
 [ ] Cursor selection to action in specified area 🛀
+
+[ ] Convert service `gets` to observables 🍋

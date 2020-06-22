@@ -37,15 +37,41 @@ form {
   margin: auto 30px auto -20%;
 }
 
+label {
+  border: 1px solid #121212;
+  width: 125%;
+  border-radius: 25px;
+  background-color: white;
+  margin-bottom: 3px;
+
+}
+
+label.password {
+  display: flex;
+  justify-content: space-between;
+}
+
 input {
+  outline: none;
+  border: none;
   border-radius: 25px;
   margin: 5px 0;
   padding: 5%;
-  width: 125%;
+  width: 89%;
+}
+
+label:hover {
+  border-color: #bbda57;
 }
 
 .button {
   width: fit-content;
   margin-top: 5px;
   margin-left: 100%;
+}
+
+mat-icon {
+  color: #7f7f7f;
+  cursor: pointer;
+  margin: auto 10px;
 }

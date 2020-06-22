@@ -2,6 +2,8 @@ import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { ProposalNavigateService } from "../proposal-navigate.service";
 import { CompaniesService, Company } from "../companies.service";
+import { PlanDesign } from "../../list/list.component";
+import { PlansService } from "../../services/plans.service";
 
 @Component({
   selector: "app-proposal-plans",
@@ -11,10 +13,13 @@ import { CompaniesService, Company } from "../companies.service";
 export class ProposalPlansComponent implements OnInit {
   companyID: number;
   company: Company;
+  list: PlanDesign[];
+
   constructor(
     private route: ActivatedRoute,
     private service: ProposalNavigateService,
-    private companiesService: CompaniesService
+    private companiesService: CompaniesService,
+    private plansService: PlansService
   ) {}
 
   ngOnInit() {
@@ -22,12 +27,15 @@ export class ProposalPlansComponent implements OnInit {
       this.companyID = params.selected;
     });
     this.company = this.companiesService.get(this.companyID);
+    this.list = this.plansService.getThree();
   }
 
   nav(type: string) {
     switch (type) {
       case "next":
         return this.service.navigate("rates", this.companyID);
+      case "prev":
+        return this.service.navigate("overview", this.companyID);
       case "logout":
         return this.service.navigate("proposal");
     }

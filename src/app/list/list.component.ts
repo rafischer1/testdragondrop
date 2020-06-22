@@ -5,6 +5,7 @@ import {
   transferArrayItem,
 } from "@angular/cdk/drag-drop";
 import { HelpersService } from "../services/helpers.service";
+import { PlansService } from "../services/plans.service";
 
 export class PlanDesign {
   name: string;
@@ -27,37 +28,7 @@ export class Rates {
   styleUrls: ["./list.component.css"],
 })
 export class ListComponent implements OnInit {
-  list: PlanDesign[] = [
-    {
-      name: "Humana EPO-3500",
-      rates: this.help.rates(),
-      renewalDate: "1/1/21",
-      id: 1,
-      locked: false,
-    },
-    {
-      name: "Aetna NY-2000-XYZ",
-      rates: this.help.rates(),
-      renewalDate: "1/1/21",
-      id: 2,
-      locked: false,
-    },
-    {
-      name: "Anthem Gold 5500",
-      rates: this.help.rates(),
-      renewalDate: "1/1/21",
-      id: 3,
-      locked: false,
-    },
-    {
-      name: "Aetna NY-HDHP-4500",
-      rates: this.help.rates(),
-      renewalDate: "1/1/21",
-      id: 4,
-      locked: false,
-    },
-  ];
-
+  list: PlanDesign[];
   finalList: PlanDesign[] = [
     {
       name: "Humana PPO-5000",
@@ -68,9 +39,14 @@ export class ListComponent implements OnInit {
     },
   ];
 
-  constructor(private help: HelpersService) {}
+  constructor(
+    private help: HelpersService,
+    private plansService: PlansService
+  ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.list = this.plansService.getAll();
+  }
 
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
@@ -94,36 +70,7 @@ export class ListComponent implements OnInit {
   }
 
   reset() {
-    this.list = [
-      {
-        name: "Humana EPO-3500",
-        rates: this.help.rates(),
-        renewalDate: "1/1/21",
-        id: 1,
-        locked: false,
-      },
-      {
-        name: "Aetna NY-2000-XYZ",
-        rates: this.help.rates(),
-        renewalDate: "1/1/21",
-        id: 2,
-        locked: false,
-      },
-      {
-        name: "Anthem Gold 5500",
-        rates: this.help.rates(),
-        renewalDate: "1/1/21",
-        id: 3,
-        locked: false,
-      },
-      {
-        name: "Aetna NY-HDHP-4500",
-        rates: this.help.rates(),
-        renewalDate: "1/1/21",
-        id: 4,
-        locked: false,
-      },
-    ];
+    this.list = this.plansService.getAll();
 
     this.finalList = [
       {
