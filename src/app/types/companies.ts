@@ -1,4 +1,5 @@
-export interface CompaniesInput {
+export interface CompanyInput {
+  id: number;
   name: string;
   location: Location;
 }
