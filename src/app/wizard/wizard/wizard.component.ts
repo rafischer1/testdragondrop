@@ -1,7 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 import { WizardService } from "../state/wizard.service";
 import { WizardStage } from "../state/wizard-stages.interface";
-import {DataService} from "../../services/data.service";
 
 @Component({
   selector: "app-wizard",
