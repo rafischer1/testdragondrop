@@ -14,6 +14,10 @@ export class DataService {
     });
   }
 
+  postPlan() {
+    this.http.post("/plans", {})
+  }
+
   getCompanies() {
     this.http.get(this.configUrl + "/companies").subscribe((res) => {
       console.log("companies:", res);
