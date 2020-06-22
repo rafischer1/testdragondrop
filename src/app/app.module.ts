@@ -16,7 +16,8 @@ import {
   MatIconModule,
   MatListModule,
   MatMenuModule,
-  MatRippleModule, MatSelectModule,
+  MatRippleModule,
+  MatSelectModule,
   MatSidenavModule,
   MatSnackBarModule,
   MatStepperModule,
@@ -34,10 +35,11 @@ import { NG_ENTITY_SERVICE_CONFIG } from "@datorama/akita-ng-entity-service";
 import { WizardStateStore } from "./wizard/state/wizard-state.store";
 import { ProposalLoginComponent } from "./proposal/proposal-login/proposal-login.component";
 import { ProposalViewComponent } from "./proposal/proposal-view/proposal-view.component";
-import { ProposalPlansComponent } from './proposal/proposal-plans/proposal-plans.component';
-import { ProposalRatesComponent } from './proposal/proposal-rates/proposal-rates.component';
-import { NavButtonComponent } from './nav-button/nav-button.component';
-import { ProposalOverviewComponent } from './proposal/proposal-overview/proposal-overview.component';
+import { ProposalPlansComponent } from "./proposal/proposal-plans/proposal-plans.component";
+import { ProposalRatesComponent } from "./proposal/proposal-rates/proposal-rates.component";
+import { NavButtonComponent } from "./nav-button/nav-button.component";
+import { ProposalOverviewComponent } from "./proposal/proposal-overview/proposal-overview.component";
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -60,6 +62,7 @@ import { ProposalOverviewComponent } from './proposal/proposal-overview/proposal
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     DragDropModule,
