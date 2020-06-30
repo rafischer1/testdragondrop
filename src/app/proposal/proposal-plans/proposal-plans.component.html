@@ -1,16 +1,29 @@
 <div class="plans-container">
   <app-nav-button [type]="'prev'" (navEmit)="nav($event)"></app-nav-button>
   <app-nav-button [type]="'next'" (navEmit)="nav($event)"></app-nav-button>
+  <div class="bodyPdf" #bodyPdf>
+    <div class="header">
+      <div #title>Hi there</div>
+    </div>
 
-  <div class="header">
-    <div>{{ company.name }}</div>
-  </div>
-
-  <div class="plans-body">
-    <div *ngFor="let plan of list" class="cards"><app-card [plan]="plan"></app-card></div>
+    <div class="plans-body" style="color: #bbda57;">
+      <div *ngFor="let plan of list" class="cards">
+        <app-card [plan]="plan"></app-card>
+      </div>
+    </div>
   </div>
 
   <div class="logout-button">
+    <app-snack-button
+      [disabled]="false"
+      [message]="'making pdf'"
+      [action]="'test that pdf'"
+      [verticalPosition]="'bottom'"
+      [horizontalPosition]="'left'"
+      [color]="'accent'"
+      [type]="'PDF'"
+      (click)="toPDF()"
+    ></app-snack-button>
     <app-snack-button
       [disabled]="false"
       [message]="'Back to Login'"

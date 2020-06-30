@@ -29,7 +29,7 @@
       </div>
     </div>
 
-    <div class="cards-container">
+    <div class="cards-container" #bodyPdf>
       <h2>Plans to Offer</h2>
       <div
         cdkDropList
@@ -47,6 +47,15 @@
       </div>
     </div>
     <div class="button">
+      <app-snack-button
+        [type]="'PDF'"
+        [action]="'Make that thing'"
+        [message]="'PDFffing'"
+        [color]="'accent'"
+        [verticalPosition]="'top'"
+        [horizontalPosition]="'center'"
+        (click)="toPdf()"
+      ></app-snack-button>
       <app-snack-button
         [type]="'Reset List'"
         [action]="'🎛'"

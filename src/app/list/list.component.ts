@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
 import {
   CdkDragDrop,
   moveItemInArray,
@@ -6,6 +6,7 @@ import {
 } from "@angular/cdk/drag-drop";
 import { HelpersService } from "../services/helpers.service";
 import { PlansService } from "../services/plans.service";
+import { PdfService } from "../services/pdf.service";
 
 export class PlanDesign {
   name: string;
@@ -28,6 +29,7 @@ export class Rates {
   styleUrls: ["./list.component.css"],
 })
 export class ListComponent implements OnInit {
+  @ViewChild("bodyPdf", { static: true }) pdf: ElementRef;
   list: PlanDesign[];
   finalList: PlanDesign[] = [
     {
@@ -41,7 +43,8 @@ export class ListComponent implements OnInit {
 
   constructor(
     private help: HelpersService,
-    private plansService: PlansService
+    private plansService: PlansService,
+    private pdfService: PdfService
   ) {}
 
   ngOnInit() {
@@ -81,5 +84,10 @@ export class ListComponent implements OnInit {
         locked: false,
       },
     ];
+  }
+
+  toPdf() {
+
+    this.pdfService.toPdf(this.pdf.nativeElement);
   }
 }

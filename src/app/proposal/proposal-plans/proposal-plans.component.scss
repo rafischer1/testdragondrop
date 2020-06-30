@@ -34,3 +34,14 @@
   bottom: 15px;
   right: 50px;
 }
+
+button {
+  cursor: pointer;
+  padding: 2% 5%;
+  font-weight: bolder;
+  background: linear-gradient(white, darken(white, 5));
+}
+
+button:active {
+  background: linear-gradient(darken(white,10), white);
+}
