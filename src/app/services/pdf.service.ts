@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import * as jsPDF from "jspdf";
 import { PlansService } from "./plans.service";
+import html2canvas from "html2canvas";
 
 @Injectable({
   providedIn: "root",
@@ -8,9 +9,23 @@ import { PlansService } from "./plans.service";
 export class PdfService {
   constructor(private plansService: PlansService) {}
 
-  toPdf(html: HTMLElement) {
-    const doc = new jsPDF();
-    doc.setFont("helvetica", "normal");
+  toPdf(html: HTMLCanvasElement) {
+    const imgData = html.toDataURL("image/png");
+    imgData.small();
+    const doc = new jsPDF("l", "mm", "a4", false);
+    doc.addImage(imgData, "PNG", 0, 0, 297, 210);
+    doc.save();
+  }
+
+  pdfDownloadToCanvas(html: HTMLElement) {
+    html2canvas(html).then((canvas) => {
+      console.log(canvas);
+      this.toPdf(canvas);
+    });
+  }
+
+  buildMeAPdf() {
+    const doc = new jsPDF("l", "mm", "a4", false);
     let i = 0;
     this.plansService.getAll().forEach((plan) => {
       const x = 20;
@@ -30,8 +45,6 @@ export class PdfService {
       );
       i++;
     });
-    doc.fromHTML(html);
-
-    doc.save("test.pdf");
+    doc.save();
   }
 }

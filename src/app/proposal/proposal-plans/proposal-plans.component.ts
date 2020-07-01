@@ -52,6 +52,6 @@ export class ProposalPlansComponent implements OnInit {
   }
 
   toPDF() {
-    this.pdfService.toPdf(document.body);
+    this.pdfService.pdfDownloadToCanvas(document.body);
   }
 }
