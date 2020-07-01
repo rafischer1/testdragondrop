@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import * as jsPDF from "jspdf";
 import { PlansService } from "./plans.service";
 import html2canvas from "html2canvas";
-import {PlanDesign} from "../list/list.component";
+import { PlanDesign } from "../list/list.component";
 
 @Injectable({
   providedIn: "root",
@@ -20,7 +20,10 @@ export class PdfService {
   }
 
   pdfDownloadToCanvas(html: HTMLElement) {
-    html2canvas(html).then((canvas) => {
+    html2canvas(html, {
+      backgroundColor: "#333",
+      scale: window.devicePixelRatio,
+    }).then((canvas) => {
       this.toPdf(canvas);
     });
   }
