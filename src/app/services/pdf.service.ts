@@ -19,9 +19,9 @@ export class PdfService {
     doc.save();
   }
 
-  pdfDownloadToCanvas(html: HTMLElement) {
+  pdfDownloadToCanvas(html: HTMLElement, type?: string) {
     html2canvas(html, {
-      backgroundColor: "#333",
+      backgroundColor: type ? (type === "canvas" ? "#fff" : "#333") : "#333",
       scale: window.devicePixelRatio,
       allowTaint: false,
     }).then((canvas) => {

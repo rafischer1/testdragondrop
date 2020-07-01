@@ -27,6 +27,15 @@
 </label>
 <div class="buttons">
   <app-snack-button
+    [type]="'PDF'"
+    [horizontalPosition]="'center'"
+    [verticalPosition]="'top'"
+    [action]="'🥎'"
+    [message]="'Downloading PDF'"
+    [color]="'accent'"
+    (click)="toPDF()"
+  ></app-snack-button>
+  <app-snack-button
     [type]="'Save'"
     [horizontalPosition]="'center'"
     [verticalPosition]="'top'"
