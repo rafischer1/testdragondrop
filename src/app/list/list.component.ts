@@ -88,6 +88,6 @@ export class ListComponent implements OnInit {
 
   toPdf() {
     // this.pdfService.toPdf(this.pdf.nativeElement);
-    this.pdfService.pdfDownloadToCanvas(document.body);
+    this.pdfService.pdfDownloadToCanvas(this.pdf.nativeElement);
   }
 }

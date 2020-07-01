@@ -10,6 +10,7 @@ export class PdfService {
   constructor(private plansService: PlansService) {}
 
   toPdf(html: HTMLCanvasElement) {
+    // document.querySelector("toPdf") try this for "body")
     const imgData = html.toDataURL("image/png");
     imgData.small();
     const doc = new jsPDF("l", "mm", "a4", false);
@@ -19,7 +20,6 @@ export class PdfService {
 
   pdfDownloadToCanvas(html: HTMLElement) {
     html2canvas(html).then((canvas) => {
-      console.log(canvas);
       this.toPdf(canvas);
     });
   }
