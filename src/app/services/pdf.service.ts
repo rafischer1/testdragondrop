@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import * as jsPDF from "jspdf";
 import { PlansService } from "./plans.service";
 import html2canvas from "html2canvas";
+import {PlanDesign} from "../list/list.component";
 
 @Injectable({
   providedIn: "root",
@@ -24,10 +25,10 @@ export class PdfService {
     });
   }
 
-  buildMeAPdf() {
+  buildMeAPdf(plans: PlanDesign[]) {
     const doc = new jsPDF("l", "mm", "a4", false);
     let i = 0;
-    this.plansService.getAll().forEach((plan) => {
+    plans.forEach((plan) => {
       const x = 20;
       let y = 20;
       if (i > 0) {

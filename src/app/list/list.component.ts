@@ -87,7 +87,11 @@ export class ListComponent implements OnInit {
   }
 
   toPdf() {
-    // this.pdfService.toPdf(this.pdf.nativeElement);
-    this.pdfService.pdfDownloadToCanvas(this.pdf.nativeElement);
+    const type = prompt("1: Canvas PDF \n 2: Built PDF");
+    if (type === "1") {
+      this.pdfService.pdfDownloadToCanvas(this.pdf.nativeElement);
+    } else if (type === "2") {
+      this.pdfService.buildMeAPdf(this.finalList);
+    }
   }
 }
