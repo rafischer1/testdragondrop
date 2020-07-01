@@ -12,6 +12,9 @@
 - List Sorting 🥫
 - [Material Cursors](https://material.io/resources/icons/?style=baseline) 📠
 
+- [jsPDF Docs 🎭](http://raw.githack.com/MrRio/jsPDF/master/docs/)
+- [HTML2Canvas Docs 🎯](http://html2canvas.hertzen.com/configuration)
+
 #### Todo
 
 [x] Integrate Wizard functionality to multiple component 'actions' 🧙‍
