@@ -10,4 +10,17 @@ export class PeoViewComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
+
+  addTag() {
+    const tagName = prompt("NAME OF TAG:");
+    if (tagName !== "") {
+      setTimeout(() => {
+        alert("TAG TO BE MADE IN THE FUTURE: " + tagName.toUpperCase());
+      }, 500);
+    }
+  }
+
+  addColor() {
+   alert("Create color selection to give hex code....")
+  }
 }

@@ -93,6 +93,7 @@
         <div class="section-header">
           PEO BRAND COLORS
           <app-circle-button
+            (click)="addColor()"
             [matIcon]="'add'"
             [size]="'small'"
             [color]="'accent'"
@@ -143,6 +144,7 @@
         <div class="section-header">
           TAGS
           <app-circle-button
+            (click)="addTag()"
             [matIcon]="'add'"
             [size]="'small'"
             [color]="'accent'"
