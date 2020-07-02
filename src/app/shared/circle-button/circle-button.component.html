@@ -1,0 +1,17 @@
+<button
+  *ngIf="size === 'large'"
+  mat-fab
+  [color]="color"
+  aria-label="Icon button type"
+>
+  <mat-icon>{{ matIcon }}</mat-icon>
+</button>
+
+<button
+  *ngIf="size === 'small'"
+  mat-mini-fab
+  [color]="color"
+  aria-label="Icon button type"
+>
+  <mat-icon>{{ matIcon }}</mat-icon>
+</button>

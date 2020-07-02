@@ -23,7 +23,7 @@ import {
 } from "@angular/material";
 import { FormsModule } from "@angular/forms";
 import { ListComponent } from "./list/list.component";
-import { SnackButtonComponent } from "./snack-button/snack-button.component";
+import { SnackButtonComponent } from "./shared/snack-button/snack-button.component";
 import { CardComponent } from "./list/card/card.component";
 import { ResizerComponent } from "./resizer/resizer.component";
 import { CursorsComponent } from "./cursors/cursors.component";
