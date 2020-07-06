@@ -1,0 +1,57 @@
+<ng-template #defaultPrompt let-type="type" let-message="message"
+  ><button (click)="deletePromptEmit()">
+    I AM A DEFAULT PROMPT
+  </button></ng-template
+>
+
+<ng-template #tagPrompt let-type="type" let-message="messages">
+  <div class="prompt {{ promptClass }}">
+    <div>
+      <div class="prompt-header">{{ header }}</div>
+      <div class="prompt-body">
+        <mat-form-field appearance="fill">
+          <mat-label>Tag Name</mat-label>
+          <label>
+            <input matInput />
+          </label>
+        </mat-form-field>
+        <br />
+        <mat-form-field>
+          <mat-label>Select Tag Color</mat-label>
+          <mat-select>
+            <mat-option value="option">Primary</mat-option>
+            <mat-option value="option">Teal</mat-option>
+            <mat-option value="option">Red</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <br />
+      </div>
+      <footer>
+        <div class="prompt-question pull-right"></div>
+        <div class="button-container">
+          <button
+            mat-stroked-button
+            color="accent"
+            (click)="responseEmit('decline')"
+          >
+            {{ declineButtonTitle }}
+          </button>
+          <button
+            (click)="responseEmit('confirm')"
+            mat-stroked-button
+            color="primary"
+          >
+            {{ confirmButtonTitle }}
+          </button>
+        </div>
+      </footer>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #colorPrompt let-type="type" let-message="messages"> </ng-template>
+
+<ng-container
+  [ngTemplateOutlet]="liveTemplate"
+  [ngTemplateOutletContext]="{ type: type, messages: messages }"
+></ng-container>
