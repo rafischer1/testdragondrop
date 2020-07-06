@@ -1,7 +1,6 @@
 .container {
   position: absolute;
   top: 46px;
-  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -113,4 +112,8 @@
 
 .tags {
   text-align: center;
+}
+
+.tags > div {
+  margin: 1% 2%;
 }

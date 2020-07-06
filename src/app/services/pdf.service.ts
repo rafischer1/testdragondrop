@@ -18,9 +18,8 @@ export class PdfService {
     doc.save();
   }
 
-  private static setDocumentText(plan: PlanDesign) {
-    return `${plan.name} \n EE: ${plan.rates.ee} ES: ${plan.rates.es} EC: ${plan.rates.ee} FAM: ${plan.rates.fam}`;
-  }
+  private static setDocumentText = (plan: PlanDesign) =>
+    `${plan.name} \n EE: ${plan.rates.ee} ES: ${plan.rates.es} EC: ${plan.rates.ee} FAM: ${plan.rates.fam}`;
 
   pdfDownloadToCanvas(html: HTMLElement, type?: string) {
     html2canvas(html, {

@@ -1,8 +1,8 @@
 <button
   mat-button
-  [color]="color"
+  [color]="tag.color"
   [class.red]="isRed()"
   [class.teal]="isTeal()"
 >
-  {{ tag.toUpperCase() }}
+  {{ tag.title.toUpperCase() }}
 </button>

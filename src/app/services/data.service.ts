@@ -2,8 +2,6 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { PlanInput } from "../types/plans";
 import { CompanyInput } from "../types/companies";
-import { Company } from "../proposal/companies.service";
-import { Observable } from "rxjs";
 
 @Injectable({
   providedIn: "root",

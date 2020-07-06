@@ -41,8 +41,8 @@ import { NavButtonComponent } from "./shared/nav-button/nav-button.component";
 import { ProposalOverviewComponent } from "./proposal/proposal-overview/proposal-overview.component";
 import { HttpClientModule } from "@angular/common/http";
 import { PeoViewComponent } from "./peo-view/peo-view.component";
-import { CircleButtonComponent } from './shared/circle-button/circle-button.component';
-import { TagButtonComponent } from './shared/tag-button/tag-button.component';
+import { CircleButtonComponent } from "./shared/circle-button/circle-button.component";
+import { TagButtonComponent } from "./shared/tag-button/tag-button.component";
 
 @NgModule({
   declarations: [
