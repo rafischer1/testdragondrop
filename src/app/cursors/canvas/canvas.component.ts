@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
+import { PdfService } from "../../services/pdf.service";
 
 @Component({
   selector: "app-canvas",
@@ -12,7 +13,7 @@ export class CanvasComponent implements OnInit {
   y: number;
   lineWidth: number;
   color = "black";
-  constructor() {}
+  constructor(private pdfService: PdfService) {}
 
   ngOnInit() {
     this.isDrawing = false;
@@ -82,5 +83,9 @@ export class CanvasComponent implements OnInit {
 
   thinner() {
     this.lineWidth--;
+  }
+
+  toPDF() {
+    this.pdfService.pdfDownloadToCanvas(this.canvasRef.nativeElement, "canvas");
   }
 }

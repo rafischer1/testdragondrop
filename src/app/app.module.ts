@@ -22,7 +22,7 @@ import {
   MatSnackBarModule,
   MatStepperModule,
 } from "@angular/material";
-import { SnackButtonComponent } from "./snack-button/snack-button.component";
+import { SnackButtonComponent } from "./shared/snack-button/snack-button.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { CardComponent } from "./list/card/card.component";
 import { ResizerComponent } from "./resizer/resizer.component";
@@ -37,9 +37,12 @@ import { ProposalLoginComponent } from "./proposal/proposal-login/proposal-login
 import { ProposalViewComponent } from "./proposal/proposal-view/proposal-view.component";
 import { ProposalPlansComponent } from "./proposal/proposal-plans/proposal-plans.component";
 import { ProposalRatesComponent } from "./proposal/proposal-rates/proposal-rates.component";
-import { NavButtonComponent } from "./nav-button/nav-button.component";
+import { NavButtonComponent } from "./shared/nav-button/nav-button.component";
 import { ProposalOverviewComponent } from "./proposal/proposal-overview/proposal-overview.component";
 import { HttpClientModule } from "@angular/common/http";
+import { PeoViewComponent } from "./peo-view/peo-view.component";
+import { CircleButtonComponent } from './shared/circle-button/circle-button.component';
+import { TagButtonComponent } from './shared/tag-button/tag-button.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +62,9 @@ import { HttpClientModule } from "@angular/common/http";
     ProposalRatesComponent,
     NavButtonComponent,
     ProposalOverviewComponent,
+    PeoViewComponent,
+    CircleButtonComponent,
+    TagButtonComponent,
   ],
   imports: [
     BrowserModule,
