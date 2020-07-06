@@ -1,6 +1,5 @@
 import { Injectable } from "@angular/core";
 import * as jsPDF from "jspdf";
-import { PlansService } from "./plans.service";
 import html2canvas from "html2canvas";
 import { PlanDesign } from "../list/list.component";
 
@@ -8,9 +7,9 @@ import { PlanDesign } from "../list/list.component";
   providedIn: "root",
 })
 export class PdfService {
-  constructor(private plansService: PlansService) {}
+  constructor() {}
 
-  toPdf(html: HTMLCanvasElement) {
+  private static toPdf(html: HTMLCanvasElement) {
     // document.querySelector("toPdf") try this for "body")
     const imgData = html.toDataURL("image/png");
     imgData.small();
@@ -19,13 +18,17 @@ export class PdfService {
     doc.save();
   }
 
+  private static setDocumentText(plan: PlanDesign) {
+    return `${plan.name} \n EE: ${plan.rates.ee} ES: ${plan.rates.es} EC: ${plan.rates.ee} FAM: ${plan.rates.fam}`;
+  }
+
   pdfDownloadToCanvas(html: HTMLElement, type?: string) {
     html2canvas(html, {
       backgroundColor: type ? (type === "canvas" ? "#fff" : "#333") : "#333",
       scale: window.devicePixelRatio,
       allowTaint: false,
     }).then((canvas) => {
-      this.toPdf(canvas);
+      PdfService.toPdf(canvas);
     });
   }
 
@@ -44,11 +47,7 @@ export class PdfService {
       }
       doc.setFillColor(51, 51, 51);
       doc.roundedRect(x, y, 100, 20, 1, 1);
-      doc.text(
-        x + 5,
-        y + 10,
-        `${plan.name} \n EE: ${plan.rates.ee} ES: ${plan.rates.es} EC: ${plan.rates.ee} FAM: ${plan.rates.fam}`
-      );
+      doc.text(x + 5, y + 10, PdfService.setDocumentText(plan));
       i++;
     });
     doc.save();
