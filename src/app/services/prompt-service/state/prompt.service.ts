@@ -12,6 +12,11 @@ export interface Prompt {
   payload?: any;
 }
 
+export interface TagOptionPayload {
+  background: string;
+  title: string;
+}
+
 @Injectable({
   providedIn: "root",
 })

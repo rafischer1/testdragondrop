@@ -10,6 +10,13 @@ import {
   ViewChild,
 } from "@angular/core";
 import { PromptStore } from "../state/prompt.store";
+import { FormControl } from "@angular/forms";
+
+interface TagOption {
+  id: number;
+  viewValue: string;
+  value: string;
+}
 
 @Component({
   selector: "app-prompt",
@@ -31,9 +38,16 @@ export class PromptComponent implements OnInit, OnChanges {
 
   @Output() confirm = new EventEmitter();
   @Output() delete = new EventEmitter();
-  @Output() change = new EventEmitter();
+  @Output() changeEvent = new EventEmitter();
 
   promptClass = "";
+  tagOptions: TagOption[] = [
+    { id: 1, viewValue: "Primary", value: "primary" },
+    { id: 2, viewValue: "Teal", value: "teal" },
+    { id: 3, viewValue: "Red", value: "red" },
+  ];
+  selectedTagOption = "primary";
+  tagTitleFormControl = new FormControl("");
 
   constructor(private store: PromptStore) {}
 
@@ -72,12 +86,18 @@ export class PromptComponent implements OnInit, OnChanges {
 
   deletePromptEmit = () => {
     return this.delete.emit();
-  }
+  };
 
   responseEmit = (res: string) => {
     this.changeEmit();
+    if (res === "confirm") {
+      this.store.updatePayload({
+        background: this.selectedTagOption,
+        title: this.tagTitleFormControl.value,
+      });
+    }
     this.store.updateResponse(res);
-  }
+  };
 
-  changeEmit = () => this.change.emit(true);
+  changeEmit = () => this.changeEvent.emit(true);
 }

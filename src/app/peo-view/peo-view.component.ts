@@ -2,7 +2,10 @@ import { Component, OnInit } from "@angular/core";
 import { Tag } from "../shared/tag-button/tag-button.component";
 import { TagsService } from "../services/tags.service";
 import { MatDialog } from "@angular/material";
-import { PromptService } from "../services/prompt-service/state/prompt.service";
+import {
+  PromptService,
+  TagOptionPayload,
+} from "../services/prompt-service/state/prompt.service";
 import { PromptQuery } from "../services/prompt-service/state/prompt-query.service";
 
 @Component({
@@ -13,6 +16,8 @@ import { PromptQuery } from "../services/prompt-service/state/prompt-query.servi
 export class PeoViewComponent implements OnInit {
   plans = [1, 2, 3, 4, 5];
   tags: Tag[];
+  tagPayload: TagOptionPayload;
+
   constructor(
     private tagsService: TagsService,
     public promptService: PromptService,
@@ -24,18 +29,11 @@ export class PeoViewComponent implements OnInit {
   }
 
   addTag() {
-    // const tagName = prompt("NAME OF TAG:");
-    // const backgroundColor = prompt("COLOR OF TAG (teal, red, or primary)");
-    // this.tagsService.add({
-    //   title: tagName,
-    //   background: backgroundColor,
-    //   color: "primary",
-    // });
     this.promptService.showPrompt(
       "tag",
       ["get that tag right"],
       "What is tag???",
-      "TAG PROMPT",
+      "CREATE TAG",
       "SAVE TAG",
       "CLOSE"
     );
@@ -46,7 +44,15 @@ export class PeoViewComponent implements OnInit {
       }
       if (res === "confirm") {
         this.query.payload$.subscribe((payload) => {
-          console.log("payload:", payload);
+          this.tagPayload = payload;
+          this.tagsService.add({
+            title: this.tagPayload.title,
+            background: this.tagPayload.background,
+            color: "primary",
+          });
+          setTimeout(() => {
+            this.promptService.deletePrompt();
+          }, 500);
         });
       }
     });
