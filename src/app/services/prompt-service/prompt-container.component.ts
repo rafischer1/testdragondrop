@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Observable } from "rxjs";
-import { Prompt, PromptService } from "../state/prompt.service";
-import { PromptQuery } from "../state/prompt-query.service";
+import { Prompt, PromptService } from "./state/prompt.service";
+import { PromptQuery } from "./state/prompt-query.service";
 
 @Component({
   selector: "app-prompt-container",

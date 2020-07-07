@@ -1,8 +1,10 @@
 <button
   mat-button
+  cdkDrag
   [color]="tag.color"
   [class.red]="isRed()"
   [class.teal]="isTeal()"
+  [class.selected]="selected"
 >
   {{ tag.title.toUpperCase() }}
 </button>

@@ -10,3 +10,7 @@ button {
 .red {
   background: #ba19a2 !important;
 }
+
+.selected {
+  border: 1px solid #121212;
+}

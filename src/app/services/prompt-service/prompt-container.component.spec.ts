@@ -1,6 +1,6 @@
 import { RouterTestingModule } from "@angular/router/testing";
 import { PromptContainerComponent } from "./prompt-container.component";
-import { PromptComponent } from "../prompt/prompt.component";
+import { PromptComponent } from "./prompt/prompt.component";
 import { createTestComponentFactory, Spectator } from "@ngneat/spectator/jest";
 
 describe("Prompt Container Component init tests", () => {

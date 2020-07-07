@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Tag } from "../shared/tag-button/tag-button.component";
+import { Observable } from "rxjs";
 
 @Injectable({
   providedIn: "root",
@@ -18,12 +19,18 @@ export class TagsService {
 
   get = (id: number) => this.tags.filter((t) => t.id === +id)[0];
 
-  add(tag: Partial<Tag>) {
+  add(tag: Partial<Tag>, tagArr: Tag[]) {
     this.tags.push({
       title: tag.title,
       color: tag.color,
       background: tag.background,
-      id: this.tags[this.tags.length - 1].id + 1,
+      id: Math.floor(Math.random() * 100) + 10,
     });
+    return this.tags;
+  }
+
+  remove(tag: Tag) {
+    this.tags = this.tags.filter((t) => t.id !== tag.id);
+    return this.tags;
   }
 }

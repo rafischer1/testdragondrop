@@ -147,8 +147,20 @@
         </div>
         <div class="section-body tags">
           <div *ngFor="let tag of tags">
-            <app-tag-button [tag]="tag"></app-tag-button>
+            <app-tag-button
+              (click)="selectTag(tag)"
+              [tag]="tag"
+              [selected]="selectedTag ? selectedTag.id === tag.id : false"
+            ></app-tag-button>
           </div>
+          <button
+            mat-stroked-button
+            color="accent"
+            class="trash-btn"
+            (click)="trashTag()"
+          >
+            <mat-icon>delete</mat-icon>
+          </button>
         </div>
       </div>
     </div>

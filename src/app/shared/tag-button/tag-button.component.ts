@@ -15,7 +15,7 @@ export interface Tag {
 })
 export class TagButtonComponent implements OnInit {
   @Input() tag: Tag;
-
+  @Input() selected: boolean;
   constructor() {}
 
   ngOnInit() {}

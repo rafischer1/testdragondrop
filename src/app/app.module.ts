@@ -44,7 +44,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { PeoViewComponent } from "./peo-view/peo-view.component";
 import { CircleButtonComponent } from "./shared/circle-button/circle-button.component";
 import { TagButtonComponent } from "./shared/tag-button/tag-button.component";
-import { PromptContainerComponent } from "./services/prompt-service/prompt-container/prompt-container.component";
+import { PromptContainerComponent } from "./services/prompt-service/prompt-container.component";
 import { PromptComponent } from "./services/prompt-service/prompt/prompt.component";
 import { ColorPickerModule } from "ngx-color-picker";
 

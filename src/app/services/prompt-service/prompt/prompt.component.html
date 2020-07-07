@@ -56,12 +56,16 @@
       <div class="prompt-body colorPicker">
         <mat-form-field color="accent"
           >Select Color <br />
-          (Hex value only)
           <label>
-            <input matInput type="color" [value]="colorPickerValue" (change)="setColorValue($event)" />
+            <input
+              matInput
+              type="color"
+              [value]="colorPickerValue"
+              (change)="setColorValue($event)"
+            />
           </label>
         </mat-form-field>
-        <div>{{ colorPickerValue }}</div>
+        <div>{{ colorPickerValue | uppercase }}</div>
       </div>
       <footer>
         <div class="button-container">

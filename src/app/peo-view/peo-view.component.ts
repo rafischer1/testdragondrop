@@ -15,6 +15,7 @@ import { PromptQuery } from "../services/prompt-service/state/prompt-query.servi
 export class PeoViewComponent implements OnInit {
   plans = [1, 2, 3, 4, 5];
   tags: Tag[];
+  selectedTag: Tag;
   tagPayload: TagOptionPayload;
   brandColors = ["#BA19A2", "#49BFA2", "#BBD64B"];
 
@@ -45,14 +46,12 @@ export class PeoViewComponent implements OnInit {
       if (res === "confirm") {
         this.query.payload$.subscribe((payload) => {
           this.tagPayload = payload;
-          this.tagsService.add({
+          this.tags = this.tagsService.add({
             title: this.tagPayload.title,
             background: this.tagPayload.background,
             color: "primary",
-          });
-          setTimeout(() => {
-            this.promptService.deletePrompt();
-          }, 500);
+          }, this.tags);
+          this.closePrompt();
         });
       }
     });
@@ -75,11 +74,19 @@ export class PeoViewComponent implements OnInit {
       if (res === "confirm") {
         this.query.payload$.subscribe((payload) => {
           this.brandColors.push(payload.hex);
-          setTimeout(() => {
-            this.promptService.deletePrompt();
-          }, 500);
+          this.closePrompt();
         });
       }
     });
   }
+
+  closePrompt() {
+    setTimeout(() => {
+      this.promptService.deletePrompt();
+    }, 200);
+  }
+
+  trashTag = () => (this.tags = this.tagsService.remove(this.selectedTag));
+
+  selectTag = (tag: Tag) => (this.selectedTag = tag);
 }
