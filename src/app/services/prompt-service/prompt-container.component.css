@@ -1,0 +1,27 @@
+.prompts-container {
+  display: flex;
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  right: 25%;
+  left: 25%;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.wrapper-hidden {
+  visibility: hidden;
+  display: none;
+}
+
+.prompt-wrapper {
+  visibility: visible;
+  z-index: 99999;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: hsla(171, 0%, 74%, 0.27);
+  backdrop-filter: blur(1px);
+}

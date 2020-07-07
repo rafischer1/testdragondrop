@@ -1,0 +1,15 @@
+<div class="{{ wrapperClass }}">
+  <div class="prompts-container">
+    <ng-container *ngIf="prompt$ | async as prompt">
+      <app-prompt
+        [type]="prompt.type"
+        [messages]="prompt.messages"
+        [question]="prompt.question"
+        [header]="prompt.header"
+        [confirmButtonTitle]="prompt.confirmButtonTitle"
+        [declineButtonTitle]="prompt.declineButtonTitle"
+        (change)="toggleWrapperClass()"
+      ></app-prompt>
+    </ng-container>
+  </div>
+</div>

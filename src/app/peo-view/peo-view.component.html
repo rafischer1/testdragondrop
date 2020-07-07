@@ -99,18 +99,13 @@
             [color]="'accent'"
           ></app-circle-button>
         </div>
-        <div class="section-body dark">
+        <div class="section-body dark" *ngFor="let color of brandColors">
           <div class="brand-color">
-            <div class="brand-color-square one"></div>
-            #BA19A2
-          </div>
-          <div class="brand-color">
-            <div class="brand-color-square two"></div>
-            #49BFA2
-          </div>
-          <div class="brand-color">
-            <div class="brand-color-square three"></div>
-            #BBD64B
+            <div
+              class="brand-color-square one"
+              [style.background]="color"
+            ></div>
+            {{ color.toUpperCase() }}
           </div>
         </div>
       </div>
@@ -150,39 +145,22 @@
             [color]="'accent'"
           ></app-circle-button>
         </div>
-        <div class="section-body">
-          <div class="tags">
+        <div class="section-body tags">
+          <div *ngFor="let tag of tags">
             <app-tag-button
-              [tag]="'wellness'"
-              [color]="'primary'"
-              [background]="'primary'"
-            ></app-tag-button>
-            <app-tag-button
-              [tag]="'dental'"
-              [color]="'primary'"
-              [background]="'primary'"
-            ></app-tag-button>
-            <app-tag-button
-              [tag]="'peo'"
-              [color]="'warn'"
-              [background]="'red'"
-            ></app-tag-button>
-            <app-tag-button
-              [tag]="'health'"
-              [color]="'primary'"
-              [background]="'primary'"
-            ></app-tag-button>
-            <app-tag-button
-              [tag]="'aetna'"
-              [color]="'primary'"
-              [background]="'teal'"
-            ></app-tag-button>
-            <app-tag-button
-              [tag]="'anthem'"
-              [color]="'primary'"
-              [background]="'teal'"
+              (click)="selectTag(tag)"
+              [tag]="tag"
+              [selected]="selectedTag ? selectedTag.id === tag.id : false"
             ></app-tag-button>
           </div>
+          <button
+            mat-stroked-button
+            color="accent"
+            class="trash-btn"
+            (click)="trashTag()"
+          >
+            <mat-icon>delete</mat-icon>
+          </button>
         </div>
       </div>
     </div>

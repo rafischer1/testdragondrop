@@ -1,0 +1,95 @@
+<ng-template #defaultPrompt let-type="type" let-message="message"
+  ><button (click)="deletePromptEmit()">
+    I AM A DEFAULT PROMPT
+  </button></ng-template
+>
+
+<ng-template #tagPrompt let-type="type" let-message="messages">
+  <div class="prompt {{ promptClass }}">
+    <div>
+      <div class="prompt-header">{{ header }}</div>
+      <div class="prompt-body">
+        <mat-form-field color="accent">
+          <mat-label>Tag Name</mat-label>
+          <label>
+            <input matInput [formControl]="tagTitleFormControl" />
+          </label>
+        </mat-form-field>
+        <br />
+        <mat-form-field color="accent">
+          <mat-label>Select Tag Color</mat-label>
+          <mat-select [(value)]="selectedTagOption">
+            <mat-option *ngFor="let tag of tagOptions" [value]="tag.value">
+              {{ tag.viewValue }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <br />
+      </div>
+      <footer>
+        <div class="prompt-question pull-right"></div>
+        <div class="button-container">
+          <button
+            mat-stroked-button
+            color="accent"
+            (click)="responseEmit('decline', 'tag')"
+          >
+            {{ declineButtonTitle }}
+          </button>
+          <button
+            (click)="responseEmit('confirm', 'tag')"
+            mat-stroked-button
+            color="primary"
+          >
+            {{ confirmButtonTitle }}
+          </button>
+        </div>
+      </footer>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #colorPrompt let-type="type" let-message="messages">
+  <div class="prompt {{ promptClass }}">
+    <div>
+      <div class="prompt-header">{{ header }}</div>
+      <div class="prompt-body colorPicker">
+        <mat-form-field color="accent"
+          >Select Color <br />
+          <label>
+            <input
+              matInput
+              type="color"
+              [value]="colorPickerValue"
+              (change)="setColorValue($event)"
+            />
+          </label>
+        </mat-form-field>
+        <div>{{ colorPickerValue | uppercase }}</div>
+      </div>
+      <footer>
+        <div class="button-container">
+          <button
+            mat-stroked-button
+            color="accent"
+            (click)="responseEmit('decline', 'color')"
+          >
+            {{ declineButtonTitle }}
+          </button>
+          <button
+            (click)="responseEmit('confirm', 'color')"
+            mat-stroked-button
+            color="primary"
+          >
+            {{ confirmButtonTitle }}
+          </button>
+        </div>
+      </footer>
+    </div>
+  </div>
+</ng-template>
+
+<ng-container
+  [ngTemplateOutlet]="liveTemplate"
+  [ngTemplateOutletContext]="{ type: type, messages: messages }"
+></ng-container>
