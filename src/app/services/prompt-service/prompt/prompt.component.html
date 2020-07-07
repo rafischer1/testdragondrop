@@ -49,7 +49,39 @@
   </div>
 </ng-template>
 
-<ng-template #colorPrompt let-type="type" let-message="messages"> </ng-template>
+<ng-template #colorPrompt let-type="type" let-message="messages">
+  <div class="prompt {{ promptClass }}">
+    <div>
+      <div class="prompt-header">{{ header }}</div>
+      <div class="prompt-body colorPicker">
+        <mat-form-field>
+          <label>
+            <input [value]="colorPickerValue"
+                   [(colorPicker)]="colorPickerValue"/>
+          </label>
+        </mat-form-field>
+      </div>
+      <footer>
+        <div class="button-container">
+          <button
+            mat-stroked-button
+            color="accent"
+            (click)="responseEmit('decline')"
+          >
+            {{ declineButtonTitle }}
+          </button>
+          <button
+            (click)="responseEmit('confirm')"
+            mat-stroked-button
+            color="primary"
+          >
+            {{ confirmButtonTitle }}
+          </button>
+        </div>
+      </footer>
+    </div>
+  </div>
+</ng-template>
 
 <ng-container
   [ngTemplateOutlet]="liveTemplate"

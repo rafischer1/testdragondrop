@@ -48,6 +48,7 @@ export class PromptComponent implements OnInit, OnChanges {
   ];
   selectedTagOption = "primary";
   tagTitleFormControl = new FormControl("");
+  colorPickerValue = "#BBD64B";
 
   constructor(private store: PromptStore) {}
 

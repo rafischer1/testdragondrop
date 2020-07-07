@@ -13,7 +13,8 @@ import {
   MatChipsModule,
   MatFormFieldModule,
   MatGridListModule,
-  MatIconModule, MatInputModule,
+  MatIconModule,
+  MatInputModule,
   MatListModule,
   MatMenuModule,
   MatRippleModule,
@@ -43,8 +44,9 @@ import { HttpClientModule } from "@angular/common/http";
 import { PeoViewComponent } from "./peo-view/peo-view.component";
 import { CircleButtonComponent } from "./shared/circle-button/circle-button.component";
 import { TagButtonComponent } from "./shared/tag-button/tag-button.component";
-import { PromptContainerComponent } from './services/prompt-service/prompt-container/prompt-container.component';
-import { PromptComponent } from './services/prompt-service/prompt/prompt.component';
+import { PromptContainerComponent } from "./services/prompt-service/prompt-container/prompt-container.component";
+import { PromptComponent } from "./services/prompt-service/prompt/prompt.component";
+import { ColorPickerModule } from "ngx-color-picker";
 
 @NgModule({
   declarations: [
@@ -94,6 +96,7 @@ import { PromptComponent } from './services/prompt-service/prompt/prompt.compone
     ReactiveFormsModule,
     MatSelectModule,
     MatInputModule,
+    ColorPickerModule,
   ],
   providers: [
     WizardStateStore,

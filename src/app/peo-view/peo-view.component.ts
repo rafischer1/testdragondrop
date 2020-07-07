@@ -1,7 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Tag } from "../shared/tag-button/tag-button.component";
 import { TagsService } from "../services/tags.service";
-import { MatDialog } from "@angular/material";
 import {
   PromptService,
   TagOptionPayload,
@@ -31,8 +30,8 @@ export class PeoViewComponent implements OnInit {
   addTag() {
     this.promptService.showPrompt(
       "tag",
-      ["get that tag right"],
-      "What is tag???",
+      [""],
+      "",
       "CREATE TAG",
       "SAVE TAG",
       "CLOSE"
@@ -59,6 +58,27 @@ export class PeoViewComponent implements OnInit {
   }
 
   addColor() {
-    alert("Create color selection to give hex code....");
+    this.promptService.showPrompt(
+      "color",
+      [""],
+      "",
+      "SELECT COLOR",
+      "SAVE COLOR",
+      "CLOSE"
+    );
+
+    this.query.response$.subscribe((res) => {
+      if (res === "decline") {
+        this.promptService.deletePrompt();
+      }
+      if (res === "confirm") {
+        this.query.payload$.subscribe((payload) => {
+          alert(payload);
+          setTimeout(() => {
+            this.promptService.deletePrompt();
+          }, 500);
+        });
+      }
+    });
   }
 }
