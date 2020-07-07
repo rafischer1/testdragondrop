@@ -32,12 +32,12 @@
           <button
             mat-stroked-button
             color="accent"
-            (click)="responseEmit('decline')"
+            (click)="responseEmit('decline', 'tag')"
           >
             {{ declineButtonTitle }}
           </button>
           <button
-            (click)="responseEmit('confirm')"
+            (click)="responseEmit('confirm', 'tag')"
             mat-stroked-button
             color="primary"
           >
@@ -54,24 +54,26 @@
     <div>
       <div class="prompt-header">{{ header }}</div>
       <div class="prompt-body colorPicker">
-        <mat-form-field>
+        <mat-form-field color="accent"
+          >Select Color <br />
+          (Hex value only)
           <label>
-            <input [value]="colorPickerValue"
-                   [(colorPicker)]="colorPickerValue"/>
+            <input matInput type="color" [value]="colorPickerValue" (change)="setColorValue($event)" />
           </label>
         </mat-form-field>
+        <div>{{ colorPickerValue }}</div>
       </div>
       <footer>
         <div class="button-container">
           <button
             mat-stroked-button
             color="accent"
-            (click)="responseEmit('decline')"
+            (click)="responseEmit('decline', 'color')"
           >
             {{ declineButtonTitle }}
           </button>
           <button
-            (click)="responseEmit('confirm')"
+            (click)="responseEmit('confirm', 'color')"
             mat-stroked-button
             color="primary"
           >

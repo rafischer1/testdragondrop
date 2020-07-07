@@ -16,6 +16,7 @@ export class PeoViewComponent implements OnInit {
   plans = [1, 2, 3, 4, 5];
   tags: Tag[];
   tagPayload: TagOptionPayload;
+  brandColors = ["#BA19A2", "#49BFA2", "#BBD64B"];
 
   constructor(
     private tagsService: TagsService,
@@ -73,7 +74,7 @@ export class PeoViewComponent implements OnInit {
       }
       if (res === "confirm") {
         this.query.payload$.subscribe((payload) => {
-          alert(payload);
+          this.brandColors.push(payload.hex);
           setTimeout(() => {
             this.promptService.deletePrompt();
           }, 500);

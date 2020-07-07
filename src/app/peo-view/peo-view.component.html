@@ -99,18 +99,13 @@
             [color]="'accent'"
           ></app-circle-button>
         </div>
-        <div class="section-body dark">
+        <div class="section-body dark" *ngFor="let color of brandColors">
           <div class="brand-color">
-            <div class="brand-color-square one"></div>
-            #BA19A2
-          </div>
-          <div class="brand-color">
-            <div class="brand-color-square two"></div>
-            #49BFA2
-          </div>
-          <div class="brand-color">
-            <div class="brand-color-square three"></div>
-            #BBD64B
+            <div
+              class="brand-color-square one"
+              [style.background]="color"
+            ></div>
+            {{ color.toUpperCase() }}
           </div>
         </div>
       </div>

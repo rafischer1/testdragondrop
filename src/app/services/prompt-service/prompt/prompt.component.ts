@@ -89,16 +89,24 @@ export class PromptComponent implements OnInit, OnChanges {
     return this.delete.emit();
   };
 
-  responseEmit = (res: string) => {
+  responseEmit = (res: string, type: string) => {
     this.changeEmit();
-    if (res === "confirm") {
+    if (res === "confirm" && type === "tag") {
       this.store.updatePayload({
         background: this.selectedTagOption,
         title: this.tagTitleFormControl.value,
+      });
+    } else if (res === "confirm" && type === "color") {
+      this.store.updatePayload({
+        hex: this.colorPickerValue,
       });
     }
     this.store.updateResponse(res);
   };
 
   changeEmit = () => this.changeEvent.emit(true);
+
+  setColorValue(ev: any) {
+    this.colorPickerValue = ev.target.value;
+  }
 }
