@@ -105,7 +105,7 @@
               class="brand-color-square one"
               [style.background]="color"
             ></div>
-            {{ color.toUpperCase() }}
+            {{ color | uppercase }}
           </div>
         </div>
       </div>
@@ -154,10 +154,12 @@
             ></app-tag-button>
           </div>
           <button
+            *ngIf="this.tags.length > 0"
             mat-stroked-button
             color="accent"
             class="trash-btn"
-            (click)="trashTag()"
+            [class.trash-selected]="this.selectedTag.title !== ''"
+            (click)="deleteTag()"
           >
             <mat-icon>delete</mat-icon>
           </button>

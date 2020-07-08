@@ -119,9 +119,12 @@
   margin: 1% 2%;
 }
 
-.trash-btn:hover {
+.trash-btn {
   width: 50%;
   margin: auto auto;
-  background-color: #121212;
-  color: #bbda57;
+}
+
+.trash-selected {
+  color: #ba19a2;
+  background-color: #333333;
 }

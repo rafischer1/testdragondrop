@@ -30,8 +30,6 @@ export class PromptComponent implements OnInit, OnChanges {
   liveTemplate: TemplateRef<any>;
 
   @Input() type: string;
-  @Input() messages: string[];
-  @Input() question: string;
   @Input() header: string;
   @Input() confirmButtonTitle: string;
   @Input() declineButtonTitle: string;

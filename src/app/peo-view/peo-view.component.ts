@@ -27,13 +27,17 @@ export class PeoViewComponent implements OnInit {
 
   ngOnInit() {
     this.tags = this.tagsService.getAll();
+    this.selectedTag = {
+      title: "",
+      background: "",
+      id: 0,
+      color: "primary",
+    };
   }
 
   addTag() {
     this.promptService.showPrompt(
       "tag",
-      [""],
-      "",
       "CREATE TAG",
       "SAVE TAG",
       "CLOSE"
@@ -46,11 +50,14 @@ export class PeoViewComponent implements OnInit {
       if (res === "confirm") {
         this.query.payload$.subscribe((payload) => {
           this.tagPayload = payload;
-          this.tags = this.tagsService.add({
-            title: this.tagPayload.title,
-            background: this.tagPayload.background,
-            color: "primary",
-          }, this.tags);
+          this.tags = this.tagsService.add(
+            {
+              title: this.tagPayload.title,
+              background: this.tagPayload.background,
+              color: "primary",
+            },
+            this.tags
+          );
           this.closePrompt();
         });
       }
@@ -60,8 +67,6 @@ export class PeoViewComponent implements OnInit {
   addColor() {
     this.promptService.showPrompt(
       "color",
-      [""],
-      "",
       "SELECT COLOR",
       "SAVE COLOR",
       "CLOSE"
@@ -86,7 +91,15 @@ export class PeoViewComponent implements OnInit {
     }, 200);
   }
 
-  trashTag = () => (this.tags = this.tagsService.remove(this.selectedTag));
+  deleteTag() {
+    this.tags = this.tagsService.remove(this.selectedTag);
+    return (this.selectedTag = {
+      title: "",
+      background: "",
+      id: 0,
+      color: "primary",
+    });
+  }
 
   selectTag = (tag: Tag) => (this.selectedTag = tag);
 }
