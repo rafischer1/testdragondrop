@@ -3,8 +3,6 @@
     <ng-container *ngIf="prompt$ | async as prompt">
       <app-prompt
         [type]="prompt.type"
-        [messages]="prompt.messages"
-        [question]="prompt.question"
         [header]="prompt.header"
         [confirmButtonTitle]="prompt.confirmButtonTitle"
         [declineButtonTitle]="prompt.declineButtonTitle"
