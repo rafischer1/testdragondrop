@@ -36,11 +36,12 @@
       </div>
       <div class="section">
         <div class="section-header teal">
-          WELLNESS BENEFIT 1
+          ADDITIONAL BENEFIT
           <app-circle-button
             [matIcon]="'add'"
             [size]="'small'"
             [color]="'accent'"
+            (click)="benefitAction()"
           ></app-circle-button>
         </div>
         <div class="section-body"></div>
@@ -83,6 +84,7 @@
             [matIcon]="'add'"
             [size]="'small'"
             [color]="'accent'"
+            (click)="addServiceOrBenefit()"
           ></app-circle-button>
         </div>
         <div class="section-body"></div>

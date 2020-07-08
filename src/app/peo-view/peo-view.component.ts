@@ -36,12 +36,7 @@ export class PeoViewComponent implements OnInit {
   }
 
   addTag() {
-    this.promptService.showPrompt(
-      "tag",
-      "CREATE TAG",
-      "SAVE TAG",
-      "CLOSE"
-    );
+    this.promptService.showPrompt("tag", "CREATE TAG", "SAVE TAG", "CLOSE");
 
     this.query.response$.subscribe((res) => {
       if (res === "decline") {
@@ -102,4 +97,12 @@ export class PeoViewComponent implements OnInit {
   }
 
   selectTag = (tag: Tag) => (this.selectedTag = tag);
+
+  benefitAction() {
+    alert("ADDITIONAL BENEFIT 1 CLICKED 🥎");
+  }
+
+  addServiceOrBenefit() {
+    alert("ADD SERVICE OR BENEFIT CLICKED 🥎");
+  }
 }
