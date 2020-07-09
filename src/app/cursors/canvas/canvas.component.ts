@@ -70,32 +70,6 @@ export class CanvasComponent implements OnInit {
     context.closePath();
   }
 
-  savePaint() {
-    console.log("saved....?");
-  }
-
-  clearPaint() {
-    this.canvasRef.nativeElement
-      .getContext("2d")
-      .clearRect(this.x, this.y, 800, 400);
-  }
-
-  selectColor(color: string) {
-    this.color = color;
-  }
-
-  thicker() {
-    this.lineWidth++;
-  }
-
-  thinner() {
-    this.lineWidth--;
-  }
-
-  toPDF() {
-    this.pdfService.pdfDownloadToCanvas(this.canvasRef.nativeElement, "canvas");
-  }
-
   customColorSelect() {
     this.prompt.showPrompt(
       "color",
@@ -118,4 +92,20 @@ export class CanvasComponent implements OnInit {
       }
     });
   }
+
+  savePaint = () => this.toPDF();
+
+  clearPaint = () =>
+    this.canvasRef.nativeElement
+      .getContext("2d")
+      .clearRect(this.x, this.y, 800, 400);
+
+  selectColor = (color: string) => (this.color = color);
+
+  thicker = () => this.lineWidth++;
+
+  thinner = () => this.lineWidth--;
+
+  toPDF = () =>
+    this.pdfService.pdfDownloadToCanvas(this.canvasRef.nativeElement, "canvas");
 }
