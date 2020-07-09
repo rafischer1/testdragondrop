@@ -6,6 +6,7 @@ export interface Prompt {
   header: string;
   confirmButtonTitle: string;
   declineButtonTitle: string;
+  color?: string;
   response?: string;
   payload?: any;
 }
@@ -24,6 +25,7 @@ export class PromptService implements Prompt {
   confirmButtonTitle: string;
   declineButtonTitle: string;
   response: string;
+  color: string;
   payload: any;
 
   constructor(private store: PromptStore) {}
@@ -31,12 +33,14 @@ export class PromptService implements Prompt {
   showPrompt = (
     type: string,
     header: string,
+    color: string,
     confirmButtonTitle: string,
     declineButtonTitle: string
   ) => {
     return this.store.addPrompt({
       type,
       header,
+      color,
       confirmButtonTitle,
       declineButtonTitle,
     });

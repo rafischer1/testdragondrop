@@ -18,6 +18,7 @@ export class PeoViewComponent implements OnInit {
   selectedTag: Tag;
   tagPayload: TagOptionPayload;
   brandColors = ["#BA19A2", "#49BFA2", "#BBD64B"];
+  chosenColor: string;
 
   constructor(
     private tagsService: TagsService,
@@ -36,7 +37,7 @@ export class PeoViewComponent implements OnInit {
   }
 
   addTag() {
-    this.promptService.showPrompt("tag", "CREATE TAG", "SAVE TAG", "CLOSE");
+    this.promptService.showPrompt("tag", "CREATE TAG", "", "SAVE TAG", "CLOSE");
 
     this.query.response$.subscribe((res) => {
       if (res === "decline") {
@@ -63,6 +64,7 @@ export class PeoViewComponent implements OnInit {
     this.promptService.showPrompt(
       "color",
       "SELECT COLOR",
+      this.chosenColor,
       "SAVE COLOR",
       "CLOSE"
     );
@@ -73,6 +75,7 @@ export class PeoViewComponent implements OnInit {
       }
       if (res === "confirm") {
         this.query.payload$.subscribe((payload) => {
+          this.chosenColor = payload.hex;
           this.brandColors.push(payload.hex);
           this.closePrompt();
         });

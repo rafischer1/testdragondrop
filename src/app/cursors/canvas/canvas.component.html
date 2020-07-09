@@ -12,6 +12,7 @@
     <mat-chip
       class="chip"
       [style.background]="chosenColor"
+      [class.selected-white]="chosenColor.includes('fff')"
       (click)="customColorSelect()"
       >Custom</mat-chip
     >

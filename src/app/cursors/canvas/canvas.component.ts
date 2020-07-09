@@ -97,7 +97,13 @@ export class CanvasComponent implements OnInit {
   }
 
   customColorSelect() {
-    this.prompt.showPrompt("color", "SELECT COLOR", "SELECT COLOR", "CLOSE");
+    this.prompt.showPrompt(
+      "color",
+      "SELECT COLOR",
+      this.chosenColor,
+      "SELECT COLOR",
+      "CLOSE"
+    );
 
     this.query.response$.subscribe((res) => {
       if (res === "decline") {

@@ -37,3 +37,8 @@ canvas {
 .purple {
   background-color: purple;
 }
+
+.selected-white {
+  color: #333333;
+  border: 1px solid #333333;
+}
