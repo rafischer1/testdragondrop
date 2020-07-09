@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
 import { CircleButtonComponent } from "./circle-button.component";
+import { MatButtonModule, MatIconModule } from "@angular/material";
 
 describe("CircleButtonComponent", () => {
   let component: CircleButtonComponent;
@@ -8,6 +9,7 @@ describe("CircleButtonComponent", () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [MatIconModule, MatButtonModule],
       declarations: [CircleButtonComponent],
     }).compileComponents();
   }));

@@ -2,6 +2,7 @@ import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
 import { ListComponent } from "./list.component";
 import {MatCardModule} from "@angular/material";
+import {CdkDropList} from "@angular/cdk/drag-drop";
 
 describe("ListComponent", () => {
   let component: ListComponent;
@@ -10,7 +11,7 @@ describe("ListComponent", () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ListComponent],
-      imports: [MatCardModule]
+      imports: [MatCardModule, CdkDropList]
     }).compileComponents();
   }));
 

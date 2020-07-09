@@ -3,7 +3,7 @@ import {
   HAMMER_GESTURE_CONFIG,
   HammerGestureConfig,
 } from "@angular/platform-browser";
-import { NgModule } from "@angular/core";
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from "@angular/core";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
@@ -99,6 +99,7 @@ import { PromptComponent } from "./services/prompt-service/prompt/prompt.compone
     ReactiveFormsModule,
     MatSelectModule,
     MatInputModule,
+    ReactiveFormsModule,
   ],
   providers: [
     WizardStateStore,
@@ -107,6 +108,7 @@ import { PromptComponent } from "./services/prompt-service/prompt/prompt.compone
       useValue: { baseUrl: "https://jsonplaceholder.typicode.com" },
     },
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

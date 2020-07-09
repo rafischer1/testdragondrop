@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
 import { NavButtonComponent } from "./nav-button.component";
+import { MatIconModule } from "@angular/material";
 
 describe("NavButtonComponent", () => {
   let component: NavButtonComponent;
@@ -8,6 +9,7 @@ describe("NavButtonComponent", () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [MatIconModule],
       declarations: [NavButtonComponent],
     }).compileComponents();
   }));

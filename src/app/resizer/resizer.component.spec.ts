@@ -1,16 +1,17 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { ResizerComponent } from './resizer.component';
+import { ResizerComponent } from "./resizer.component";
+import { CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
 
-describe('ResizerComponent', () => {
+describe("ResizerComponent", () => {
   let component: ResizerComponent;
   let fixture: ComponentFixture<ResizerComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ResizerComponent ]
-    })
-    .compileComponents();
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
+      declarations: [ResizerComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +20,7 @@ describe('ResizerComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

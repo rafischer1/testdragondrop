@@ -44,6 +44,7 @@ import {CircleButtonComponent} from "./shared/circle-button/circle-button.compon
 import {TagButtonComponent} from "./shared/tag-button/tag-button.component";
 import {PromptContainerComponent} from "./services/prompt-service/prompt-container.component";
 import {PromptComponent} from "./services/prompt-service/prompt/prompt.component";
+import {CUSTOM_ELEMENTS_SCHEMA} from "@angular/core";
 
 describe("AppComponent", () => {
   beforeEach(async(() => {
@@ -96,7 +97,8 @@ describe("AppComponent", () => {
         PromptContainerComponent,
         PromptComponent,
       ],
-      providers: [WizardStateStore]
+      providers: [WizardStateStore],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
     }).compileComponents();
   }));
 

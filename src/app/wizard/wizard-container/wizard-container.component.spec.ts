@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
 import { WizardContainerComponent } from "./wizard-container.component";
+import {WizardComponent} from "../wizard/wizard.component";
 
 describe("WizardContainerComponent", () => {
   let component: WizardContainerComponent;
@@ -8,7 +9,7 @@ describe("WizardContainerComponent", () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [WizardContainerComponent],
+      declarations: [WizardContainerComponent, WizardComponent],
     }).compileComponents();
   }));
 
