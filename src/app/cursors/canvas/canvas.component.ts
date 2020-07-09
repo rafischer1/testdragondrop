@@ -77,7 +77,7 @@ export class CanvasComponent implements OnInit {
   clearPaint() {
     this.canvasRef.nativeElement
       .getContext("2d")
-      .clearRect(this.x, this.y, 500, 350);
+      .clearRect(this.x, this.y, 800, 400);
   }
 
   selectColor(color: string) {
