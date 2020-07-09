@@ -1,4 +1,8 @@
-import { BrowserModule } from "@angular/platform-browser";
+import {
+  BrowserModule,
+  HAMMER_GESTURE_CONFIG,
+  HammerGestureConfig,
+} from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -46,7 +50,6 @@ import { CircleButtonComponent } from "./shared/circle-button/circle-button.comp
 import { TagButtonComponent } from "./shared/tag-button/tag-button.component";
 import { PromptContainerComponent } from "./services/prompt-service/prompt-container.component";
 import { PromptComponent } from "./services/prompt-service/prompt/prompt.component";
-import { ColorPickerModule } from "ngx-color-picker";
 
 @NgModule({
   declarations: [
@@ -96,7 +99,6 @@ import { ColorPickerModule } from "ngx-color-picker";
     ReactiveFormsModule,
     MatSelectModule,
     MatInputModule,
-    ColorPickerModule,
   ],
   providers: [
     WizardStateStore,

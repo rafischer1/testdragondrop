@@ -30,9 +30,8 @@ export class PromptComponent implements OnInit, OnChanges {
   liveTemplate: TemplateRef<any>;
 
   @Input() type: string;
-  @Input() messages: string[];
-  @Input() question: string;
   @Input() header: string;
+  @Input() color: string;
   @Input() confirmButtonTitle: string;
   @Input() declineButtonTitle: string;
 
@@ -48,12 +47,15 @@ export class PromptComponent implements OnInit, OnChanges {
   ];
   selectedTagOption = "primary";
   tagTitleFormControl = new FormControl("");
-  colorPickerValue = "#BBD64B";
+  colorPickerValue: string;
 
   constructor(private store: PromptStore) {}
 
   ngOnInit() {
     this.setTemplateType(this.type);
+    this.color
+      ? (this.colorPickerValue = this.color)
+      : (this.colorPickerValue = "#BBD64B");
   }
 
   setTemplateType(type: string) {

@@ -14,9 +14,9 @@ export class CursorsComponent implements OnInit {
   sideNavOpen: boolean;
   buttons: string[] = [
     "create",
-    "text_fields",
     "brush",
     "palette",
+    "text_fields",
     "format_clear",
   ];
   constructor(private help: HelpersService) {}
@@ -29,7 +29,7 @@ export class CursorsComponent implements OnInit {
   }
 
   sideNavOpenToggle = () =>
-    this.sideNavOpen ? (this.sideNavOpen = false) : (this.sideNavOpen = true)
+    this.sideNavOpen ? (this.sideNavOpen = false) : (this.sideNavOpen = true);
 
   cursorChange(type: string) {
     this.selected = type;

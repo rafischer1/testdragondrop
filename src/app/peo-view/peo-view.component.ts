@@ -18,6 +18,7 @@ export class PeoViewComponent implements OnInit {
   selectedTag: Tag;
   tagPayload: TagOptionPayload;
   brandColors = ["#BA19A2", "#49BFA2", "#BBD64B"];
+  chosenColor: string;
 
   constructor(
     private tagsService: TagsService,
@@ -27,17 +28,16 @@ export class PeoViewComponent implements OnInit {
 
   ngOnInit() {
     this.tags = this.tagsService.getAll();
+    this.selectedTag = {
+      title: "",
+      background: "",
+      id: 0,
+      color: "primary",
+    };
   }
 
   addTag() {
-    this.promptService.showPrompt(
-      "tag",
-      [""],
-      "",
-      "CREATE TAG",
-      "SAVE TAG",
-      "CLOSE"
-    );
+    this.promptService.showPrompt("tag", "CREATE TAG", "", "SAVE TAG", "CLOSE");
 
     this.query.response$.subscribe((res) => {
       if (res === "decline") {
@@ -46,11 +46,14 @@ export class PeoViewComponent implements OnInit {
       if (res === "confirm") {
         this.query.payload$.subscribe((payload) => {
           this.tagPayload = payload;
-          this.tags = this.tagsService.add({
-            title: this.tagPayload.title,
-            background: this.tagPayload.background,
-            color: "primary",
-          }, this.tags);
+          this.tags = this.tagsService.add(
+            {
+              title: this.tagPayload.title,
+              background: this.tagPayload.background,
+              color: "primary",
+            },
+            this.tags
+          );
           this.closePrompt();
         });
       }
@@ -60,9 +63,8 @@ export class PeoViewComponent implements OnInit {
   addColor() {
     this.promptService.showPrompt(
       "color",
-      [""],
-      "",
       "SELECT COLOR",
+      this.chosenColor,
       "SAVE COLOR",
       "CLOSE"
     );
@@ -73,6 +75,7 @@ export class PeoViewComponent implements OnInit {
       }
       if (res === "confirm") {
         this.query.payload$.subscribe((payload) => {
+          this.chosenColor = payload.hex;
           this.brandColors.push(payload.hex);
           this.closePrompt();
         });
@@ -86,7 +89,23 @@ export class PeoViewComponent implements OnInit {
     }, 200);
   }
 
-  trashTag = () => (this.tags = this.tagsService.remove(this.selectedTag));
+  deleteTag() {
+    this.tags = this.tagsService.remove(this.selectedTag);
+    return (this.selectedTag = {
+      title: "",
+      background: "",
+      id: 0,
+      color: "primary",
+    });
+  }
 
   selectTag = (tag: Tag) => (this.selectedTag = tag);
+
+  benefitAction() {
+    alert("ADDITIONAL BENEFIT 1 CLICKED 🥎");
+  }
+
+  addServiceOrBenefit() {
+    alert("ADD SERVICE OR BENEFIT CLICKED 🥎");
+  }
 }

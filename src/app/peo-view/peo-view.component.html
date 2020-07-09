@@ -36,11 +36,12 @@
       </div>
       <div class="section">
         <div class="section-header teal">
-          WELLNESS BENEFIT 1
+          ADDITIONAL BENEFIT
           <app-circle-button
             [matIcon]="'add'"
             [size]="'small'"
             [color]="'accent'"
+            (click)="benefitAction()"
           ></app-circle-button>
         </div>
         <div class="section-body"></div>
@@ -83,6 +84,7 @@
             [matIcon]="'add'"
             [size]="'small'"
             [color]="'accent'"
+            (click)="addServiceOrBenefit()"
           ></app-circle-button>
         </div>
         <div class="section-body"></div>
@@ -105,7 +107,7 @@
               class="brand-color-square one"
               [style.background]="color"
             ></div>
-            {{ color.toUpperCase() }}
+            {{ color | uppercase }}
           </div>
         </div>
       </div>
@@ -154,10 +156,12 @@
             ></app-tag-button>
           </div>
           <button
+            *ngIf="this.tags.length > 0"
             mat-stroked-button
             color="accent"
             class="trash-btn"
-            (click)="trashTag()"
+            [class.trash-selected]="this.selectedTag.title !== ''"
+            (click)="deleteTag()"
           >
             <mat-icon>delete</mat-icon>
           </button>
