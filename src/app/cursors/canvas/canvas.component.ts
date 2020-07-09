@@ -1,5 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
 import { PdfService } from "../../services/pdf.service";
+import { PromptService } from "../../services/prompt-service/state/prompt.service";
+import { PromptQuery } from "../../services/prompt-service/state/prompt-query.service";
 
 @Component({
   selector: "app-canvas",
@@ -13,11 +15,16 @@ export class CanvasComponent implements OnInit {
   y: number;
   lineWidth: number;
   color = "black";
-  constructor(private pdfService: PdfService) {}
+  chosenColor = "#333333";
+  constructor(
+    private pdfService: PdfService,
+    private prompt: PromptService,
+    private query: PromptQuery
+  ) {}
 
   ngOnInit() {
     this.isDrawing = false;
-    this.lineWidth = 10;
+    this.lineWidth = 14;
   }
 
   paint(event: MouseEvent) {
@@ -87,5 +94,22 @@ export class CanvasComponent implements OnInit {
 
   toPDF() {
     this.pdfService.pdfDownloadToCanvas(this.canvasRef.nativeElement, "canvas");
+  }
+
+  customColorSelect() {
+    this.prompt.showPrompt("color", "SELECT COLOR", "SELECT COLOR", "CLOSE");
+
+    this.query.response$.subscribe((res) => {
+      if (res === "decline") {
+        this.prompt.deletePrompt();
+      }
+      if (res === "confirm") {
+        this.query.payload$.subscribe((payload) => {
+          this.chosenColor = payload.hex;
+          this.selectColor(payload.hex);
+          this.prompt.deletePrompt();
+        });
+      }
+    });
   }
 }
