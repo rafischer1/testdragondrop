@@ -27,6 +27,8 @@
 
 [x] Move item from list to full card preview
 
-[ ] Cursor selection to action in specified area 🛀
+[x] Cursor selection to action in specified area 🛀
 
 [ ] Convert service `gets` to observables 🍋
+
+[ ] Reconfigure basic `features` to generic types 🎡
