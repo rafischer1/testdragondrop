@@ -2,6 +2,8 @@ import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
 import { CursorsComponent } from "./cursors.component";
 import { CursorButtonComponent } from "./cursor-button/cursor-button.component";
+import { CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
+import { FormsModule } from "@angular/forms";
 
 describe("CursorsComponent", () => {
   let component: CursorsComponent;
@@ -9,8 +11,9 @@ describe("CursorsComponent", () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [CursorsComponent],
-      imports: [CursorButtonComponent],
+      declarations: [CursorsComponent, CursorButtonComponent],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
+      imports: [FormsModule],
     }).compileComponents();
   }));
 

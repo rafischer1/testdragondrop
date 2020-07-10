@@ -1,12 +1,29 @@
-import { TestBed } from '@angular/core/testing';
+import { TestBed } from "@angular/core/testing";
 
-import { ProposalNavigateService } from './proposal-navigate.service';
+import { ProposalNavigateService } from "./proposal-navigate.service";
+import { Router } from "@angular/router";
+import { RouterTestingModule } from "@angular/router/testing";
 
-describe('ProposalNavigateService', () => {
-  beforeEach(() => TestBed.configureTestingModule({}));
+export class RouterStub {
+  navigate(url: string) {
+    return url;
+  }
+}
 
-  it('should be created', () => {
-    const service: ProposalNavigateService = TestBed.get(ProposalNavigateService);
+describe("ProposalNavigateService", () => {
+  beforeEach(() =>
+    TestBed.configureTestingModule({
+      providers: [
+        { provide: Router, useClass: RouterStub },
+        RouterTestingModule,
+      ],
+    })
+  );
+
+  it("should be created", () => {
+    const service: ProposalNavigateService = TestBed.get(
+      ProposalNavigateService
+    );
     expect(service).toBeTruthy();
   });
 });

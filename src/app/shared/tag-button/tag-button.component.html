@@ -1,10 +1,10 @@
 <button
   mat-button
   cdkDrag
-  [color]="tag.color"
-  [class.red]="isRed()"
-  [class.teal]="isTeal()"
+  [style.color]="tag?.tagColor"
+  [class.red]="tag ? isRed() : ''"
+  [class.teal]="tag ? isTeal() : ''"
   [class.selected]="selected"
 >
-  {{ tag.title.toUpperCase() }}
+  {{ tag?.title.toUpperCase() }}
 </button>

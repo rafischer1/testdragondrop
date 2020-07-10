@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { FormControl } from "@angular/forms";
+import { FormControl, FormGroup } from "@angular/forms";
 import { Router } from "@angular/router";
 
 @Component({
@@ -17,6 +17,9 @@ export class ProposalLoginComponent implements OnInit {
   confirmPassword = new FormControl("");
   hide = true;
   hideConfirm = true;
+  myForm = new FormGroup({
+    test: new FormControl(),
+  });
 
   ngOnInit() {
     this.passwordVerified = false;

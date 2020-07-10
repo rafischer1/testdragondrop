@@ -2,6 +2,10 @@ import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
 import { WizardComponent } from "./wizard.component";
 import { WizardStateStore } from "../state/wizard-state.store";
+import { Router } from "@angular/router";
+import { RouterTestingModule } from "@angular/router/testing";
+import { RouterStub } from "../../proposal/proposal-navigate.service.spec";
+import { WizardService } from "../state/wizard.service";
 
 describe("WizardComponent", () => {
   let component: WizardComponent;
@@ -10,7 +14,12 @@ describe("WizardComponent", () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [WizardComponent],
-      providers: [WizardStateStore],
+      providers: [
+        WizardStateStore,
+        { provide: Router, useClass: RouterStub },
+        RouterTestingModule,
+        WizardService,
+      ],
     }).compileComponents();
   }));
 

@@ -1,6 +1,6 @@
 <div class="rates-container">
   <app-nav-button [type]="'prev'" (navEmit)="nav($event)"></app-nav-button>
-  <p>{{ company.name }} Client Rates Breakdown</p>
+  <p>{{ company?.name }} Client Rates Breakdown</p>
 
   <div class="logout-button">
     <app-snack-button
@@ -9,7 +9,7 @@
       [action]="'Logging Out 🎂'"
       [verticalPosition]="'bottom'"
       [horizontalPosition]="'left'"
-      [color]="'accent'"
+      [matColor]="'accent'"
       [type]="'LOG OUT'"
       (click)="nav('logout')"
     ></app-snack-button>

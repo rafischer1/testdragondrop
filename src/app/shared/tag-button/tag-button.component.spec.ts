@@ -1,16 +1,17 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
+import { TagButtonComponent } from "./tag-button.component";
+import {MatSnackBar, MatSnackBarModule} from "@angular/material";
 
-import { TagButtonComponent } from './tag-button.component';
-
-describe('TagButtonComponent', () => {
+describe("TagButtonComponent", () => {
   let component: TagButtonComponent;
   let fixture: ComponentFixture<TagButtonComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TagButtonComponent ]
-    })
-    .compileComponents();
+      imports: [],
+      declarations: [TagButtonComponent],
+      providers: [MatSnackBarModule],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +20,7 @@ describe('TagButtonComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

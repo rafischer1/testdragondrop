@@ -1,7 +1,7 @@
 <div class="overview-container">
   <app-nav-button [type]="'next'" (navEmit)="nav($event)"></app-nav-button>
   <div class="overview-body">
-    <p>{{ company.name }} is a cool company!</p>
+    <p>{{ company?.name }} is a cool company!</p>
   </div>
   <div class="logout-button">
     <app-snack-button
@@ -10,7 +10,7 @@
       [action]="'Logging Out 🎂'"
       [verticalPosition]="'bottom'"
       [horizontalPosition]="'left'"
-      [color]="'accent'"
+      [matColor]="'accent'"
       [type]="'LOG OUT'"
       (click)="nav('logout')"
     ></app-snack-button>

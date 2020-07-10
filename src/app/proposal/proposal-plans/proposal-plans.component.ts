@@ -33,9 +33,9 @@ export class ProposalPlansComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.route.queryParams.subscribe((params) => {
+    this.route.queryParams ? this.route.queryParams.subscribe((params) => {
       this.companyID = params.selected;
-    });
+    }) : this.companyID = 0;
     this.company = this.companiesService.get(this.companyID);
     this.list = this.plansService.getThree();
   }

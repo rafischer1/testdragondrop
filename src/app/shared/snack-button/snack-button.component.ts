@@ -3,6 +3,7 @@ import {
   MatSnackBar,
   MatSnackBarHorizontalPosition,
   MatSnackBarVerticalPosition,
+  ThemePalette,
 } from "@angular/material";
 
 @Component({
@@ -14,7 +15,7 @@ export class SnackButtonComponent implements OnInit {
   @Input() message: string;
   @Input() action: string;
   @Input() type: string;
-  @Input() color: string;
+  @Input() matColor: ThemePalette;
   @Input() horizontalPosition: MatSnackBarHorizontalPosition;
   @Input() verticalPosition: MatSnackBarVerticalPosition;
   @Input() disabled: boolean;
