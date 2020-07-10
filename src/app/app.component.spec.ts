@@ -1,5 +1,4 @@
 import { TestBed, async } from "@angular/core/testing";
-import { RouterTestingModule } from "@angular/router/testing";
 import { AppComponent } from "./app.component";
 import { BrowserModule } from "@angular/platform-browser";
 import { AppRoutingModule } from "./app-routing.module";
@@ -13,15 +12,17 @@ import {
   MatChipsModule,
   MatFormFieldModule,
   MatGridListModule,
-  MatIconModule, MatInputModule,
+  MatIconModule,
+  MatInputModule,
   MatListModule,
   MatMenuModule,
-  MatRippleModule, MatSelectModule,
+  MatRippleModule,
+  MatSelectModule,
   MatSidenavModule,
   MatSnackBarModule,
   MatStepperModule,
 } from "@angular/material";
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { ListComponent } from "./list/list.component";
 import { SnackButtonComponent } from "./shared/snack-button/snack-button.component";
 import { CardComponent } from "./list/card/card.component";
@@ -31,20 +32,21 @@ import { CursorButtonComponent } from "./cursors/cursor-button/cursor-button.com
 import { CanvasComponent } from "./cursors/canvas/canvas.component";
 import { WizardContainerComponent } from "./wizard/wizard-container/wizard-container.component";
 import { WizardComponent } from "./wizard/wizard/wizard.component";
-import {WizardStateStore} from "./wizard/state/wizard-state.store";
-import {HttpClientModule} from "@angular/common/http";
-import {ProposalLoginComponent} from "./proposal/proposal-login/proposal-login.component";
-import {ProposalViewComponent} from "./proposal/proposal-view/proposal-view.component";
-import {ProposalPlansComponent} from "./proposal/proposal-plans/proposal-plans.component";
-import {ProposalRatesComponent} from "./proposal/proposal-rates/proposal-rates.component";
-import {NavButtonComponent} from "./shared/nav-button/nav-button.component";
-import {ProposalOverviewComponent} from "./proposal/proposal-overview/proposal-overview.component";
-import {PeoViewComponent} from "./peo-view/peo-view.component";
-import {CircleButtonComponent} from "./shared/circle-button/circle-button.component";
-import {TagButtonComponent} from "./shared/tag-button/tag-button.component";
-import {PromptContainerComponent} from "./services/prompt-service/prompt-container.component";
-import {PromptComponent} from "./services/prompt-service/prompt/prompt.component";
-import {CUSTOM_ELEMENTS_SCHEMA} from "@angular/core";
+import { WizardStateStore } from "./wizard/state/wizard-state.store";
+import { HttpClientModule } from "@angular/common/http";
+import { ProposalLoginComponent } from "./proposal/proposal-login/proposal-login.component";
+import { ProposalViewComponent } from "./proposal/proposal-view/proposal-view.component";
+import { ProposalPlansComponent } from "./proposal/proposal-plans/proposal-plans.component";
+import { ProposalRatesComponent } from "./proposal/proposal-rates/proposal-rates.component";
+import { NavButtonComponent } from "./shared/nav-button/nav-button.component";
+import { ProposalOverviewComponent } from "./proposal/proposal-overview/proposal-overview.component";
+import { PeoViewComponent } from "./peo-view/peo-view.component";
+import { CircleButtonComponent } from "./shared/circle-button/circle-button.component";
+import { TagButtonComponent } from "./shared/tag-button/tag-button.component";
+import { PromptContainerComponent } from "./services/prompt-service/prompt-container.component";
+import { PromptComponent } from "./services/prompt-service/prompt/prompt.component";
+import { CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
+import {RouterOutlet} from "@angular/router";
 
 describe("AppComponent", () => {
   beforeEach(async(() => {
@@ -70,9 +72,10 @@ describe("AppComponent", () => {
         MatSidenavModule,
         MatButtonToggleModule,
         MatStepperModule,
-        ReactiveFormsModule,
         MatSelectModule,
         MatInputModule,
+        ReactiveFormsModule,
+        FormsModule,
       ],
       declarations: [
         AppComponent,
@@ -107,5 +110,4 @@ describe("AppComponent", () => {
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   });
-
 });

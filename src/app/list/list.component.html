@@ -11,12 +11,7 @@
         (cdkDropListDropped)="drop($event)"
         [class.empty]="list.length === 0"
       >
-        <div
-          class="list item"
-          *ngFor="let item of list"
-          cdkDrag
-          color="primary"
-        >
+        <div class="list item" *ngFor="let item of list" cdkDrag>
           <p
             mat-ripple
             [matRippleColor]="'rgba(209, 209, 209, 0.45)'"
@@ -51,7 +46,7 @@
         [type]="'PDF'"
         [action]="'🎣'"
         [message]="'Downloading PDF'"
-        [color]="'accent'"
+        [matColor]="'accent'"
         [verticalPosition]="'top'"
         [horizontalPosition]="'center'"
         (click)="toPdf()"
@@ -60,7 +55,7 @@
         [type]="'Reset List'"
         [action]="'🎛'"
         [message]="'Lists Reset'"
-        [color]="'warn'"
+        [matColor]="'warn'"
         [verticalPosition]="'top'"
         [horizontalPosition]="'center'"
         (click)="reset()"
@@ -71,7 +66,7 @@
         [message]="'Saved'"
         [verticalPosition]="'top'"
         [horizontalPosition]="'center'"
-        [color]="'primary'"
+        [matColor]="'primary'"
         (click)="saveList()"
       ></app-snack-button>
     </div>

@@ -50,6 +50,8 @@ import { CircleButtonComponent } from "./shared/circle-button/circle-button.comp
 import { TagButtonComponent } from "./shared/tag-button/tag-button.component";
 import { PromptContainerComponent } from "./services/prompt-service/prompt-container.component";
 import { PromptComponent } from "./services/prompt-service/prompt/prompt.component";
+import { RouterModule } from "@angular/router";
+import {NumericColorInputDirective} from "@angular-material-components/color-picker";
 
 @NgModule({
   declarations: [
@@ -79,13 +81,15 @@ import { PromptComponent } from "./services/prompt-service/prompt/prompt.compone
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    RouterModule,
     BrowserAnimationsModule,
     DragDropModule,
     CdkStepperModule,
     MatButtonModule,
     MatSnackBarModule,
     MatFormFieldModule,
-    FormsModule,
     MatCardModule,
     MatChipsModule,
     MatIconModule,
@@ -96,10 +100,8 @@ import { PromptComponent } from "./services/prompt-service/prompt/prompt.compone
     MatSidenavModule,
     MatButtonToggleModule,
     MatStepperModule,
-    ReactiveFormsModule,
     MatSelectModule,
     MatInputModule,
-    ReactiveFormsModule,
   ],
   providers: [
     WizardStateStore,

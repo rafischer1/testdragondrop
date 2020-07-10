@@ -1,6 +1,7 @@
 <button
+  mat-button
   mat-raised-button
-  color="{{ color }}"
+  [color]="matColor"
   [disabled]="disabled"
   (click)="openSnackBar()"
 >

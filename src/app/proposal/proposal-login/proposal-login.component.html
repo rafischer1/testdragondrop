@@ -11,7 +11,7 @@
         Proposal Portal
       </h3>
     </div>
-    <form>
+    <form [formGroup]="myForm">
       <label for="email">
         <input
           id="email"
@@ -53,7 +53,7 @@
           [type]="'Sign In'"
           [action]="'Signed In'"
           [message]="getEmail()"
-          [color]="'primary'"
+          [matColor]="'primary'"
           [verticalPosition]="'top'"
           [horizontalPosition]="'center'"
           [disabled]="signInDisabled"

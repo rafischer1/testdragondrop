@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 import { PromptComponent } from "./prompt.component";
-import {CUSTOM_ELEMENTS_SCHEMA} from "@angular/core";
+import { CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
+import { FormsModule } from "@angular/forms";
 
 describe("Prompt Component", () => {
   let component: PromptComponent;
@@ -10,6 +11,7 @@ describe("Prompt Component", () => {
     TestBed.configureTestingModule({
       declarations: [PromptComponent],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
+      imports: [FormsModule],
     }).compileComponents();
   }));
 
