@@ -32,7 +32,7 @@ export class PeoViewComponent implements OnInit {
       title: "",
       background: "",
       id: 0,
-      color: "primary",
+      tagColor: "primary",
     };
   }
 
@@ -50,7 +50,7 @@ export class PeoViewComponent implements OnInit {
             {
               title: this.tagPayload.title,
               background: this.tagPayload.background,
-              color: "primary",
+              tagColor: "primary",
             },
             this.tags
           );
@@ -95,7 +95,7 @@ export class PeoViewComponent implements OnInit {
       title: "",
       background: "",
       id: 0,
-      color: "primary",
+      tagColor: "primary",
     });
   }
 

@@ -1,7 +1,6 @@
 import { async, ComponentFixture, TestBed } from "@angular/core/testing";
-
 import { TagButtonComponent } from "./tag-button.component";
-import { MatButton } from "@angular/material";
+import {MatSnackBar, MatSnackBarModule} from "@angular/material";
 
 describe("TagButtonComponent", () => {
   let component: TagButtonComponent;
@@ -10,7 +9,8 @@ describe("TagButtonComponent", () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [],
-      declarations: [TagButtonComponent, MatButton],
+      declarations: [TagButtonComponent],
+      providers: [MatSnackBarModule],
     }).compileComponents();
   }));
 

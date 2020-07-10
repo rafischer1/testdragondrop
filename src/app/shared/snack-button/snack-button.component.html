@@ -1,9 +1,27 @@
-<button
-  mat-button
+<button *ngIf="matColor === 'primary'"
   mat-raised-button
-  [color]="matColor"
+  color="primary"
   [disabled]="disabled"
   (click)="openSnackBar()"
 >
   {{ type }}
 </button>
+
+<button *ngIf="matColor === 'accent'"
+        mat-raised-button
+        color="accent"
+        [disabled]="disabled"
+        (click)="openSnackBar()"
+>
+  {{ type }}
+</button>
+
+<button *ngIf="matColor === 'warn'"
+        mat-raised-button
+        color="warn"
+        [disabled]="disabled"
+        (click)="openSnackBar()"
+>
+  {{ type }}
+</button>
+

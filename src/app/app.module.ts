@@ -24,11 +24,12 @@ import {
   MatRippleModule,
   MatSelectModule,
   MatSidenavModule,
+  MatSnackBar,
   MatSnackBarModule,
   MatStepperModule,
 } from "@angular/material";
 import { SnackButtonComponent } from "./shared/snack-button/snack-button.component";
-import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { FormControl, FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { CardComponent } from "./list/card/card.component";
 import { ResizerComponent } from "./resizer/resizer.component";
 import { CursorsComponent } from "./cursors/cursors.component";
@@ -51,7 +52,9 @@ import { TagButtonComponent } from "./shared/tag-button/tag-button.component";
 import { PromptContainerComponent } from "./services/prompt-service/prompt-container.component";
 import { PromptComponent } from "./services/prompt-service/prompt/prompt.component";
 import { RouterModule } from "@angular/router";
-import {NumericColorInputDirective} from "@angular-material-components/color-picker";
+import { NumericColorInputDirective } from "@angular-material-components/color-picker";
+import { Overlay } from "@angular/cdk/typings/overlay";
+import { OVERLAY_PROVIDERS, OverlayModule } from "@angular/cdk/overlay";
 
 @NgModule({
   declarations: [
@@ -87,8 +90,8 @@ import {NumericColorInputDirective} from "@angular-material-components/color-pic
     BrowserAnimationsModule,
     DragDropModule,
     CdkStepperModule,
-    MatButtonModule,
     MatSnackBarModule,
+    MatRippleModule,
     MatFormFieldModule,
     MatCardModule,
     MatChipsModule,
@@ -96,15 +99,18 @@ import {NumericColorInputDirective} from "@angular-material-components/color-pic
     MatMenuModule,
     MatGridListModule,
     MatListModule,
-    MatRippleModule,
     MatSidenavModule,
+    MatButtonModule,
     MatButtonToggleModule,
     MatStepperModule,
     MatSelectModule,
     MatInputModule,
+    OverlayModule,
   ],
   providers: [
     WizardStateStore,
+    MatSnackBar,
+    Overlay,
     {
       provide: NG_ENTITY_SERVICE_CONFIG,
       useValue: { baseUrl: "https://jsonplaceholder.typicode.com" },

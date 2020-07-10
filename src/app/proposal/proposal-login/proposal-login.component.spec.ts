@@ -2,8 +2,10 @@ import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
 import { ProposalLoginComponent } from "./proposal-login.component";
 import { ReactiveFormsModule } from "@angular/forms";
-import {MatIcon} from "@angular/material";
-import {SnackButtonComponent} from "../../shared/snack-button/snack-button.component";
+import { MatIcon } from "@angular/material";
+import { SnackButtonComponent } from "../../shared/snack-button/snack-button.component";
+import { Router } from "@angular/router";
+import { RouterStub } from "../proposal-navigate.service.spec";
 
 describe("ProposalLoginComponent", () => {
   let component: ProposalLoginComponent;
@@ -13,6 +15,7 @@ describe("ProposalLoginComponent", () => {
     TestBed.configureTestingModule({
       declarations: [ProposalLoginComponent, MatIcon, SnackButtonComponent],
       imports: [ReactiveFormsModule],
+      providers: [{ provide: Router, useClass: RouterStub }],
     }).compileComponents();
   }));
 

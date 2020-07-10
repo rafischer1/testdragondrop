@@ -5,7 +5,7 @@ export interface Tag {
   id: number;
   title: string;
   background: string;
-  color: ThemePalette;
+  tagColor: ThemePalette;
 }
 
 @Component({

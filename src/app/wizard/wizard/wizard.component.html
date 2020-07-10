@@ -1,19 +1,19 @@
 <div class="wizard-container">
   <div class="header">
-    <h4>Stage: {{ wizard.order }}</h4>
+    <h4>Stage: {{ wizard?.order }}</h4>
   </div>
 
-  <div class="tasks" *ngFor="let task of wizard.tasks">
+  <div class="tasks" *ngFor="let task of wizard?.tasks">
     <div>{{ task.order }}:</div>
     <div class="description">{{ task.description }}</div>
   </div>
 
   <div class="buttons">
     <button
-      *ngIf="wizard.navFrom !== ''"
+      *ngIf="wizard?.navFrom !== ''"
       mat-raised-button
       color="primary"
-      (click)="nav(wizard.navFrom, wizard.order - 1)"
+      (click)="nav(wizard?.navFrom, wizard?.order - 1)"
     >
       Prev
     </button>
@@ -22,10 +22,10 @@
       Reset
     </button>
     <button
-      *ngIf="wizard.navTo !== ''"
+      *ngIf="wizard?.navTo !== ''"
       mat-raised-button
       color="primary"
-      (click)="nav(wizard.navTo, wizard.order + 1)"
+      (click)="nav(wizard?.navTo, wizard?.order + 1)"
     >
       Next
     </button>

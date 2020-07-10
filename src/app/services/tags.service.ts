@@ -7,11 +7,11 @@ import { Observable } from "rxjs";
 })
 export class TagsService {
   tags: Tag[] = [
-    { id: 1, title: "Anthem", background: "teal", color: "primary" },
-    { id: 2, title: "Dental", background: "primary", color: "primary" },
-    { id: 3, title: "Aetna", background: "teal", color: "primary" },
-    { id: 4, title: "health", background: "primary", color: "primary" },
-    { id: 5, title: "peo", background: "red", color: "primary" },
+    { id: 1, title: "Anthem", background: "teal", tagColor: "primary" },
+    { id: 2, title: "Dental", background: "primary", tagColor: "primary" },
+    { id: 3, title: "Aetna", background: "teal", tagColor: "primary" },
+    { id: 4, title: "health", background: "primary", tagColor: "primary" },
+    { id: 5, title: "peo", background: "red", tagColor: "primary" },
   ];
   constructor() {}
 
@@ -22,7 +22,7 @@ export class TagsService {
   add(tag: Partial<Tag>, tagArr: Tag[]) {
     this.tags.push({
       title: tag.title,
-      color: tag.color,
+      tagColor: tag.tagColor,
       background: tag.background,
       id: Math.floor(Math.random() * 100) + 10,
     });

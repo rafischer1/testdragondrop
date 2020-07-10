@@ -1,14 +1,14 @@
 <mat-card class="example-card">
   <mat-card-header>
-    <mat-card-title>{{ plan.name }}</mat-card-title>
+    <mat-card-title>{{ plan?.name }}</mat-card-title>
   </mat-card-header>
   <mat-card-content>
-    <p>Renewal: {{ plan.renewalDate }}</p>
+    <p>Renewal: {{ plan?.renewalDate }}</p>
     <div class="rates">
-      <p>EE: ${{ plan.rates.ee }}</p>
-      <p>ES: ${{ plan.rates.es }}</p>
-      <p>EC: ${{ plan.rates.ec }}</p>
-      <p>FAM: ${{ plan.rates.fam }}</p>
+      <p>EE: ${{ plan?.rates.ee }}</p>
+      <p>ES: ${{ plan?.rates.es }}</p>
+      <p>EC: ${{ plan?.rates.ec }}</p>
+      <p>FAM: ${{ plan?.rates.fam }}</p>
     </div>
   </mat-card-content>
   <mat-card-actions>
