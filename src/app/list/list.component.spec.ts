@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
 import { ListComponent } from "./list.component";
-import {MatCardModule, MatList, MatRipple, MatSnackBar} from "@angular/material";
+import {MatCardModule, MatList, MatRipple, MatRippleModule, MatSnackBar, MatSnackBarModule} from "@angular/material";
 import { CdkDropList } from "@angular/cdk/drag-drop";
 import { CardComponent } from "./card/card.component";
 import { addProviderToModule } from "@datorama/akita/schematics/ng-add/utils";
@@ -17,13 +17,12 @@ describe("ListComponent", () => {
       declarations: [
         ListComponent,
         CdkDropList,
-        MatRipple,
         CardComponent,
         MatList,
         SnackButtonComponent
       ],
-      imports: [MatCardModule],
-      providers: [MatSnackBar]
+      imports: [MatCardModule, MatSnackBarModule, MatRippleModule],
+      providers: []
     }).compileComponents();
   }));
 

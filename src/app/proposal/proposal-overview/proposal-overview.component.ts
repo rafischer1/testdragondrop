@@ -19,10 +19,10 @@ export class ProposalOverviewComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.route.queryParams.subscribe((params) => {
+    this.route.queryParams ? this.route.queryParams.subscribe((params) => {
       this.companyID = params.selected;
       this.company = this.companiesService.get(this.companyID);
-    });
+    }) : this.companyID = 0;
   }
 
   nav(type: string) {

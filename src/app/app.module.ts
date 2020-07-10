@@ -55,6 +55,7 @@ import { RouterModule } from "@angular/router";
 import { NumericColorInputDirective } from "@angular-material-components/color-picker";
 import { Overlay } from "@angular/cdk/typings/overlay";
 import { OVERLAY_PROVIDERS, OverlayModule } from "@angular/cdk/overlay";
+import {BrowserDynamicTestingModule} from "@angular/platform-browser-dynamic/testing";
 
 @NgModule({
   declarations: [
@@ -83,6 +84,7 @@ import { OVERLAY_PROVIDERS, OverlayModule } from "@angular/cdk/overlay";
   imports: [
     BrowserModule,
     HttpClientModule,
+    BrowserDynamicTestingModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,

@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from "@angular/core/testing";
-
 import { ProposalPlansComponent } from "./proposal-plans.component";
 import { NavButtonComponent } from "../../shared/nav-button/nav-button.component";
 import { CardComponent } from "../../list/card/card.component";
@@ -18,6 +17,7 @@ import {
   MatSnackBarModule,
 } from "@angular/material";
 
+
 export const fakeActivatedRoute = {
   snapshot: { data: {} },
 } as ActivatedRoute;
@@ -27,6 +27,7 @@ describe("ProposalPlansComponent", () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [MatSnackBarModule],
       declarations: [
         ProposalPlansComponent,
         NavButtonComponent,

@@ -17,7 +17,9 @@ export class ProposalLoginComponent implements OnInit {
   confirmPassword = new FormControl("");
   hide = true;
   hideConfirm = true;
-  myForm: FormGroup;
+  myForm = new FormGroup({
+    test: new FormControl(),
+  });
 
   ngOnInit() {
     this.passwordVerified = false;
