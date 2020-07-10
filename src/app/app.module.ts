@@ -1,8 +1,4 @@
-import {
-  BrowserModule,
-  HAMMER_GESTURE_CONFIG,
-  HammerGestureConfig,
-} from "@angular/platform-browser";
+import { BrowserModule } from "@angular/platform-browser";
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from "@angular/core";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -52,10 +48,8 @@ import { TagButtonComponent } from "./shared/tag-button/tag-button.component";
 import { PromptContainerComponent } from "./services/prompt-service/prompt-container.component";
 import { PromptComponent } from "./services/prompt-service/prompt/prompt.component";
 import { RouterModule } from "@angular/router";
-import { NumericColorInputDirective } from "@angular-material-components/color-picker";
-import { Overlay } from "@angular/cdk/typings/overlay";
-import { OVERLAY_PROVIDERS, OverlayModule } from "@angular/cdk/overlay";
-import {BrowserDynamicTestingModule} from "@angular/platform-browser-dynamic/testing";
+import { BrowserDynamicTestingModule } from "@angular/platform-browser-dynamic/testing";
+import {Overlay} from "@angular/cdk/overlay";
 
 @NgModule({
   declarations: [
@@ -107,7 +101,6 @@ import {BrowserDynamicTestingModule} from "@angular/platform-browser-dynamic/tes
     MatStepperModule,
     MatSelectModule,
     MatInputModule,
-    OverlayModule,
   ],
   providers: [
     WizardStateStore,
