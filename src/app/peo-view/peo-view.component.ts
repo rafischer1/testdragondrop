@@ -19,6 +19,7 @@ export class PeoViewComponent implements OnInit {
   tagPayload: TagOptionPayload;
   brandColors = ["#BA19A2", "#49BFA2", "#BBD64B"];
   chosenColor: string;
+  colorToDelete: string;
 
   constructor(
     private tagsService: TagsService,
@@ -34,6 +35,7 @@ export class PeoViewComponent implements OnInit {
       id: 0,
       tagColor: "primary",
     };
+    this.colorToDelete = "";
   }
 
   addTag() {
@@ -107,5 +109,16 @@ export class PeoViewComponent implements OnInit {
 
   addServiceOrBenefit() {
     alert("ADD SERVICE OR BENEFIT CLICKED 🥎");
+  }
+
+  deleteColor() {
+    this.brandColors = this.brandColors.filter(
+      (color) => color !== this.colorToDelete
+    );
+    this.colorToDelete = "";
+  }
+
+  selectColorToDelete(color: string) {
+    this.colorToDelete = color;
   }
 }

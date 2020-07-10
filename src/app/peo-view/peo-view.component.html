@@ -95,6 +95,13 @@
         <div class="section-header">
           PEO BRAND COLORS
           <app-circle-button
+            *ngIf="colorToDelete !== ''"
+            (click)="deleteColor()"
+            [matIcon]="'delete'"
+            [size]="'small'"
+            [color]="'accent'"
+          ></app-circle-button>
+          <app-circle-button
             (click)="addColor()"
             [matIcon]="'add'"
             [size]="'small'"
@@ -102,7 +109,11 @@
           ></app-circle-button>
         </div>
         <div class="section-body dark" *ngFor="let color of brandColors">
-          <div class="brand-color">
+          <div
+            class="brand-color"
+            (click)="selectColorToDelete(color)"
+            [class.selected-color-to-delete]="colorToDelete === color"
+          >
             <div
               class="brand-color-square one"
               [style.background]="color"

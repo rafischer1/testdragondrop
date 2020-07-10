@@ -129,3 +129,8 @@
   color: #ba19a2;
   background-color: #333333;
 }
+
+.selected-color-to-delete {
+  background: #c2c2c2;
+  color: white;
+}

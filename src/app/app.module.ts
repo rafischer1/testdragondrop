@@ -25,7 +25,7 @@ import {
   MatStepperModule,
 } from "@angular/material";
 import { SnackButtonComponent } from "./shared/snack-button/snack-button.component";
-import { FormControl, FormsModule, ReactiveFormsModule } from "@angular/forms";
+import {  FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { CardComponent } from "./list/card/card.component";
 import { ResizerComponent } from "./resizer/resizer.component";
 import { CursorsComponent } from "./cursors/cursors.component";
@@ -49,7 +49,6 @@ import { PromptContainerComponent } from "./services/prompt-service/prompt-conta
 import { PromptComponent } from "./services/prompt-service/prompt/prompt.component";
 import { RouterModule } from "@angular/router";
 import { BrowserDynamicTestingModule } from "@angular/platform-browser-dynamic/testing";
-import {Overlay} from "@angular/cdk/overlay";
 
 @NgModule({
   declarations: [
@@ -78,7 +77,6 @@ import {Overlay} from "@angular/cdk/overlay";
   imports: [
     BrowserModule,
     HttpClientModule,
-    BrowserDynamicTestingModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
@@ -105,7 +103,6 @@ import {Overlay} from "@angular/cdk/overlay";
   providers: [
     WizardStateStore,
     MatSnackBar,
-    Overlay,
     {
       provide: NG_ENTITY_SERVICE_CONFIG,
       useValue: { baseUrl: "https://jsonplaceholder.typicode.com" },
