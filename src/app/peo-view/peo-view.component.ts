@@ -119,4 +119,8 @@ export class PeoViewComponent implements OnInit {
   selectColorToDelete(color: string) {
     this.colorToDelete = color;
   }
+
+  peoBrandImageUpload() {
+    alert("BRAND IMAGE UPLOAD CLICKED 🏝")
+  }
 }

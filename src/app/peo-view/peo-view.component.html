@@ -15,7 +15,13 @@
         <div class="section-body">
           <div class="plans" *ngFor="let plan of plans">
             <div class="checkbox">
-              <mat-icon>check_box</mat-icon> Plan {{ plan }}
+              <label>
+                <mat-checkbox
+                  [color]="'accent'"
+                  class="checkbox"
+                ></mat-checkbox>
+              </label>
+              Plan {{ plan }}
             </div>
 
             <button mat-button [color]="'accent'">VIEW PLAN</button>
@@ -134,6 +140,7 @@
               [matIcon]="'publish'"
               [size]="'large'"
               [color]="'accent'"
+              (click)="peoBrandImageUpload()"
             ></app-circle-button>
           </div>
           <div class="upload">
@@ -141,6 +148,7 @@
               [matIcon]="'publish'"
               [size]="'large'"
               [color]="'accent'"
+              (click)="peoBrandImageUpload()"
             ></app-circle-button>
           </div>
           <div class="upload">
@@ -148,6 +156,7 @@
               [matIcon]="'publish'"
               [size]="'large'"
               [color]="'accent'"
+              (click)="peoBrandImageUpload()"
             ></app-circle-button>
           </div>
         </div>
