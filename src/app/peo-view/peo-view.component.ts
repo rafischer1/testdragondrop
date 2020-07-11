@@ -29,14 +29,17 @@ export class PeoViewComponent implements OnInit {
 
   ngOnInit() {
     this.tags = this.tagsService.getAll();
-    this.selectedTag = {
+    this.resetSelectedTag();
+    this.colorToDelete = "";
+  }
+
+  resetSelectedTag = () =>
+    (this.selectedTag = {
       title: "",
       background: "",
       id: 0,
       tagColor: "primary",
-    };
-    this.colorToDelete = "";
-  }
+    });
 
   addTag() {
     this.promptService.showPrompt("tag", "CREATE TAG", "", "SAVE TAG", "CLOSE");
@@ -93,12 +96,7 @@ export class PeoViewComponent implements OnInit {
 
   deleteTag() {
     this.tags = this.tagsService.remove(this.selectedTag);
-    return (this.selectedTag = {
-      title: "",
-      background: "",
-      id: 0,
-      tagColor: "primary",
-    });
+    return this.resetSelectedTag();
   }
 
   selectTag = (tag: Tag) => (this.selectedTag = tag);

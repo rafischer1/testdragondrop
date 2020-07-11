@@ -134,3 +134,12 @@
   background: #c2c2c2;
   color: white;
 }
+
+.delete-add-buttons {
+  display: flex;
+  margin: auto 2%;
+}
+
+.delete-add-buttons > .delete-add-button {
+  margin: 0 2%;
+}

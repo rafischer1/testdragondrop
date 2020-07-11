@@ -94,19 +94,23 @@
       <div class="section right">
         <div class="section-header">
           PEO BRAND COLORS
-          <app-circle-button
-            *ngIf="colorToDelete !== ''"
-            (click)="deleteColor()"
-            [matIcon]="'delete'"
-            [size]="'small'"
-            [color]="'accent'"
-          ></app-circle-button>
-          <app-circle-button
-            (click)="addColor()"
-            [matIcon]="'add'"
-            [size]="'small'"
-            [color]="'accent'"
-          ></app-circle-button>
+          <div class="delete-add-buttons">
+            <app-circle-button
+              class="delete-add-button"
+              *ngIf="colorToDelete !== ''"
+              (click)="deleteColor()"
+              [matIcon]="'delete'"
+              [size]="'small'"
+              [color]="'accent'"
+            ></app-circle-button>
+            <app-circle-button
+              class="delete-add-button"
+              (click)="addColor()"
+              [matIcon]="'add'"
+              [size]="'small'"
+              [color]="'accent'"
+            ></app-circle-button>
+          </div>
         </div>
         <div class="section-body dark" *ngFor="let color of brandColors">
           <div
@@ -151,12 +155,23 @@
       <div class="section right">
         <div class="section-header">
           TAGS
-          <app-circle-button
-            (click)="addTag()"
-            [matIcon]="'add'"
-            [size]="'small'"
-            [color]="'accent'"
-          ></app-circle-button>
+          <div class="delete-add-buttons">
+            <app-circle-button
+              class="delete-add-button"
+              *ngIf="selectedTag?.title !== ''"
+              (click)="deleteTag()"
+              [matIcon]="'delete'"
+              [size]="'small'"
+              [color]="'accent'"
+            ></app-circle-button>
+            <app-circle-button
+              class="delete-add-button"
+              (click)="addTag()"
+              [matIcon]="'add'"
+              [size]="'small'"
+              [color]="'accent'"
+            ></app-circle-button>
+          </div>
         </div>
         <div class="section-body tags">
           <div *ngFor="let tag of tags">
@@ -166,16 +181,6 @@
               [selected]="selectedTag ? selectedTag.id === tag.id : false"
             ></app-tag-button>
           </div>
-          <button
-            *ngIf="this.tags.length > 0"
-            mat-stroked-button
-            color="accent"
-            class="trash-btn"
-            [class.trash-selected]="this.selectedTag.title !== ''"
-            (click)="deleteTag()"
-          >
-            <mat-icon>delete</mat-icon>
-          </button>
         </div>
       </div>
     </div>
