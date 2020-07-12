@@ -1,0 +1,45 @@
+.section {
+  border: 1px solid #333333;
+  margin: 2% 0;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.right {
+  width: 80%;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #333333;
+  color: white;
+  padding: 2%;
+}
+
+.section-body {
+  display: flex;
+  background: #f4f4f4;
+  flex-direction: column;
+  padding-bottom: 5%;
+  max-height: 400px;
+  overflow-y: scroll;
+}
+
+.plans {
+  padding: 5%;
+}
+
+.anthem-button {
+  background: #49bfa2 !important;
+  color: white !important;
+}
+
+.tag-color {
+  color: white !important;
+}
+
+.teal {
+  background-color: #49bfa2 !important;
+  border: 1px solid #49bfa2;
+}

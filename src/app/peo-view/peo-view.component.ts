@@ -20,6 +20,18 @@ export class PeoViewComponent implements OnInit {
   brandColors = ["#BA19A2", "#49BFA2", "#BBD64B"];
   chosenColor: string;
   colorToDelete: string;
+  anthemTag: Tag = {
+    title: "ANTHEM",
+    tagColor: "primary",
+    background: "teal",
+    id: 1,
+  };
+  dentalTag: Tag = {
+    title: "DENTAL",
+    tagColor: "primary",
+    background: "primary",
+    id: 2,
+  };
 
   constructor(
     private tagsService: TagsService,
@@ -121,6 +133,9 @@ export class PeoViewComponent implements OnInit {
   }
 
   peoBrandImageUpload() {
-    alert("BRAND IMAGE UPLOAD CLICKED 🏝")
+    alert("BRAND IMAGE UPLOAD CLICKED 🏝");
   }
+
+  planEmitFromSection = (ev: any) =>
+    alert("Plan Emitted: " + ev.plan + " section: " + ev.section);
 }

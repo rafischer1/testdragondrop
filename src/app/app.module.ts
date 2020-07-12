@@ -49,6 +49,7 @@ import { PromptContainerComponent } from "./services/prompt-service/prompt-conta
 import { PromptComponent } from "./services/prompt-service/prompt/prompt.component";
 import { RouterModule } from "@angular/router";
 import { BrowserDynamicTestingModule } from "@angular/platform-browser-dynamic/testing";
+import { PeoSectionComponent } from './peo-view/peo-section/peo-section.component';
 
 @NgModule({
   declarations: [
@@ -73,6 +74,7 @@ import { BrowserDynamicTestingModule } from "@angular/platform-browser-dynamic/t
     TagButtonComponent,
     PromptContainerComponent,
     PromptComponent,
+    PeoSectionComponent,
   ],
     imports: [
         BrowserModule,

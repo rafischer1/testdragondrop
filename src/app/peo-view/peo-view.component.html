@@ -1,100 +1,44 @@
 <div class="container">
   <div class="flex-grid">
     <div class="col">
-      <div class="section">
-        <div class="section-header">
-          HEALTH BENEFITS
-          <button
-            mat-raised-button
-            color="primary"
-            class="anthem-button button-color"
-          >
-            ANTHEM
-          </button>
-        </div>
-        <div class="section-body">
-          <div class="plans" *ngFor="let plan of plans">
-            <div class="checkbox">
-              <label>
-                <mat-checkbox
-                  [color]="'accent'"
-                  class="checkbox"
-                ></mat-checkbox>
-              </label>
-              Plan {{ plan }}
-            </div>
-
-            <button mat-button [color]="'accent'">VIEW PLAN</button>
-          </div>
-        </div>
-      </div>
-      <div class="section">
-        <div class="section-header teal">VISION BENEFITS</div>
-        <div class="section-body">
-          <div class="plans" *ngFor="let plan of plans">
-            <div class="checkbox">
-              <mat-icon>check_box</mat-icon> Plan {{ plan }}
-            </div>
-
-            <button mat-button [color]="'accent'">VIEW PLAN</button>
-          </div>
-        </div>
-      </div>
-      <div class="section">
-        <div class="section-header teal">
-          ADDITIONAL BENEFIT
-          <app-circle-button
-            [matIcon]="'add'"
-            [size]="'small'"
-            [color]="'accent'"
-            (click)="benefitAction()"
-          ></app-circle-button>
-        </div>
-        <div class="section-body"></div>
-      </div>
+      <app-peo-section
+        [plans]="plans"
+        [title]="'HEALTH BENEFITS'"
+        [tag]="anthemTag"
+        (planEmitter)="planEmitFromSection($event)"
+      ></app-peo-section>
+      <app-peo-section
+        [title]="'VISION BENEFITS'"
+        [plans]="plans"
+        [headerColor]="'teal'"
+        (planEmitter)="planEmitFromSection($event)"
+      ></app-peo-section>
+      <app-peo-section
+        [title]="'Additional Benefit'"
+        [headerColor]="'teal'"
+        [addButton]="true"
+        (benefitEmitter)="benefitAction()"
+      ></app-peo-section>
     </div>
     <div class="col">
-      <div class="section">
-        <div class="section-header">
-          DENTAL BENEFITS
-          <button mat-raised-button color="primary" class="button-color">
-            DENTAL
-          </button>
-        </div>
-        <div class="section-body">
-          <div class="plans" *ngFor="let plan of plans">
-            <div class="checkbox">
-              <mat-icon>check_box</mat-icon> Plan {{ plan }}
-            </div>
-
-            <button mat-button [color]="'accent'">VIEW PLAN</button>
-          </div>
-        </div>
-      </div>
-      <div class="section">
-        <div class="section-header teal">LIFE BENEFITS</div>
-        <div class="section-body">
-          <div class="plans" *ngFor="let plan of plans">
-            <div class="checkbox">
-              <mat-icon>check_box</mat-icon> Plan {{ plan }}
-            </div>
-
-            <button mat-button [color]="'accent'">VIEW PLAN</button>
-          </div>
-        </div>
-      </div>
-      <div class="section">
-        <div class="section-header teal">
-          NEW SERVICE OR BENEFIT
-          <app-circle-button
-            [matIcon]="'add'"
-            [size]="'small'"
-            [color]="'accent'"
-            (click)="addServiceOrBenefit()"
-          ></app-circle-button>
-        </div>
-        <div class="section-body"></div>
-      </div>
+      <app-peo-section
+        [title]="'dental benefits'"
+        [plans]="plans"
+        [tag]="dentalTag"
+        (planEmitter)="planEmitFromSection($event)"
+      ></app-peo-section>
+      <app-peo-section
+        [title]="'life benefits'"
+        [plans]="plans"
+        [headerColor]="'teal'"
+        (planEmitter)="planEmitFromSection($event)"
+      ></app-peo-section>
+      <app-peo-section
+        [title]="'new service or benefit'"
+        [headerColor]="'teal'"
+        [addButton]="true"
+        (benefitEmitter)="addServiceOrBenefit()"
+      ></app-peo-section>
     </div>
     <div class="col">
       <div class="section right">

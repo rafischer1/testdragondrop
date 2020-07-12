@@ -1,0 +1,36 @@
+<div class="section">
+  <div
+    class="section-header"
+    [class.teal]="headerColor ? headerColor === 'teal' : ''"
+  >
+    {{ title | uppercase }}
+    <app-circle-button
+      *ngIf="addButton"
+      [matIcon]="'add'"
+      [size]="'small'"
+      [color]="'accent'"
+      (click)="benefitActionEmit()"
+    ></app-circle-button>
+    <button
+      *ngIf="tag"
+      color="primary"
+      class="tag-color"
+      [class.teal]="tag ? tag.background === 'teal' : ''"
+      mat-raised-button
+    >
+      {{ tag?.title }}
+    </button>
+  </div>
+  <div class="section-body">
+    <div class="plans" *ngFor="let plan of plans">
+      <div class="checkbox">
+        <div class="checkbox">
+          <mat-icon>check_box</mat-icon> Plan {{ plan }}
+        </div>
+      </div>
+      <button mat-button [color]="'accent'" (click)="viewPlan(plan, title)">
+        VIEW PLAN
+      </button>
+    </div>
+  </div>
+</div>
