@@ -72,10 +72,6 @@
   color: white !important;
 }
 
-.anthem-button {
-  background: #49bfa2 !important;
-}
-
 .brand-color {
   background: white;
   width: 75%;
@@ -129,3 +125,30 @@
   color: #ba19a2;
   background-color: #333333;
 }
+
+.selected-color-to-delete {
+  background: #c2c2c2;
+  color: white;
+}
+
+.delete-add-buttons {
+  display: flex;
+  margin: auto 2%;
+}
+
+.delete-add-buttons > .delete-add-button {
+  margin: 0 2%;
+}
+
+.checkbox {
+  color: #333333;
+}
+
+.upload-btn {
+  cursor: pointer;
+}
+
+.upload-file {
+  display: none;
+}
+

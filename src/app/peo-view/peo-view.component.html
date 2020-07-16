@@ -1,108 +1,73 @@
 <div class="container">
   <div class="flex-grid">
     <div class="col">
-      <div class="section">
-        <div class="section-header">
-          HEALTH BENEFITS
-          <button
-            mat-raised-button
-            color="primary"
-            class="anthem-button button-color"
-          >
-            ANTHEM
-          </button>
-        </div>
-        <div class="section-body">
-          <div class="plans" *ngFor="let plan of plans">
-            <div class="checkbox">
-              <mat-icon>check_box</mat-icon> Plan {{ plan }}
-            </div>
-
-            <button mat-button [color]="'accent'">VIEW PLAN</button>
-          </div>
-        </div>
-      </div>
-      <div class="section">
-        <div class="section-header teal">VISION BENEFITS</div>
-        <div class="section-body">
-          <div class="plans" *ngFor="let plan of plans">
-            <div class="checkbox">
-              <mat-icon>check_box</mat-icon> Plan {{ plan }}
-            </div>
-
-            <button mat-button [color]="'accent'">VIEW PLAN</button>
-          </div>
-        </div>
-      </div>
-      <div class="section">
-        <div class="section-header teal">
-          ADDITIONAL BENEFIT
-          <app-circle-button
-            [matIcon]="'add'"
-            [size]="'small'"
-            [color]="'accent'"
-            (click)="benefitAction()"
-          ></app-circle-button>
-        </div>
-        <div class="section-body"></div>
-      </div>
+      <app-peo-section
+        [plans]="plans"
+        [title]="'HEALTH BENEFITS'"
+        [tag]="anthemTag"
+        (planEmitter)="planEmitFromSection($event)"
+      ></app-peo-section>
+      <app-peo-section
+        [title]="'VISION BENEFITS'"
+        [plans]="plans"
+        [headerColor]="'teal'"
+        (planEmitter)="planEmitFromSection($event)"
+      ></app-peo-section>
+      <app-peo-section
+        [title]="'Additional Benefit'"
+        [headerColor]="'teal'"
+        [addButton]="true"
+        (benefitEmitter)="benefitAction()"
+      ></app-peo-section>
     </div>
     <div class="col">
-      <div class="section">
-        <div class="section-header">
-          DENTAL BENEFITS
-          <button mat-raised-button color="primary" class="button-color">
-            DENTAL
-          </button>
-        </div>
-        <div class="section-body">
-          <div class="plans" *ngFor="let plan of plans">
-            <div class="checkbox">
-              <mat-icon>check_box</mat-icon> Plan {{ plan }}
-            </div>
-
-            <button mat-button [color]="'accent'">VIEW PLAN</button>
-          </div>
-        </div>
-      </div>
-      <div class="section">
-        <div class="section-header teal">LIFE BENEFITS</div>
-        <div class="section-body">
-          <div class="plans" *ngFor="let plan of plans">
-            <div class="checkbox">
-              <mat-icon>check_box</mat-icon> Plan {{ plan }}
-            </div>
-
-            <button mat-button [color]="'accent'">VIEW PLAN</button>
-          </div>
-        </div>
-      </div>
-      <div class="section">
-        <div class="section-header teal">
-          NEW SERVICE OR BENEFIT
-          <app-circle-button
-            [matIcon]="'add'"
-            [size]="'small'"
-            [color]="'accent'"
-            (click)="addServiceOrBenefit()"
-          ></app-circle-button>
-        </div>
-        <div class="section-body"></div>
-      </div>
+      <app-peo-section
+        [title]="'dental benefits'"
+        [plans]="plans"
+        [tag]="dentalTag"
+        (planEmitter)="planEmitFromSection($event)"
+      ></app-peo-section>
+      <app-peo-section
+        [title]="'life benefits'"
+        [plans]="plans"
+        [headerColor]="'teal'"
+        (planEmitter)="planEmitFromSection($event)"
+      ></app-peo-section>
+      <app-peo-section
+        [title]="'new service or benefit'"
+        [headerColor]="'teal'"
+        [addButton]="true"
+        (benefitEmitter)="addServiceOrBenefit()"
+      ></app-peo-section>
     </div>
     <div class="col">
       <div class="section right">
         <div class="section-header">
           PEO BRAND COLORS
-          <app-circle-button
-            (click)="addColor()"
-            [matIcon]="'add'"
-            [size]="'small'"
-            [color]="'accent'"
-          ></app-circle-button>
+          <div class="delete-add-buttons">
+            <app-circle-button
+              class="delete-add-button"
+              *ngIf="colorToDelete !== ''"
+              (click)="deleteColor()"
+              [matIcon]="'delete'"
+              [size]="'small'"
+              [color]="'accent'"
+            ></app-circle-button>
+            <app-circle-button
+              class="delete-add-button"
+              (click)="addColor()"
+              [matIcon]="'add'"
+              [size]="'small'"
+              [color]="'accent'"
+            ></app-circle-button>
+          </div>
         </div>
         <div class="section-body dark" *ngFor="let color of brandColors">
-          <div class="brand-color">
+          <div
+            class="brand-color"
+            (click)="selectColorToDelete(color)"
+            [class.selected-color-to-delete]="colorToDelete === color"
+          >
             <div
               class="brand-color-square one"
               [style.background]="color"
@@ -115,37 +80,50 @@
         <div class="section-header">PEO BRAND IMAGES</div>
         <div class="section-body dark">
           <div class="upload">
-            <app-circle-button
-              [matIcon]="'publish'"
-              [size]="'large'"
-              [color]="'accent'"
-            ></app-circle-button>
+            <label for="upload-file-1" class="upload-btn"
+              ><mat-icon>publish</mat-icon></label
+            >
+            <input
+              id="upload-file-1"
+              (change)="handleFileSelect($event)"
+              (click)="clearFileSelection($event)"
+              class="btn btn-default upload-file"
+              type="file"
+            />
           </div>
           <div class="upload">
-            <app-circle-button
-              [matIcon]="'publish'"
-              [size]="'large'"
-              [color]="'accent'"
-            ></app-circle-button>
-          </div>
-          <div class="upload">
-            <app-circle-button
-              [matIcon]="'publish'"
-              [size]="'large'"
-              [color]="'accent'"
-            ></app-circle-button>
+            <label for="upload-file-2" class="upload-btn"
+              ><mat-icon>publish</mat-icon></label
+            >
+            <input
+              id="upload-file-2"
+              (change)="handleFileSelect($event)"
+              class="btn btn-default upload-file"
+              type="file"
+            />
           </div>
         </div>
       </div>
       <div class="section right">
         <div class="section-header">
           TAGS
-          <app-circle-button
-            (click)="addTag()"
-            [matIcon]="'add'"
-            [size]="'small'"
-            [color]="'accent'"
-          ></app-circle-button>
+          <div class="delete-add-buttons">
+            <app-circle-button
+              class="delete-add-button"
+              *ngIf="selectedTag?.title !== ''"
+              (click)="deleteTag()"
+              [matIcon]="'delete'"
+              [size]="'small'"
+              [color]="'accent'"
+            ></app-circle-button>
+            <app-circle-button
+              class="delete-add-button"
+              (click)="addTag()"
+              [matIcon]="'add'"
+              [size]="'small'"
+              [color]="'accent'"
+            ></app-circle-button>
+          </div>
         </div>
         <div class="section-body tags">
           <div *ngFor="let tag of tags">
@@ -155,16 +133,6 @@
               [selected]="selectedTag ? selectedTag.id === tag.id : false"
             ></app-tag-button>
           </div>
-          <button
-            *ngIf="this.tags.length > 0"
-            mat-stroked-button
-            color="accent"
-            class="trash-btn"
-            [class.trash-selected]="this.selectedTag.title !== ''"
-            (click)="deleteTag()"
-          >
-            <mat-icon>delete</mat-icon>
-          </button>
         </div>
       </div>
     </div>

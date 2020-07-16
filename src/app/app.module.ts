@@ -1,8 +1,4 @@
-import {
-  BrowserModule,
-  HAMMER_GESTURE_CONFIG,
-  HammerGestureConfig,
-} from "@angular/platform-browser";
+import { BrowserModule } from "@angular/platform-browser";
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from "@angular/core";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -11,25 +7,25 @@ import { DragDropModule } from "@angular/cdk/drag-drop";
 import { ListComponent } from "./list/list.component";
 import { CdkStepperModule } from "@angular/cdk/stepper";
 import {
-  MatButtonModule,
-  MatButtonToggleModule,
-  MatCardModule,
-  MatChipsModule,
-  MatFormFieldModule,
-  MatGridListModule,
-  MatIconModule,
-  MatInputModule,
-  MatListModule,
-  MatMenuModule,
-  MatRippleModule,
-  MatSelectModule,
-  MatSidenavModule,
-  MatSnackBar,
-  MatSnackBarModule,
-  MatStepperModule,
+    MatButtonModule,
+    MatButtonToggleModule,
+    MatCardModule, MatCheckboxModule,
+    MatChipsModule,
+    MatFormFieldModule,
+    MatGridListModule,
+    MatIconModule,
+    MatInputModule,
+    MatListModule,
+    MatMenuModule,
+    MatRippleModule,
+    MatSelectModule,
+    MatSidenavModule,
+    MatSnackBar,
+    MatSnackBarModule,
+    MatStepperModule,
 } from "@angular/material";
 import { SnackButtonComponent } from "./shared/snack-button/snack-button.component";
-import { FormControl, FormsModule, ReactiveFormsModule } from "@angular/forms";
+import {  FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { CardComponent } from "./list/card/card.component";
 import { ResizerComponent } from "./resizer/resizer.component";
 import { CursorsComponent } from "./cursors/cursors.component";
@@ -52,10 +48,8 @@ import { TagButtonComponent } from "./shared/tag-button/tag-button.component";
 import { PromptContainerComponent } from "./services/prompt-service/prompt-container.component";
 import { PromptComponent } from "./services/prompt-service/prompt/prompt.component";
 import { RouterModule } from "@angular/router";
-import { NumericColorInputDirective } from "@angular-material-components/color-picker";
-import { Overlay } from "@angular/cdk/typings/overlay";
-import { OVERLAY_PROVIDERS, OverlayModule } from "@angular/cdk/overlay";
-import {BrowserDynamicTestingModule} from "@angular/platform-browser-dynamic/testing";
+import { BrowserDynamicTestingModule } from "@angular/platform-browser-dynamic/testing";
+import { PeoSectionComponent } from './peo-view/peo-section/peo-section.component';
 
 @NgModule({
   declarations: [
@@ -80,39 +74,38 @@ import {BrowserDynamicTestingModule} from "@angular/platform-browser-dynamic/tes
     TagButtonComponent,
     PromptContainerComponent,
     PromptComponent,
+    PeoSectionComponent,
   ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    BrowserDynamicTestingModule,
-    AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule,
-    RouterModule,
-    BrowserAnimationsModule,
-    DragDropModule,
-    CdkStepperModule,
-    MatSnackBarModule,
-    MatRippleModule,
-    MatFormFieldModule,
-    MatCardModule,
-    MatChipsModule,
-    MatIconModule,
-    MatMenuModule,
-    MatGridListModule,
-    MatListModule,
-    MatSidenavModule,
-    MatButtonModule,
-    MatButtonToggleModule,
-    MatStepperModule,
-    MatSelectModule,
-    MatInputModule,
-    OverlayModule,
-  ],
+    imports: [
+        BrowserModule,
+        HttpClientModule,
+        AppRoutingModule,
+        FormsModule,
+        ReactiveFormsModule,
+        RouterModule,
+        BrowserAnimationsModule,
+        DragDropModule,
+        CdkStepperModule,
+        MatSnackBarModule,
+        MatRippleModule,
+        MatFormFieldModule,
+        MatCardModule,
+        MatChipsModule,
+        MatIconModule,
+        MatMenuModule,
+        MatGridListModule,
+        MatListModule,
+        MatSidenavModule,
+        MatButtonModule,
+        MatButtonToggleModule,
+        MatStepperModule,
+        MatSelectModule,
+        MatInputModule,
+        MatCheckboxModule,
+    ],
   providers: [
     WizardStateStore,
     MatSnackBar,
-    Overlay,
     {
       provide: NG_ENTITY_SERVICE_CONFIG,
       useValue: { baseUrl: "https://jsonplaceholder.typicode.com" },

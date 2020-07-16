@@ -19,6 +19,19 @@ export class PeoViewComponent implements OnInit {
   tagPayload: TagOptionPayload;
   brandColors = ["#BA19A2", "#49BFA2", "#BBD64B"];
   chosenColor: string;
+  colorToDelete: string;
+  anthemTag: Tag = {
+    title: "ANTHEM",
+    tagColor: "primary",
+    background: "teal",
+    id: 1,
+  };
+  dentalTag: Tag = {
+    title: "DENTAL",
+    tagColor: "primary",
+    background: "primary",
+    id: 2,
+  };
 
   constructor(
     private tagsService: TagsService,
@@ -28,13 +41,17 @@ export class PeoViewComponent implements OnInit {
 
   ngOnInit() {
     this.tags = this.tagsService.getAll();
-    this.selectedTag = {
+    this.resetSelectedTag();
+    this.colorToDelete = "";
+  }
+
+  resetSelectedTag = () =>
+    (this.selectedTag = {
       title: "",
       background: "",
       id: 0,
       tagColor: "primary",
-    };
-  }
+    });
 
   addTag() {
     this.promptService.showPrompt("tag", "CREATE TAG", "", "SAVE TAG", "CLOSE");
@@ -91,12 +108,7 @@ export class PeoViewComponent implements OnInit {
 
   deleteTag() {
     this.tags = this.tagsService.remove(this.selectedTag);
-    return (this.selectedTag = {
-      title: "",
-      background: "",
-      id: 0,
-      tagColor: "primary",
-    });
+    return this.resetSelectedTag();
   }
 
   selectTag = (tag: Tag) => (this.selectedTag = tag);
@@ -107,5 +119,27 @@ export class PeoViewComponent implements OnInit {
 
   addServiceOrBenefit() {
     alert("ADD SERVICE OR BENEFIT CLICKED 🥎");
+  }
+
+  deleteColor() {
+    this.brandColors = this.brandColors.filter(
+      (color) => color !== this.colorToDelete
+    );
+    this.colorToDelete = "";
+  }
+
+  selectColorToDelete(color: string) {
+    this.colorToDelete = color;
+  }
+
+  peoBrandImageUpload() {
+    alert("BRAND IMAGE UPLOAD CLICKED 🏝");
+  }
+
+  planEmitFromSection = (ev: any) =>
+    alert("Plan Emitted: " + ev.plan + " section: " + ev.section);
+
+  handleFileSelect(ev: any) {
+    alert("File selected: " +  ev.target.files[0].name)
   }
 }
