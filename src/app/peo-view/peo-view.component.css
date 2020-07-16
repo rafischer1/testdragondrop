@@ -143,3 +143,12 @@
 .checkbox {
   color: #333333;
 }
+
+.upload-btn {
+  cursor: pointer;
+}
+
+.upload-file {
+  display: none;
+}
+

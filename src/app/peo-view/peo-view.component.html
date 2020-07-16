@@ -80,28 +80,27 @@
         <div class="section-header">PEO BRAND IMAGES</div>
         <div class="section-body dark">
           <div class="upload">
-            <app-circle-button
-              [matIcon]="'publish'"
-              [size]="'large'"
-              [color]="'accent'"
-              (click)="peoBrandImageUpload()"
-            ></app-circle-button>
+            <label for="upload-file-1" class="upload-btn"
+              ><mat-icon>publish</mat-icon></label
+            >
+            <input
+              id="upload-file-1"
+              (change)="handleFileSelect($event)"
+              (click)="clearFileSelection($event)"
+              class="btn btn-default upload-file"
+              type="file"
+            />
           </div>
           <div class="upload">
-            <app-circle-button
-              [matIcon]="'publish'"
-              [size]="'large'"
-              [color]="'accent'"
-              (click)="peoBrandImageUpload()"
-            ></app-circle-button>
-          </div>
-          <div class="upload">
-            <app-circle-button
-              [matIcon]="'publish'"
-              [size]="'large'"
-              [color]="'accent'"
-              (click)="peoBrandImageUpload()"
-            ></app-circle-button>
+            <label for="upload-file-2" class="upload-btn"
+              ><mat-icon>publish</mat-icon></label
+            >
+            <input
+              id="upload-file-2"
+              (change)="handleFileSelect($event)"
+              class="btn btn-default upload-file"
+              type="file"
+            />
           </div>
         </div>
       </div>
