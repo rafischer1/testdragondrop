@@ -32,14 +32,15 @@
         <mat-icon>home</mat-icon>
         <span>Home</span>
       </button>
+      <button mat-menu-item (click)="navigate('sql')">
+        <mat-icon>computer</mat-icon>
+        <span>SQL</span>
+      </button>
     </mat-menu>
     <button mat-raised-button (click)="openWizard()" color="accent">
       <mat-icon>traffic</mat-icon>
     </button>
-    <button mat-menu-item (click)="navigate('sql')">
-      <mat-icon>computer</mat-icon>
-      <span>SQL</span>
-    </button>
+
   </div>
 </div>
 <router-outlet></router-outlet>
