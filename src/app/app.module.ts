@@ -50,6 +50,7 @@ import { PromptComponent } from "./services/prompt-service/prompt/prompt.compone
 import { RouterModule } from "@angular/router";
 import { BrowserDynamicTestingModule } from "@angular/platform-browser-dynamic/testing";
 import { PeoSectionComponent } from './peo-view/peo-section/peo-section.component';
+import { SqlGeneratorComponent } from './sql-generator/sql-generator.component';
 
 @NgModule({
   declarations: [
@@ -75,6 +76,7 @@ import { PeoSectionComponent } from './peo-view/peo-section/peo-section.componen
     PromptContainerComponent,
     PromptComponent,
     PeoSectionComponent,
+    SqlGeneratorComponent,
   ],
     imports: [
         BrowserModule,

@@ -9,6 +9,7 @@ import { ProposalPlansComponent } from "./proposal/proposal-plans/proposal-plans
 import { ProposalRatesComponent } from "./proposal/proposal-rates/proposal-rates.component";
 import { ProposalOverviewComponent } from "./proposal/proposal-overview/proposal-overview.component";
 import {PeoViewComponent} from "./peo-view/peo-view.component";
+import {SqlGeneratorComponent} from "./sql-generator/sql-generator.component";
 
 const routes: Routes = [
   { path: "", component: ListComponent },
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: "rates", component: ProposalRatesComponent },
   { path: "overview", component: ProposalOverviewComponent },
   { path: "peo", component: PeoViewComponent },
+  { path: "sql", component: SqlGeneratorComponent },
 ];
 
 @NgModule({
