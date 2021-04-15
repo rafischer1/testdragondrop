@@ -7,25 +7,26 @@ import { DragDropModule } from "@angular/cdk/drag-drop";
 import { ListComponent } from "./list/list.component";
 import { CdkStepperModule } from "@angular/cdk/stepper";
 import {
-    MatButtonModule,
-    MatButtonToggleModule,
-    MatCardModule, MatCheckboxModule,
-    MatChipsModule,
-    MatFormFieldModule,
-    MatGridListModule,
-    MatIconModule,
-    MatInputModule,
-    MatListModule,
-    MatMenuModule,
-    MatRippleModule,
-    MatSelectModule,
-    MatSidenavModule,
-    MatSnackBar,
-    MatSnackBarModule,
-    MatStepperModule,
+  MatButtonModule,
+  MatButtonToggleModule,
+  MatCardModule,
+  MatCheckboxModule,
+  MatChipsModule,
+  MatFormFieldModule,
+  MatGridListModule,
+  MatIconModule,
+  MatInputModule,
+  MatListModule,
+  MatMenuModule,
+  MatRippleModule,
+  MatSelectModule,
+  MatSidenavModule,
+  MatSnackBar,
+  MatSnackBarModule,
+  MatStepperModule,
 } from "@angular/material";
 import { SnackButtonComponent } from "./shared/snack-button/snack-button.component";
-import {  FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { CardComponent } from "./list/card/card.component";
 import { ResizerComponent } from "./resizer/resizer.component";
 import { CursorsComponent } from "./cursors/cursors.component";
@@ -49,11 +50,11 @@ import { PromptContainerComponent } from "./services/prompt-service/prompt-conta
 import { PromptComponent } from "./services/prompt-service/prompt/prompt.component";
 import { RouterModule } from "@angular/router";
 import { BrowserDynamicTestingModule } from "@angular/platform-browser-dynamic/testing";
-import { PeoSectionComponent } from './peo-view/peo-section/peo-section.component';
-import { SqlGeneratorComponent } from './sql-generator/sql-generator.component';
-import { TranslocoRootModule } from './transloco/transloco-root.module';
-import { LanguageToggleComponent } from './shared/language-toggle/language-toggle.component';
-import { LanguageButtonComponent } from './shared/language-toggle/language-button/language-button.component';
+import { PeoSectionComponent } from "./peo-view/peo-section/peo-section.component";
+import { SqlGeneratorComponent } from "./sql-generator/sql-generator.component";
+import { TranslocoRootModule } from "./transloco/transloco-root.module";
+import { LanguageToggleComponent } from "./shared/language-toggle/language-toggle.component";
+import { LanguageButtonComponent } from "./shared/language-toggle/language-button/language-button.component";
 
 @NgModule({
   declarations: [
@@ -83,34 +84,34 @@ import { LanguageButtonComponent } from './shared/language-toggle/language-butto
     LanguageToggleComponent,
     LanguageButtonComponent,
   ],
-    imports: [
-        BrowserModule,
-        HttpClientModule,
-        AppRoutingModule,
-        FormsModule,
-        ReactiveFormsModule,
-        RouterModule,
-        BrowserAnimationsModule,
-        DragDropModule,
-        CdkStepperModule,
-        MatSnackBarModule,
-        MatRippleModule,
-        MatFormFieldModule,
-        MatCardModule,
-        MatChipsModule,
-        MatIconModule,
-        MatMenuModule,
-        MatGridListModule,
-        MatListModule,
-        MatSidenavModule,
-        MatButtonModule,
-        MatButtonToggleModule,
-        MatStepperModule,
-        MatSelectModule,
-        MatInputModule,
-        MatCheckboxModule,
-        TranslocoRootModule,
-    ],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    RouterModule,
+    BrowserAnimationsModule,
+    DragDropModule,
+    CdkStepperModule,
+    MatSnackBarModule,
+    MatRippleModule,
+    MatFormFieldModule,
+    MatCardModule,
+    MatChipsModule,
+    MatIconModule,
+    MatMenuModule,
+    MatGridListModule,
+    MatListModule,
+    MatSidenavModule,
+    MatButtonModule,
+    MatButtonToggleModule,
+    MatStepperModule,
+    MatSelectModule,
+    MatInputModule,
+    MatCheckboxModule,
+    TranslocoRootModule,
+  ],
   providers: [
     WizardStateStore,
     MatSnackBar,
