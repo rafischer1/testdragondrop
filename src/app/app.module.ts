@@ -53,6 +53,7 @@ import { PeoSectionComponent } from './peo-view/peo-section/peo-section.componen
 import { SqlGeneratorComponent } from './sql-generator/sql-generator.component';
 import { TranslocoRootModule } from './transloco/transloco-root.module';
 import { LanguageToggleComponent } from './shared/language-toggle/language-toggle.component';
+import { LanguageButtonComponent } from './shared/language-toggle/language-button/language-button.component';
 
 @NgModule({
   declarations: [
@@ -80,6 +81,7 @@ import { LanguageToggleComponent } from './shared/language-toggle/language-toggl
     PeoSectionComponent,
     SqlGeneratorComponent,
     LanguageToggleComponent,
+    LanguageButtonComponent,
   ],
     imports: [
         BrowserModule,

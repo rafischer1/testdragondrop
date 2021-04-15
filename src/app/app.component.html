@@ -1,5 +1,6 @@
 <div class="app-container">
   <div class="header">
+
     <button
       mat-icon-button
       [matMenuTriggerFor]="menu"
@@ -40,8 +41,9 @@
     <button mat-raised-button (click)="openWizard()" color="accent">
       <mat-icon>traffic</mat-icon>
     </button>
-
+    <app-language-toggle></app-language-toggle>
   </div>
+
 </div>
 <router-outlet></router-outlet>
 <app-wizard-container></app-wizard-container>
