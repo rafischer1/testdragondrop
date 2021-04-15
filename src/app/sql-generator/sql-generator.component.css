@@ -1,0 +1,34 @@
+.sql-container {
+  position: fixed;
+  top: 46px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: space-between;
+  flex-direction: row;
+}
+
+.tenant-input {
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 2%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.all-features-input {
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 2%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

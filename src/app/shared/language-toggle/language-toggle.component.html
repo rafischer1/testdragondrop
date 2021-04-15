@@ -1,0 +1,17 @@
+<div class="lang-container">
+  <app-language-button
+    (set)="setLanguage('en')"
+    [active]="activeLang === 'en'"
+    [icon]="'🏴󠁧󠁢󠁥󠁮󠁧󠁿'"
+  ></app-language-button>
+  <app-language-button
+    (set)="setLanguage('es')"
+    [active]="activeLang === 'es'"
+    [icon]="'🇪🇸'"
+  ></app-language-button>
+  <app-language-button
+    (set)="setLanguage('de')"
+    [active]="activeLang === 'de'"
+    [icon]="'🇩🇪'"
+  ></app-language-button>
+</div>

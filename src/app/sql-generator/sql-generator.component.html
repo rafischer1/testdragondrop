@@ -1,0 +1,65 @@
+<div class="sql-container">
+  <div class="tenant-input">
+    <h4>key: 'hi', enabled: false, locked: false</h4>
+    <form [formGroup]="tenantForm">
+      <label for="tenant-id"
+        >TENANT ID
+        <input id="tenant-id" [formControl]="tenantId" [required]="true" />
+      </label>
+      <label for="tenant-features"
+        >TENANT FEATURES
+        <textarea
+          cols="40"
+          rows="15"
+          id="tenant-features"
+          name="tenant-features[]"
+          placeholder="[{}]"
+          [formControl]="tenantFeaturesFormControl"
+        ></textarea>
+      </label>
+      <div class="button">
+        <app-snack-button
+          [type]="'GEN SQL'"
+          [action]="'GENERATED SQL'"
+          [message]="'TRYING TO GEN SQL'"
+          [matColor]="'primary'"
+          [verticalPosition]="'top'"
+          [horizontalPosition]="'center'"
+          [disabled]="areTenantFeaturesDisabled()"
+          (click)="genSQL($event)"
+        ></app-snack-button>
+      </div>
+    </form>
+    <div class="tenant-features-display">
+      <div>{{ tenantFeatures }}</div>
+    </div>
+  </div>
+  <div class="all-features-input">
+    <form [formGroup]="featuresForm">
+      <label for="all-features"
+        >TENANT FEATURES
+        <textarea
+          cols="40"
+          rows="15"
+          id="all-features"
+          [formControl]="allFeatures"
+        ></textarea>
+      </label>
+      <div class="button">
+        <app-snack-button
+          [type]="'GEN FEATURES'"
+          [action]="'GENERATED FEATURES'"
+          [message]="'TRYING TO GEN FEATURES'"
+          [matColor]="'primary'"
+          [verticalPosition]="'top'"
+          [horizontalPosition]="'center'"
+          [disabled]="areFeaturesDisabled()"
+          (click)="genAllFeatures()"
+        ></app-snack-button>
+      </div>
+    </form>
+    <div class="all-features-display">
+      <div>{{ featuresArr }}</div>
+    </div>
+  </div>
+</div>

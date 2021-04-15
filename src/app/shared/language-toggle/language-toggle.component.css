@@ -1,0 +1,14 @@
+.lang-container {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  right: 20px;
+  top: 5px;
+  border: 1px solid #868686;
+  border-radius: 10px;
+  padding: 1px 2px;
+}
+
+.lang-container:hover {
+  border: 1px solid lightgray;
+}
