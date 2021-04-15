@@ -36,18 +36,16 @@ export class SqlGeneratorComponent implements OnInit {
 
   genSQL(ev: MouseEvent) {
     ev.preventDefault();
+    const feats = this.tenantFeaturesFormControl.value.split(",");
     console.log(
       "GENSQL:",
       this.tenantId.value,
-      this.tenantFeaturesFormControl.value
+      this.tenantFeaturesFormControl.value,
+      feats
     );
-    const feats = this.tenantFeaturesFormControl.value.split(",");
     const id = this.tenantId.value;
-    this.tenantFeatures = [];
-    feats.value.forEach((f) => {
-      this.tenantFeatures.push(
-        `INSERT INTO api_schema.features_tenant_map ("key", tenant_id, enabled, locked) VALUES ('${f.key}', ${id}, ${f.enabled}, ${f.locked};`
-      );
+    this.tenantFeatures = feats.value.map((f) => {
+      return `INSERT INTO api_schema.features_tenant_map ("key", tenant_id, enabled, locked) VALUES ('${f.key}', ${id}, ${f.enabled}, ${f.locked};`;
     });
     return this.tenantFeatures;
   }
@@ -55,23 +53,22 @@ export class SqlGeneratorComponent implements OnInit {
   genAllFeatures() {
     console.log("GEN FEATS:", this.featuresForm.controls.allFeatures.value);
     const feats = this.allFeatures.value;
-    this.featuresArr = [];
-    feats.value.forEach((f) => {
-      this.featuresArr.push(
-        `INSERT INTO api_schema.features ("key") VALUES ('${f.key}');`
-      );
+    this.featuresArr = feats.value.map((f) => {
+      return `INSERT INTO api_schema.features ("key") VALUES ('${f.key}');`;
     });
     return this.featuresArr;
   }
 
   areTenantFeaturesDisabled(): boolean {
-    return !!(
-      this.tenantId.value.length > 0 &&
-      this.tenantFeaturesFormControl.value.length > 0
-    );
+    // return !!(
+    //   this.tenantId.value.length > 0 &&
+    //   this.tenantFeaturesFormControl.value.length > 0
+    // );
+    return false
   }
 
   areFeaturesDisabled(): boolean {
-    return this.allFeatures.value.length > 0;
+    // return this.allFeatures.value.length > 0;
+    return false
   }
 }

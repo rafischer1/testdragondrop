@@ -51,6 +51,8 @@ import { RouterModule } from "@angular/router";
 import { BrowserDynamicTestingModule } from "@angular/platform-browser-dynamic/testing";
 import { PeoSectionComponent } from './peo-view/peo-section/peo-section.component';
 import { SqlGeneratorComponent } from './sql-generator/sql-generator.component';
+import { TranslocoRootModule } from './transloco/transloco-root.module';
+import { LanguageToggleComponent } from './shared/language-toggle/language-toggle.component';
 
 @NgModule({
   declarations: [
@@ -77,6 +79,7 @@ import { SqlGeneratorComponent } from './sql-generator/sql-generator.component';
     PromptComponent,
     PeoSectionComponent,
     SqlGeneratorComponent,
+    LanguageToggleComponent,
   ],
     imports: [
         BrowserModule,
@@ -104,6 +107,7 @@ import { SqlGeneratorComponent } from './sql-generator/sql-generator.component';
         MatSelectModule,
         MatInputModule,
         MatCheckboxModule,
+        TranslocoRootModule,
     ],
   providers: [
     WizardStateStore,
