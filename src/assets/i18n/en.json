@@ -1,6 +1,19 @@
 {
   "list": {
     "masterPlans": "Master Plans",
-    "plansToOffer": "Plans to Offer"
+    "plansToOffer": "Plans to Offer",
+    "resetList": "Reset List",
+    "listsReset": "Lists Reset",
+    "saveList": "Save List",
+    "saved": "Saved",
+    "downloadingPdf": "Downloading PDF"
+  },
+  "menu": {
+    "list": "List",
+    "resize": "Resize",
+    "cursors": "Cursors",
+    "login": "Login",
+    "client": "Client",
+    "home": "Home"
   }
 }

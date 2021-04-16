@@ -45,25 +45,25 @@
       <app-snack-button
         [type]="'PDF'"
         [action]="'🎣'"
-        [message]="'Downloading PDF'"
+        [message]="t('downloadingPdf')"
         [matColor]="'accent'"
         [verticalPosition]="'top'"
         [horizontalPosition]="'center'"
         (click)="toPdf()"
       ></app-snack-button>
       <app-snack-button
-        [type]="'Reset List'"
+        [type]="t('resetList')"
         [action]="'🎛'"
-        [message]="'Lists Reset'"
+        [message]="t('listsReset')"
         [matColor]="'warn'"
         [verticalPosition]="'top'"
         [horizontalPosition]="'center'"
         (click)="reset()"
       ></app-snack-button>
       <app-snack-button
-        [type]="'Save List'"
+        [type]="t('saveList')"
         [action]="'⏱'"
-        [message]="'Saved'"
+        [message]="t('saved')"
         [verticalPosition]="'top'"
         [horizontalPosition]="'center'"
         [matColor]="'primary'"

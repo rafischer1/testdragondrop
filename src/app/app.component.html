@@ -1,6 +1,5 @@
-<div class="app-container">
+<div class="app-container" *transloco="let t; read: 'menu'">
   <div class="header">
-
     <button
       mat-icon-button
       [matMenuTriggerFor]="menu"
@@ -11,27 +10,27 @@
     <mat-menu #menu="matMenu" xPosition="after">
       <button mat-menu-item (click)="navigate('list')">
         <mat-icon>voicemail</mat-icon>
-        <span>List</span>
+        <span>{{ t("list") }}</span>
       </button>
       <button mat-menu-item (click)="navigate('resize')">
         <mat-icon>dialpad</mat-icon>
-        <span>Resize</span>
+        <span>{{ t("resize") }}</span>
       </button>
       <button mat-menu-item (click)="navigate('cursors')">
         <mat-icon>fingerprint</mat-icon>
-        <span>Cursors</span>
+        <span>{{ t("cursors") }}</span>
       </button>
       <button mat-menu-item (click)="navigate('login')">
         <mat-icon>blur_circular</mat-icon>
-        <span>Login</span>
+        <span>{{ t("login") }}</span>
       </button>
       <button mat-menu-item (click)="navigate('peo')">
         <mat-icon>psychology</mat-icon>
-        <span>PEO</span>
+        <span>{{ t("client") }}</span>
       </button>
       <button mat-menu-item (click)="navigate('')">
         <mat-icon>home</mat-icon>
-        <span>Home</span>
+        <span>{{ t("home") }}</span>
       </button>
       <button mat-menu-item (click)="navigate('sql')">
         <mat-icon>computer</mat-icon>
@@ -43,7 +42,6 @@
     </button>
     <app-language-toggle></app-language-toggle>
   </div>
-
 </div>
 <router-outlet></router-outlet>
 <app-wizard-container></app-wizard-container>

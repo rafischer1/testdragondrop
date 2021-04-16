@@ -1,6 +1,19 @@
 {
   "list": {
     "masterPlans": "Planes finales",
-    "plansToOffer": "Planes ofrecidos"
+    "plansToOffer": "Planes ofrecidos",
+    "resetList": "Restablecer Lista",
+    "listsReset": "Restablecimiento de listas",
+    "saveList": "Guardar lista",
+    "saved": "Salvado",
+    "downloadingPdf": "Descargando PDF"
+  },
+  "menu": {
+    "list": "Lista",
+    "resize": "Re-tamaño",
+    "cursors": "Cursores",
+    "login": "Acceso",
+    "client": "Cliente",
+    "home": "Casa"
   }
 }
