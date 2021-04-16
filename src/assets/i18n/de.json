@@ -1,4 +1,15 @@
 {
+  "client": {
+    "health": "gesundheitliche Vorteile",
+    "vision": "Visuelle Vorteile",
+    "additional": "Zusätzliche Vorteile",
+    "dental": "zahnärztliche Vorteile",
+    "life": "Lebensvorteile",
+    "new": "neue Dienstleistungen oder Vorteile",
+    "benefits": "Vorteile",
+    "brandColors": "Kundenmarkenfarben",
+    "tags": "Schlüsselwörter"
+  },
   "list": {
     "masterPlans": "endgültige Pläne",
     "plansToOffer": "angebotene Pläne",

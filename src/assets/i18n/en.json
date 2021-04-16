@@ -1,4 +1,15 @@
 {
+  "client": {
+    "health": "health benefits",
+    "vision": "vision benefits",
+    "additional": "additional benefits",
+    "dental": "dental benefits",
+    "life": "life benefits",
+    "new": "new services or benefits",
+    "benefits": "benefits",
+    "brandColors": "client brand colors",
+    "tags": "tags"
+  },
   "list": {
     "masterPlans": "Master Plans",
     "plansToOffer": "Plans to Offer",

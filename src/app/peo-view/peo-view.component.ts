@@ -140,6 +140,8 @@ export class PeoViewComponent implements OnInit {
     alert("Plan Emitted: " + ev.plan + " section: " + ev.section);
 
   handleFileSelect(ev: any) {
-    alert("File selected: " +  ev.target.files[0].name)
+    alert("File selected: " + ev.target.files[0].name);
   }
+
+  clearFileSelection(ev: any) {}
 }

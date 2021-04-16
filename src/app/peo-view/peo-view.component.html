@@ -1,20 +1,20 @@
-<div class="container">
+<div class="container" *transloco="let t; read: 'client'">
   <div class="flex-grid">
     <div class="col">
       <app-peo-section
         [plans]="plans"
-        [title]="'HEALTH BENEFITS'"
+        [title]="t('health') | uppercase"
         [tag]="anthemTag"
         (planEmitter)="planEmitFromSection($event)"
       ></app-peo-section>
       <app-peo-section
-        [title]="'VISION BENEFITS'"
+        [title]="t('vision') | uppercase"
         [plans]="plans"
         [headerColor]="'teal'"
         (planEmitter)="planEmitFromSection($event)"
       ></app-peo-section>
       <app-peo-section
-        [title]="'Additional Benefit'"
+        [title]="t('additional') | uppercase"
         [headerColor]="'teal'"
         [addButton]="true"
         (benefitEmitter)="benefitAction()"
@@ -22,19 +22,19 @@
     </div>
     <div class="col">
       <app-peo-section
-        [title]="'dental benefits'"
+        [title]="t('dental') | uppercase"
         [plans]="plans"
         [tag]="dentalTag"
         (planEmitter)="planEmitFromSection($event)"
       ></app-peo-section>
       <app-peo-section
-        [title]="'life benefits'"
+        [title]="t('life') | uppercase"
         [plans]="plans"
         [headerColor]="'teal'"
         (planEmitter)="planEmitFromSection($event)"
       ></app-peo-section>
       <app-peo-section
-        [title]="'new service or benefit'"
+        [title]="t('new') | uppercase"
         [headerColor]="'teal'"
         [addButton]="true"
         (benefitEmitter)="addServiceOrBenefit()"
@@ -43,7 +43,7 @@
     <div class="col">
       <div class="section right">
         <div class="section-header">
-          PEO BRAND COLORS
+          {{ t("brandColors") | uppercase }}
           <div class="delete-add-buttons">
             <app-circle-button
               class="delete-add-button"
@@ -93,7 +93,7 @@
           </div>
           <div class="upload">
             <label for="upload-file-2" class="upload-btn"
-              ><mat-icon>publish</mat-icon></label
+              ><mat-icon>{{ t("publish") }}</mat-icon></label
             >
             <input
               id="upload-file-2"
@@ -106,7 +106,7 @@
       </div>
       <div class="section right">
         <div class="section-header">
-          TAGS
+          {{ t("tags") | uppercase }}
           <div class="delete-add-buttons">
             <app-circle-button
               class="delete-add-button"

@@ -1,4 +1,15 @@
 {
+  "client": {
+    "health": "beneficios medicos",
+    "vision": "beneficios de la vista",
+    "additional": "beneficios adicionales",
+    "dental": "beneficios dentales",
+    "life": "beneficios de vida",
+    "new": "servicios nuevo o beneficios",
+    "benefits": "benficios",
+    "brandColors": "colores de la marca del cliente",
+    "tags": "etiquetas"
+  },
   "list": {
     "masterPlans": "Planes finales",
     "plansToOffer": "Planes ofrecidos",
