@@ -8,7 +8,11 @@
     "new": "servicios nuevo o beneficios",
     "benefits": "benficios",
     "brandColors": "colores de la marca del cliente",
-    "tags": "etiquetas"
+    "tags": "etiquetas",
+    "images": "imágenes de la marca del cliente",
+    "saveTag": "guardar etiqueta",
+    "createTag": "crear etiqueta",
+    "close": "cerca"
   },
   "list": {
     "masterPlans": "Planes finales",

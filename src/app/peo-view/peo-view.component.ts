@@ -6,6 +6,7 @@ import {
   TagOptionPayload,
 } from "../services/prompt-service/state/prompt.service";
 import { PromptQuery } from "../services/prompt-service/state/prompt-query.service";
+import { TranslocoService } from "@ngneat/transloco";
 
 @Component({
   selector: "app-peo-view",
@@ -21,7 +22,7 @@ export class PeoViewComponent implements OnInit {
   chosenColor: string;
   colorToDelete: string;
   anthemTag: Tag = {
-    title: "ANTHEM",
+    title: "GOTHAM",
     tagColor: "primary",
     background: "teal",
     id: 1,
@@ -35,6 +36,7 @@ export class PeoViewComponent implements OnInit {
 
   constructor(
     private tagsService: TagsService,
+    private translate: TranslocoService,
     public promptService: PromptService,
     private query: PromptQuery
   ) {}
@@ -54,7 +56,13 @@ export class PeoViewComponent implements OnInit {
     });
 
   addTag() {
-    this.promptService.showPrompt("tag", "CREATE TAG", "", "SAVE TAG", "CLOSE");
+    this.promptService.showPrompt(
+      "tag",
+      this.translate.translate("client.createTag").toUpperCase(),
+      "",
+      this.translate.translate("client.saveTag").toUpperCase(),
+      this.translate.translate("client.close").toUpperCase()
+    );
 
     this.query.response$.subscribe((res) => {
       if (res === "decline") {

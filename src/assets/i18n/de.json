@@ -8,7 +8,11 @@
     "new": "neue Dienstleistungen oder Vorteile",
     "benefits": "Vorteile",
     "brandColors": "Kundenmarkenfarben",
-    "tags": "Schlüsselwörter"
+    "tags": "Schlüsselwörter",
+    "images": "Kundenmarkenbilder",
+    "saveTag": "Tag speichern",
+    "createTag": "Tag erstellen",
+    "close": "schließen"
   },
   "list": {
     "masterPlans": "endgültige Pläne",

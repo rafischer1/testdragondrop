@@ -77,12 +77,12 @@
         </div>
       </div>
       <div class="section right">
-        <div class="section-header">PEO BRAND IMAGES</div>
+        <div class="section-header">{{ t("images") | uppercase }}</div>
         <div class="section-body dark">
           <div class="upload">
             <label for="upload-file-1" class="upload-btn"
-              ><mat-icon>publish</mat-icon></label
-            >
+              ><mat-icon>publish</mat-icon>
+            </label>
             <input
               id="upload-file-1"
               (change)="handleFileSelect($event)"
@@ -93,7 +93,7 @@
           </div>
           <div class="upload">
             <label for="upload-file-2" class="upload-btn"
-              ><mat-icon>{{ t("publish") }}</mat-icon></label
+              ><mat-icon>publish</mat-icon></label
             >
             <input
               id="upload-file-2"

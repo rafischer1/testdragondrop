@@ -8,7 +8,11 @@
     "new": "new services or benefits",
     "benefits": "benefits",
     "brandColors": "client brand colors",
-    "tags": "tags"
+    "images": "client brand images",
+    "tags": "tags",
+    "saveTag": "save tag",
+    "createTag": "create tag",
+    "close": "close"
   },
   "list": {
     "masterPlans": "Master Plans",
